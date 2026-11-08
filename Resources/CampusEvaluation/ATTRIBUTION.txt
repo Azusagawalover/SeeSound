@@ -1,0 +1,5 @@
+FLEURS: Few-shot Learning Evaluation of Universal Representations of Speech.
+Google FLEURS contributors. Dataset: https://huggingface.co/datasets/google/fleurs
+License: Creative Commons Attribution 4.0 International, https://creativecommons.org/licenses/by/4.0/
+Two Mandarin Chinese validation recordings; downloaded via the dataset audio endpoint, which may re-encode WAV containers; no further edits by this project. References and SHA-256 are recorded in References/CampusEvaluation/sources.json.
+The three notice images are generated from original fictional text in this project, dedicated under CC0-1.0.

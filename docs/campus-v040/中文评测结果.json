@@ -1,0 +1,62 @@
+{
+  "version": "0.40",
+  "samples": [
+    {
+      "metric": "字符编辑距离 12 / 参考字符 44 · CER 27.3%",
+      "output": "報告警告稱 沒有人能保證目前在伊拉克採取的任何行動 能夠阻止宗派戰爭不斷增長的暴力或走向混亂",
+      "sample_id": "fleurs-zh-1",
+      "reference": "报告警告称，没有人能保证目前在伊拉克采取的任何行动能够阻止宗派战争、不断增长的暴力或走向混乱。",
+      "edits": 12,
+      "reference_character_count": 44,
+      "cer": 0.2727272727272727,
+      "device": "iPhone 15 / iOS17.5 Simulator",
+      "source_attachment": "docs/campus-v040/screenshots/iphone/evaluation-fleurs-zh-1.json"
+    },
+    {
+      "metric": "字符编辑距离 22 / 参考字符 35 · CER 62.9%",
+      "output": "因為遠離大陸鋪入動物無法長度發射而來,使得距歸成為克洞群島主要的失討動物。",
+      "sample_id": "fleurs-zh-2",
+      "reference": "因为远离大陆，哺乳动物无法长途跋涉而来，使得巨龟成为科隆群岛主要的食草动物。",
+      "edits": 22,
+      "reference_character_count": 35,
+      "cer": 0.6285714285714286,
+      "device": "iPhone 15 / iOS17.5 Simulator",
+      "source_attachment": "docs/campus-v040/screenshots/iphone/evaluation-fleurs-zh-2.json"
+    },
+    {
+      "metric": "字符编辑距离 0 / 参考字符 48 · CER 0.0%",
+      "output": "模拟活动通知\n活动：校园读书会\n报名截止：2026年11月5日 18:00\n地点：图书馆三楼\n请携带学生证。\n费用：免费",
+      "sample_id": "notice-activity",
+      "reference": "模拟活动通知\n活动：校园读书会\n报名截止：2026年11月5日 18:00\n地点：图书馆三楼\n请携带学生证。\n费用：免费",
+      "edits": 0,
+      "reference_character_count": 48,
+      "cer": 0.0,
+      "device": "iPhone 15 / iOS17.5 Simulator",
+      "source_attachment": "docs/campus-v040/screenshots/iphone-recheck/evaluation-notice-activity.json"
+    },
+    {
+      "metric": "字符编辑距离 0 / 参考字符 52 · CER 0.0%",
+      "output": "模拟校园通知\n办理地点：学生服务中心二楼\n受理时间：2026年11月3日09:30\n请携带校园卡和证件照。\n材料费：12元",
+      "sample_id": "notice-counter",
+      "reference": "模拟校园通知\n办理地点：学生服务中心二楼\n受理时间：2026年11月3日 09:30\n请携带校园卡和证件照。\n材料费：12元",
+      "edits": 0,
+      "reference_character_count": 52,
+      "cer": 0.0,
+      "device": "iPhone 15 / iOS17.5 Simulator",
+      "source_attachment": "docs/campus-v040/screenshots/iphone-recheck/evaluation-notice-counter.json"
+    },
+    {
+      "metric": "字符编辑距离 0 / 参考字符 56 · CER 0.0%",
+      "output": "模拟补充通知\n办理时间改为2026年11月6日14:20。\n办理地点改为行政楼101室。\n请补交一张证件照，原有校园卡仍需携带。",
+      "sample_id": "notice-update",
+      "reference": "模拟补充通知\n办理时间改为2026年11月6日 14:20。\n办理地点改为行政楼101室。\n请补交一张证件照，原有校园卡仍需携带。",
+      "edits": 0,
+      "reference_character_count": 56,
+      "cer": 0.0,
+      "device": "iPhone 15 / iOS17.5 Simulator",
+      "source_attachment": "docs/campus-v040/screenshots/iphone-recheck/evaluation-notice-update.json"
+    }
+  ],
+  "normalization": "忽略空白与标点，保留数字和字母，未做繁简归一化。",
+  "limitations": "3张原创模拟公告、2段FLEURS普通话朗读。非真实校园采集，不推算总体识别准确率。第二段存在明显实词错误，仍需人工核对。"
+}

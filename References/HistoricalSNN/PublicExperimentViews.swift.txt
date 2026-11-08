@@ -1,0 +1,384 @@
+import Charts
+import SwiftUI
+
+struct PublicSoundExperimentPage: View {
+    @ObservedObject var workspace: Workspace
+    @ObservedObject var service: PublicExperimentService
+    @State private var section = 0
+    @State private var filter: SoundSampleLabel?
+    @State private var neuron = 0
+    @State private var compareNeuron = false
+    @State private var comparisonBeta = 0.85
+    @State private var onlyDisagreements = false
+    @Environment(\.scenePhase) private var scenePhase
+    init(workspace: Workspace, service: PublicExperimentService) {
+        self.workspace = workspace; self.service = service
+        _section = State(initialValue: ProcessInfo.processInfo.arguments.contains("--public-results") ? 1 : 0)
+    }
+    var body: some View {
+        ScrollViewReader { proxy in
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
+                introduction.id("public-top")
+                HStack(spacing: 10) {
+                    tab("同步回放", index: 0, symbol: "play.rectangle")
+                    tab("对照与复盘", index: 1, symbol: "chart.bar.xaxis")
+                }
+                if service.model == nil || service.catalog == nil {
+                    Notice(text: service.status)
+                } else if section == 0 {
+                    playback
+                    predictions
+                    Button("查看频谱与神经元", systemImage: "waveform.path.ecg") { proxy.scrollTo("public-signals", anchor: .top) }
+                        .buttonStyle(.bordered).frame(maxWidth: .infinity, alignment: .leading)
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 310), spacing: 16)], spacing: 16) {
+                        spectrum
+                        spikes
+                    }.id("public-signals")
+                    neuronPanel
+                    Button("返回播放控制", systemImage: "arrow.up") { proxy.scrollTo("public-top", anchor: .top) }.buttonStyle(.bordered)
+                    samplePicker
+                } else { results }
+                provenance
+                NavigationLink {
+                    SNNLaboratoryPage(service: workspace.lab, library: workspace.samples)
+                } label: { Label("个人样本、数学信号与模型导入", systemImage: "slider.horizontal.3").frame(maxWidth: .infinity, alignment: .leading) }
+                    .padding(18).background(.background, in: RoundedRectangle(cornerRadius: 18))
+            }.padding(20).frame(maxWidth: 1200).frame(maxWidth: .infinity)
+        }.background(Color(.systemGroupedBackground)).navigationTitle("SNN 实验室").navigationBarTitleDisplayMode(.inline)
+            .onAppear {
+                workspace.stop()
+                neuron = service.analysis?.mostActive ?? 0
+                comparisonBeta = service.model?.beta ?? 0.85
+                if service.evaluation == nil { Task { await service.evaluate() } }
+            }
+            .onDisappear { service.stop() }
+            .onChange(of: scenePhase) { _, phase in
+                if phase == .active && service.evaluation == nil { Task { await service.evaluate() } }
+            }
+            .onChange(of: service.selectedID) { _, _ in
+                neuron = service.analysis?.mostActive ?? 0
+                compareNeuron = false
+                comparisonBeta = service.model?.beta ?? 0.85
+                proxy.scrollTo("public-top", anchor: .top)
+            }
+            .onChange(of: section) { _, value in
+                if value == 1 { service.pause() }
+                proxy.scrollTo("public-top", anchor: .top)
+            }
+        }
+    }
+    private var introduction: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack { Label("公开声音实验", systemImage: "waveform.path").font(.caption.bold()); Spacer(); Text("ESC-50").font(.caption.monospaced()) }
+            Text(section == 0 ? "听见声音，\n看见它如何变成脉冲。" : "公开数据对照")
+                .font(.system(.title, design: .rounded, weight: .bold))
+            Text(section == 0 ? "不用录音。选择一段公开样本，同步观察频谱、输入脉冲与训练模型的神经元。" : "相同特征、相同划分，保留判断正确与错误的样本。")
+                .font(.subheadline).foregroundStyle(.white.opacity(0.85))
+            ViewThatFits {
+                HStack(spacing: 12) { tags }
+                VStack(alignment: .leading, spacing: 8) { tags }
+            }
+        }.padding(22).foregroundStyle(.white)
+            .background(LinearGradient(colors: [Color(red: 0.03, green: 0.23, blue: 0.30), Color(red: 0.10, green: 0.40, blue: 0.43)],
+                                       startPoint: .topLeading, endPoint: .bottomTrailing), in: RoundedRectangle(cornerRadius: 24))
+    }
+    @ViewBuilder private var tags: some View {
+        ForEach(["敲门 / 拍手 / 其他", "24 段留出录音", "本机推理"], id: \.self) { title in
+            Text(title).font(.caption).padding(.horizontal, 10).padding(.vertical, 7).background(.white.opacity(0.12), in: Capsule())
+        }
+    }
+    private func tab(_ title: String, index: Int, symbol: String) -> some View {
+        Button { section = index } label: {
+            Label(title, systemImage: symbol).font(.subheadline.weight(.semibold)).frame(maxWidth: .infinity).padding(.vertical, 13)
+                .foregroundStyle(section == index ? Color(.systemBackground) : Color.primary)
+                .background(section == index ? Color.seeAccent : Color(.secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 14))
+        }.buttonStyle(.plain).accessibilityAddTraits(section == index ? .isSelected : [])
+    }
+    @ViewBuilder private var playback: some View {
+        if let clip = service.clip {
+            VStack(alignment: .leading, spacing: 14) {
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text(clip.categoryTitle).font(.title2.bold())
+                        Text("数据集标注 · 官方第 5 折测试样本").font(.caption).foregroundStyle(.secondary)
+                    }
+                    Spacer()
+                    Text("第 \(service.frame + 1) / 64 帧").font(.caption.monospacedDigit()).foregroundStyle(Color.seeAccent)
+                }
+                Chart(Array(clip.waveform.enumerated()), id: \.offset) { item in
+                    AreaMark(x: .value("时间", (Double(item.offset) + 0.5) / 64 * clip.duration), y: .value("相对幅度", item.element))
+                        .foregroundStyle(Color.seeAccent.opacity(0.18))
+                    LineMark(x: .value("时间", (Double(item.offset) + 0.5) / 64 * clip.duration), y: .value("相对幅度", item.element))
+                        .foregroundStyle(Color.seeAccent)
+                }.chartXScale(domain: 0...5).chartOverlay { proxy in
+                    GeometryReader { geometry in
+                        if let x = proxy.position(forX: service.position * 5), let anchor = proxy.plotFrame {
+                            Rectangle().fill(Color.orange).frame(width: 2).offset(x: x + geometry[anchor].origin.x)
+                        }
+                    }.allowsHitTesting(false)
+                }.frame(height: 85).accessibilityLabel("公开录音的相对幅度与当前播放位置")
+                Slider(value: Binding(get: { service.position }, set: { service.seek($0) }), in: 0...1)
+                    .accessibilityLabel("音频时间线")
+                HStack {
+                    Button { service.step(-1) } label: { Label("上一帧", systemImage: "backward.frame") }.disabled(service.frame == 0)
+                    Spacer()
+                    Button {
+                        if service.isPlaying { service.pause() }
+                        else {
+                            workspace.audio.stopEverything(); workspace.hand.stop(); workspace.samples.cancelCapture(); workspace.offlineSpeech.cancel()
+                            service.playPause()
+                        }
+                    } label: { Label(service.isPlaying ? "暂停" : "播放并观察", systemImage: service.isPlaying ? "pause.fill" : "play.fill") }
+                        .buttonStyle(.borderedProminent)
+                    Spacer()
+                    Button { service.step(1) } label: { Label("下一帧", systemImage: "forward.frame") }.disabled(service.frame == 63)
+                }.font(.caption)
+                HStack {
+                    Text(String(format: "%.2f / 5.00 秒", service.position * 5)).font(.caption.monospacedDigit())
+                    Spacer()
+                    Picker("播放速度", selection: $service.playbackRate) {
+                        Text("0.5×").tag(Float(0.5)); Text("1×").tag(Float(1)); Text("1.5×").tag(Float(1.5))
+                    }.pickerStyle(.menu)
+                    Toggle("循环", isOn: $service.looping).fixedSize().font(.caption)
+                }
+                Text(service.status).font(.caption).foregroundStyle(.secondary)
+                Text("时间线对应预计算特征；这里播放公开文件，不分析麦克风。")
+                    .font(.caption).foregroundStyle(.secondary)
+            }.publicCard()
+        }
+    }
+    private var predictions: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            HStack(alignment: .top, spacing: 12) {
+                prediction("SNN · 整段判断", label: service.prediction?.snn)
+                prediction("ANN · 整段判断", label: service.prediction?.ann)
+            }
+            Text("判断使用完整 5 秒的预计算特征；播放光标只定位信号，不代表实时麦克风识别。")
+                .font(.caption).foregroundStyle(.secondary)
+        }
+    }
+    private func prediction(_ name: String, label: SoundSampleLabel?) -> some View {
+        VStack(alignment: .leading, spacing: 7) {
+            Text(name).font(.caption.bold()).foregroundStyle(.secondary)
+            Text(label?.title ?? "等待本机推理").font(.headline)
+            if let label, let actual = service.clip?.label {
+                Label(label == actual ? "与标注一致" : "与标注不同", systemImage: label == actual ? "checkmark.circle" : "exclamationmark.circle")
+                    .font(.caption).foregroundStyle(label == actual ? Color.seeAccent : .orange)
+            }
+        }.frame(maxWidth: .infinity, alignment: .leading).publicCard()
+    }
+    @ViewBuilder private var spectrum: some View {
+        if let clip = service.clip {
+            VStack(alignment: .leading, spacing: 10) {
+                Text("01 · Mel 频谱").font(.headline)
+                Text("16 个频带 × 64 帧 · 80 Hz–8 kHz").font(.caption).foregroundStyle(.secondary)
+                PublicSignalCanvas(values: clip.features, frame: service.frame, isSpectrum: true)
+                Text("亮色表示相对能量更高，竖线是当前帧。按整段最大能量归一化，不是校准分贝。")
+                    .font(.caption).foregroundStyle(.secondary)
+            }.publicCard()
+        }
+    }
+    @ViewBuilder private var spikes: some View {
+        if let analysis = service.analysis {
+            VStack(alignment: .leading, spacing: 10) {
+                Text("02 · 差分脉冲").font(.headline)
+                Text("16 个频带分别编码上升 / 下降，共 32 路").font(.caption).foregroundStyle(.secondary)
+                PublicSignalCanvas(values: analysis.encoded, frame: service.frame, isSpectrum: false)
+                Text("青色为上升、橙色为下降；步长固定 0.08。本帧 \(Int(analysis.encoded[service.frame].reduce(0, +))) 次输入脉冲。")
+                    .font(.caption).foregroundStyle(.secondary)
+            }.publicCard()
+        }
+    }
+    @ViewBuilder private var neuronPanel: some View {
+        if let model = service.model, let analysis = service.analysis, analysis.traces.indices.contains(neuron) {
+            let trace = analysis.traces[neuron]
+            let altered = compareNeuron ? LIFNeuron.trace(currents: trace.map(\.input), beta: comparisonBeta, threshold: model.threshold) : []
+            VStack(alignment: .leading, spacing: 14) {
+                Text("03 · 训练模型中的 LIF 神经元").font(.headline)
+                Stepper("神经元 \(neuron + 1) / \(model.snnHidden.bias.count)", value: $neuron, in: 0...(model.snnHidden.bias.count - 1))
+                    .font(.subheadline).accessibilityLabel("选择训练模型神经元")
+                Chart {
+                    ForEach(trace) { point in
+                        LineMark(x: .value("时间帧", point.id), y: .value("膜电位", point.potential)).foregroundStyle(by: .value("曲线", "训练参数"))
+                        if point.spike == 1 { PointMark(x: .value("时间帧", point.id), y: .value("发放", model.threshold)).foregroundStyle(.orange) }
+                    }
+                    ForEach(altered) { point in
+                        LineMark(x: .value("时间帧", point.id), y: .value("膜电位", point.potential)).foregroundStyle(by: .value("曲线", "探索参数"))
+                    }
+                    RuleMark(y: .value("阈值", model.threshold)).lineStyle(StrokeStyle(dash: [4, 4])).foregroundStyle(.secondary)
+                    RuleMark(x: .value("当前帧", service.frame)).foregroundStyle(.orange.opacity(0.7))
+                }.chartForegroundStyleScale(["训练参数": Color.seeAccent, "探索参数": Color.purple])
+                    .chartXScale(domain: 0...63).frame(height: 175)
+                let point = trace[service.frame]
+                ViewThatFits {
+                    HStack(spacing: 18) { neuronNumbers(point) }
+                    VStack(alignment: .leading, spacing: 6) { neuronNumbers(point) }
+                }.font(.caption.monospacedDigit())
+                Text("橙点是发放，每帧最多一次；减阈值复位后仍可能超过阈值。默认展示发放较活跃的神经元，换神经元不会改变分类结果。")
+                    .font(.caption).foregroundStyle(.secondary)
+                Toggle("对比不同的膜电位保留速度", isOn: $compareNeuron).font(.subheadline)
+                if compareNeuron {
+                    HStack {
+                        Button { comparisonBeta = max(0, comparisonBeta - 0.05) } label: { Image(systemName: "minus.circle") }.accessibilityLabel("减小探索 β")
+                        Slider(value: $comparisonBeta, in: 0...0.99).accessibilityLabel("探索 β")
+                        Button { comparisonBeta = min(0.99, comparisonBeta + 0.05) } label: { Image(systemName: "plus.circle") }.accessibilityLabel("增大探索 β")
+                    }.buttonStyle(.plain)
+                    Text("探索 β = \(comparisonBeta, format: .number.precision(.fractionLength(2)))，发放 \(Int(altered.map(\.spike).reduce(0, +))) 次；训练参数发放 \(Int(trace.map(\.spike).reduce(0, +))) 次。")
+                        .font(.caption).foregroundStyle(.secondary)
+                    Text("紫线只用于观察神经元变化；模型预测仍使用原训练参数。")
+                        .font(.caption).foregroundStyle(.secondary)
+                }
+            }.publicCard()
+        }
+    }
+    @ViewBuilder private func neuronNumbers(_ point: NeuronPoint) -> some View {
+        Text(String(format: "输入电流 %.3f", point.input))
+        Text(String(format: "复位后电位 %.3f", point.potential))
+        Text(point.spike == 1 ? "本帧发放" : "本帧未发放").foregroundStyle(point.spike == 1 ? Color.orange : .secondary)
+    }
+    private var samplePicker: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            Text("选择公开样本").font(.headline)
+            Picker("样本类别", selection: $filter) {
+                Text("全部").tag(Optional<SoundSampleLabel>.none)
+                ForEach([SoundSampleLabel.knock, .clapping, .other]) { Text($0.title).tag(Optional($0)) }
+            }.pickerStyle(.menu)
+            ForEach(service.catalog?.clips.filter { filter == nil || $0.label == filter } ?? []) { clip in
+                Button { service.select(clip.id) } label: {
+                    HStack {
+                        Image(systemName: clip.id == service.selectedID ? "checkmark.circle.fill" : "waveform.circle")
+                            .foregroundStyle(Color.seeAccent)
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(clip.categoryTitle).font(.subheadline.weight(.semibold)).foregroundStyle(.primary)
+                            Text(clip.id).font(.caption2.monospaced()).foregroundStyle(.secondary)
+                        }
+                        Spacer()
+                        if let result = service.evaluation?.predictions.first(where: { $0.id == clip.id }), result.isError {
+                            Text("有误判").font(.caption).foregroundStyle(.orange)
+                        }
+                    }.padding(12).background(Color(.tertiarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 12))
+                }.buttonStyle(.plain)
+            }
+        }.publicCard()
+    }
+    private var results: some View {
+        VStack(alignment: .leading, spacing: 18) {
+            VStack(alignment: .leading, spacing: 12) {
+                Text("同一批公开录音，两种方法").font(.title3.bold())
+                Text("固定 96 段训练、24 段测试；官方第 5 折只用于最后评测。以下是这个三类子集的结果。")
+                    .font(.subheadline).foregroundStyle(.secondary)
+                if let result = service.evaluation {
+                    HStack(spacing: 14) {
+                        accuracy("SNN", value: result.accuracy(snn: true))
+                        accuracy("ANN", value: result.accuracy(snn: false))
+                    }
+                    Label("本机已复核 24 段预计算特征，与电脑报告一致", systemImage: "checkmark.seal").font(.caption).foregroundStyle(Color.seeAccent)
+                    matrix(result.matrix(snn: true), title: "SNN 混淆矩阵")
+                    matrix(result.matrix(snn: false), title: "ANN 混淆矩阵")
+                } else {
+                    if service.isEvaluating { ProgressView("正在本机推理测试特征") }
+                    Text(service.status).font(.caption)
+                }
+                Button("重新在本机复核") { Task { await service.evaluate() } }.disabled(service.isEvaluating)
+                Text("这不是完整 ESC-50 基准，也不是你家环境的实测。样本量小，两种方法的差距不能直接推广；没有测量能耗。")
+                    .font(.caption).foregroundStyle(.secondary)
+            }.publicCard()
+            VStack(alignment: .leading, spacing: 12) {
+                Text("失败样本复盘").font(.headline)
+                Toggle("只看两种模型意见不同", isOn: $onlyDisagreements).font(.subheadline)
+                let failures = service.evaluation?.predictions.filter { onlyDisagreements ? $0.isDisagreement : $0.isError } ?? []
+                if failures.isEmpty { Text(service.evaluation == nil ? "等待本机推理结果。" : "当前筛选没有样本。").font(.subheadline).foregroundStyle(.secondary) }
+                ForEach(failures) { result in
+                    Button {
+                        service.select(result.id); section = 0
+                    } label: {
+                        VStack(alignment: .leading, spacing: 7) {
+                            Text("标注：\(result.actual.title)").font(.subheadline.bold()).foregroundStyle(.primary)
+                            Text("SNN：\(result.snn.title) · ANN：\(result.ann.title)").font(.caption).foregroundStyle(.secondary)
+                            HStack { Text(result.id).font(.caption2.monospaced()); Spacer(); Label("回放复盘", systemImage: "play.circle").font(.caption) }.foregroundStyle(Color.seeAccent)
+                        }.padding(13).background(Color(.tertiarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 12))
+                    }.buttonStyle(.plain)
+                }
+            }.publicCard()
+        }
+    }
+    private func accuracy(_ title: String, value: Double) -> some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text(title).font(.caption.bold()).foregroundStyle(.secondary)
+            Text(value, format: .percent.precision(.fractionLength(1))).font(.system(.title, design: .rounded, weight: .bold)).foregroundStyle(Color.seeAccent)
+            Text("24 段测试样本").font(.caption).foregroundStyle(.secondary)
+        }.frame(maxWidth: .infinity, alignment: .leading).padding(14).background(Color.seeAccent.opacity(0.06), in: RoundedRectangle(cornerRadius: 16))
+    }
+    private func matrix(_ rows: [[Int]], title: String) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(title).font(.subheadline.bold())
+            Text("行是标注，列是预测；顺序为敲门、拍手、其他。").font(.caption).foregroundStyle(.secondary)
+            Grid(horizontalSpacing: 12, verticalSpacing: 8) {
+                ForEach(rows.indices, id: \.self) { row in
+                    GridRow {
+                        Text(["敲门", "拍手", "其他"][row]).font(.caption)
+                        ForEach(rows[row].indices, id: \.self) { column in
+                            Text("\(rows[row][column])").font(.subheadline.monospacedDigit()).frame(maxWidth: .infinity).padding(9)
+                                .background((row == column ? Color.seeAccent : Color.orange).opacity(rows[row][column] > 0 ? 0.14 : 0.03), in: RoundedRectangle(cornerRadius: 8))
+                        }
+                    }
+                }
+            }
+        }
+    }
+    private var provenance: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Label("来源与实验范围", systemImage: "doc.text.magnifyingglass").font(.headline)
+            Text("ESC-50 · Karol J. Piczak · CC BY-NC 3.0。使用敲门、拍手，以及键盘 / 吸尘器组成的“其他”子集，没有门铃类别。")
+                .font(.caption).foregroundStyle(.secondary)
+            Link("查看 ESC-50 数据集", destination: URL(string: "https://github.com/karolpiczak/ESC-50")!)
+            if let clip = service.clip {
+                Link("当前录音的原始来源", destination: clip.sourceURL)
+                Text(clip.attribution).font(.caption2).foregroundStyle(.secondary).textSelection(.enabled)
+            }
+            NavigationLink("完整数据许可与逐段署名") {
+                ScrollView { Text(licenseText)
+                    .font(.caption).textSelection(.enabled).padding(20) }.navigationTitle("ESC-50 许可")
+            }
+        }.publicCard()
+    }
+    private var licenseText: String {
+        guard let url = Bundle.main.url(forResource: "ESC50-LICENSE", withExtension: "txt") else { return "许可文件未能读取" }
+        return (try? String(contentsOf: url, encoding: .utf8)) ?? "许可文件未能读取"
+    }
+}
+
+private struct PublicSignalCanvas: View {
+    let values: [[Double]]
+    let frame: Int
+    let isSpectrum: Bool
+    var body: some View {
+        Canvas { context, size in
+            let channels = values.first?.count ?? 1
+            for (time, row) in values.enumerated() {
+                for (channel, value) in row.enumerated() {
+                    let rect = CGRect(x: Double(time) / 64 * size.width, y: Double(channels - 1 - channel) / Double(channels) * size.height,
+                                      width: size.width / 64 + 0.3, height: size.height / Double(channels) + 0.3)
+                    if isSpectrum {
+                        let color = Color(red: 0.04 + value * 0.90, green: 0.13 + value * 0.57, blue: 0.19 + value * 0.10)
+                        context.fill(Path(rect), with: .color(color))
+                    } else if value > 0 {
+                        context.fill(Path(rect.insetBy(dx: 0.5, dy: 0.8)), with: .color(channel.isMultiple(of: 2) ? .cyan : .orange))
+                    }
+                }
+            }
+            var cursor = Path(); let x = (Double(frame) + 0.5) / 64 * size.width
+            cursor.move(to: CGPoint(x: x, y: 0)); cursor.addLine(to: CGPoint(x: x, y: size.height))
+            context.stroke(cursor, with: .color(.white), lineWidth: 1.5)
+        }.frame(height: 160).background(Color(red: 0.04, green: 0.10, blue: 0.15)).clipShape(RoundedRectangle(cornerRadius: 12))
+            .accessibilityLabel(isSpectrum ? "16 频带的 Mel 频谱，当前第 \(frame + 1) 帧" : "32 路差分脉冲，当前第 \(frame + 1) 帧")
+    }
+}
+
+private extension View {
+    func publicCard() -> some View {
+        padding(18).frame(maxWidth: .infinity, alignment: .leading)
+            .background(Color(.secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 22))
+    }
+}

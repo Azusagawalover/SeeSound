@@ -1,0 +1,56 @@
+{
+  "beta": 0.8500000238418579,
+  "threshold": 1.0,
+  "trace": [
+    {
+      "input": 0.0,
+      "spike": 0.0,
+      "membrane": 0.0
+    },
+    {
+      "input": 0.4,
+      "spike": 0.0,
+      "membrane": 0.4
+    },
+    {
+      "input": 0.9,
+      "spike": 1.0,
+      "membrane": 0.24000000953674316
+    },
+    {
+      "input": 0.0,
+      "spike": 0.0,
+      "membrane": 0.20400001382827782
+    },
+    {
+      "input": 2.5,
+      "spike": 1.0,
+      "membrane": 1.6734000166177756
+    },
+    {
+      "input": 0.0,
+      "spike": 0.0,
+      "membrane": 1.4223900540220746
+    },
+    {
+      "input": -0.3,
+      "spike": 0.0,
+      "membrane": 0.909031579831185
+    },
+    {
+      "input": 0.8,
+      "spike": 1.0,
+      "membrane": 0.572676864529509
+    },
+    {
+      "input": 0.8,
+      "spike": 1.0,
+      "membrane": 0.2867753485037632
+    },
+    {
+      "input": 0.0,
+      "spike": 0.0,
+      "membrane": 0.2437590530654558
+    }
+  ]
+}

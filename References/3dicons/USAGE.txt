@@ -1,0 +1,6 @@
+3dicons V1 by Vijay Verma
+Official original PNGs: https://old.3dicons.co/
+CC0 1.0 Universal: https://creativecommons.org/publicdomain/zero/1.0/
+The icon pages and official About page identify this collection as CC0.
+Original assets are unchanged. Source URLs, sizes and hashes are in sources.json.
+Used offline as decorative UI images, not as model inputs.

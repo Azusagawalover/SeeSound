@@ -1,0 +1,5 @@
+Synthetic test fixture, generated locally with macOS speech synthesis.
+Voice: Samantha. No microphone recording or private conversation.
+Text: Please bring your student card to the service centre tomorrow morning.
+Purpose: check model loading, local file transcription and readable output.
+This one synthetic phrase is not an evaluation of natural Chinese speech accuracy.

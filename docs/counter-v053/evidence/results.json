@@ -1,0 +1,358 @@
+{
+  "version": "0.53",
+  "build": "53",
+  "files": [
+    {
+      "path": "App/CounterVisitViews.swift",
+      "sha256": "419a915263cac07ba727e3598b6ebefd3b0312d7abb1bf5460c9f05983f3b740"
+    },
+    {
+      "path": "App/CampusDomain.swift",
+      "sha256": "9b507fe32a4ca96b58bad296387160552cbd9668f357528aa099bdf2932b57c8"
+    },
+    {
+      "path": "App/CampusWorkspaceDomain.swift",
+      "sha256": "245873c7a4f22d00b751bdecbd25d99a5daaade00ea3b592b21ca130b7e00c55"
+    },
+    {
+      "path": "App/CampusWorkspaceViews.swift",
+      "sha256": "3f9d000a48bfd124d21f126e02c4c9d6310802d6e38d7a584b2a938550cdfd28"
+    },
+    {
+      "path": "App/CampusCommunicationViews.swift",
+      "sha256": "4d956d660125f749229fa5d39ee03ad4c849eba92a832c6760c89d19c85eead8"
+    },
+    {
+      "path": "App/CampusViews.swift",
+      "sha256": "af9816090a67c4fd35dede352f45016e553bc1af0dcc5e33b52b8ccba3e334be"
+    },
+    {
+      "path": "App/WorkspaceUpgradeViews.swift",
+      "sha256": "ead12a5a805d9797bba2f4356eb086d7c8721ad478732dde3262fc530512bbac"
+    },
+    {
+      "path": "App/WorkroomCasesViews.swift",
+      "sha256": "2a441b0f06797986fa1a5dca00fe9e09c1e27fa7a7d3b0bcb72f25ac352ed47e"
+    },
+    {
+      "path": "Checks/Integration/CampusWorkspaceTests.swift",
+      "sha256": "89a21bd571c7c46938b7b2ec3d9b156da03406bf3412548f9ba1daef51aa95d8"
+    },
+    {
+      "path": "SeeSound.xcodeproj/project.pbxproj",
+      "sha256": "52f290804ecffb98928f72ac05a558f16d5c764b1d19ba7a3a8d95529e0d1456"
+    },
+    {
+      "path": "Package.swift",
+      "sha256": "5e834305e33d51830b7d55e1267cee85fe6578c62c0fa917688fae70352f0827"
+    }
+  ],
+  "ui_tests_run": false,
+  "real_capture_or_paid_api_calls": false,
+  "data_checks": [
+    {
+      "class": "CampusWorkspaceTests",
+      "name": "testAnswerEditInvalidatesDependentCardsAndNewSnapshotRetainsOldEvidence",
+      "status": "passed"
+    },
+    {
+      "class": "CampusWorkspaceTests",
+      "name": "testAnswerFactNeedsConsentExactValueAndKeepsUnconfirmedManualSource",
+      "status": "passed"
+    },
+    {
+      "class": "CampusWorkspaceTests",
+      "name": "testAttentionIDsAreScopedToParentJourney",
+      "status": "passed"
+    },
+    {
+      "class": "CampusWorkspaceTests",
+      "name": "testBookmarkAndFavoritesPersistWithoutChangingJourneyVersion",
+      "status": "passed"
+    },
+    {
+      "class": "CampusWorkspaceTests",
+      "name": "testCharacterMetricPreservesDigitsAndCountsInsertionsAndSubstitutions",
+      "status": "passed"
+    },
+    {
+      "class": "CampusWorkspaceTests",
+      "name": "testConflictOnlyUsesLatestVersionOfEachMaterial",
+      "status": "passed"
+    },
+    {
+      "class": "CampusWorkspaceTests",
+      "name": "testConflictResolutionDoesNotSilentlyRewriteFactsAndNewSourceReopensIt",
+      "status": "passed"
+    },
+    {
+      "class": "CampusWorkspaceTests",
+      "name": "testDuplicateNormalizationPreservesDifferentContentAndOrigin",
+      "status": "passed"
+    },
+    {
+      "class": "CampusWorkspaceTests",
+      "name": "testDuplicateSourceRequiresExplicitKeepAndStalePreviewCannotWrite",
+      "status": "passed"
+    },
+    {
+      "class": "CampusWorkspaceTests",
+      "name": "testEvaluationRecordStoreRoundtripPreservesRawOutputAndManualCorrectionSeparately",
+      "status": "passed"
+    },
+    {
+      "class": "CampusWorkspaceTests",
+      "name": "testEvaluationStoreRejectsCorruptionAndInvalidDurations",
+      "status": "passed"
+    },
+    {
+      "class": "CampusWorkspaceTests",
+      "name": "testExcerptSaveNeverMixesDemonstrationAndPersonal",
+      "status": "passed"
+    },
+    {
+      "class": "CampusWorkspaceTests",
+      "name": "testIncomingJourneyDifferenceRespectsKeepLocalChoice",
+      "status": "passed"
+    },
+    {
+      "class": "CampusWorkspaceTests",
+      "name": "testInvalidPlanDateAndInventedQuestionEvidenceAreRejected",
+      "status": "passed"
+    },
+    {
+      "class": "CampusWorkspaceTests",
+      "name": "testJourneyDeletionRemovesLocalReadingAndWatchState",
+      "status": "passed"
+    },
+    {
+      "class": "CampusWorkspaceTests",
+      "name": "testLegacyJourneyAndLedgerDecodeWithoutNewFields",
+      "status": "passed"
+    },
+    {
+      "class": "CampusWorkspaceTests",
+      "name": "testLocalReadingAndWatchReceiptStateDoesNotEnterEncryptedExport",
+      "status": "passed"
+    },
+    {
+      "class": "CampusWorkspaceTests",
+      "name": "testPresentationResetOnlyTouchesItsOwnMarkedJourney",
+      "status": "passed"
+    },
+    {
+      "class": "CampusWorkspaceTests",
+      "name": "testQuestionEvidenceRequiresConsentExactQuoteAndCurrentVersion",
+      "status": "passed"
+    },
+    {
+      "class": "CampusWorkspaceTests",
+      "name": "testRemovingQuestionInvalidatesOnlyItsDependentAnswerCards",
+      "status": "passed"
+    },
+    {
+      "class": "CampusWorkspaceTests",
+      "name": "testScenarioOnlyCreatesQuestionsAndExplicitUserDate",
+      "status": "passed"
+    },
+    {
+      "class": "CampusWorkspaceTests",
+      "name": "testScheduleUsesExplicitUserPlanAndExcludesFinishedJourney",
+      "status": "passed"
+    },
+    {
+      "class": "CampusWorkspaceTests",
+      "name": "testScheduleUsesHalfOpenDayAndWeekBoundaries",
+      "status": "passed"
+    },
+    {
+      "class": "CampusWorkspaceTests",
+      "name": "testSearchDistinguishesSharedSourceAndFactIDsAcrossJourneys",
+      "status": "passed"
+    },
+    {
+      "class": "CampusWorkspaceTests",
+      "name": "testSearchKeepsJourneyChildrenSeparateAndProvidesParentRoute",
+      "status": "passed"
+    },
+    {
+      "class": "CampusWorkspaceTests",
+      "name": "testStaleAnswerPreviewAndCapacityFailureDoNotPartiallySave",
+      "status": "passed"
+    },
+    {
+      "class": "CampusWorkspaceTests",
+      "name": "testWatchJourneyContainsOnlySummaryAndContentChangesInvalidateIt",
+      "status": "passed"
+    },
+    {
+      "class": "CampusTests",
+      "name": "testChangeImpactUsesActualOldEvidenceAndPreservesCompletion",
+      "status": "passed"
+    },
+    {
+      "class": "CampusTests",
+      "name": "testCompletionTicksDoNotRequireJourneyArrangementReview",
+      "status": "passed"
+    },
+    {
+      "class": "CampusTests",
+      "name": "testCounterpartNeedsSelfCheckAndEditedFactLosesBothConfirmations",
+      "status": "passed"
+    },
+    {
+      "class": "CampusTests",
+      "name": "testDemoCannotScheduleRealReminderAndInvalidOutcomeCreatesNothing",
+      "status": "passed"
+    },
+    {
+      "class": "CampusTests",
+      "name": "testEvidenceCannotBeInventedOrMixDemoWithPersonalSource",
+      "status": "passed"
+    },
+    {
+      "class": "CampusTests",
+      "name": "testEvidenceLocationHandlesChineseAndMultilineQuotesWithoutGuessing",
+      "status": "passed"
+    },
+    {
+      "class": "CampusTests",
+      "name": "testJourneyHandoffIncludesDependenciesButNoUnrelatedJourneyOrRecovery",
+      "status": "passed"
+    },
+    {
+      "class": "CampusTests",
+      "name": "testJourneyPauseAndResumeSurviveRestart",
+      "status": "passed"
+    },
+    {
+      "class": "CampusTests",
+      "name": "testLinkedCaseChangeInvalidatesSourceMatchedConfirmationAtomically",
+      "status": "passed"
+    },
+    {
+      "class": "CampusTests",
+      "name": "testLinkedTaskChangeInvalidatesWatchCaseFingerprint",
+      "status": "passed"
+    },
+    {
+      "class": "CampusTests",
+      "name": "testManualAndAutomaticRedactionPreserveOriginalAndHideSelectedIdentifiers",
+      "status": "passed"
+    },
+    {
+      "class": "CampusTests",
+      "name": "testMergeRetainsJourneyAndDoesNotImportRecoveryOptIn",
+      "status": "passed"
+    },
+    {
+      "class": "CampusTests",
+      "name": "testNewSourceVersionInvalidatesOnlyItsOwnFactsAndRetainsEvidence",
+      "status": "passed"
+    },
+    {
+      "class": "CampusTests",
+      "name": "testOldArchiveDecodesWithoutCampusData",
+      "status": "passed"
+    },
+    {
+      "class": "CampusTests",
+      "name": "testOutcomeAndFollowUpCaseSaveTogetherAndReminderIsOptIn",
+      "status": "passed"
+    },
+    {
+      "class": "CampusTests",
+      "name": "testRecoveryCannotOverwriteDifferentCaseVersion",
+      "status": "passed"
+    },
+    {
+      "class": "CampusTests",
+      "name": "testRecoveryIsOptInAndNeverSilentlyRestoredAfterRestart",
+      "status": "passed"
+    },
+    {
+      "class": "CampusTests",
+      "name": "testRemovingVisualReferencesDoesNotInvalidateJourneyCaseInformationVersion",
+      "status": "passed"
+    },
+    {
+      "class": "CampusTests",
+      "name": "testSelectedCaseExportDoesNotLeakJourneyConversations",
+      "status": "passed"
+    },
+    {
+      "class": "CampusTests",
+      "name": "testSettingsDeselectionKeepsJourneyButDoesNotExportItsListPreferences",
+      "status": "passed"
+    },
+    {
+      "class": "CampusTests",
+      "name": "testSplitPersistsSelectedOnlyAndRefusesReplayOrStaleDraft",
+      "status": "passed"
+    },
+    {
+      "class": "CampusTests",
+      "name": "testSplitRequiresConsentAndRejectsWholeBatchWhenOnePartIsInvalid",
+      "status": "passed"
+    },
+    {
+      "class": "CampusTests",
+      "name": "testStaleJourneyEditorCannotOverwriteNewerState",
+      "status": "passed"
+    },
+    {
+      "class": "CampusTests",
+      "name": "testWatchInvalidationIsVersionAndTimeScoped",
+      "status": "passed"
+    },
+    {
+      "class": "CampusTests",
+      "name": "testWatchSeenAppliesOnlyToSameVersionIncludingLinkedTasks",
+      "status": "passed"
+    }
+  ],
+  "products": [
+    {
+      "configuration": "Debug",
+      "product": ".",
+      "version": "0.53",
+      "build": "53",
+      "minimum_os": "17.3"
+    },
+    {
+      "configuration": "Debug",
+      "product": "Watch/SeeSoundWatch.app",
+      "version": "0.53",
+      "build": "53",
+      "minimum_os": "9.6"
+    },
+    {
+      "configuration": "Debug",
+      "product": "PlugIns/SeeSoundShare.appex",
+      "version": "0.53",
+      "build": "53",
+      "minimum_os": "17.3"
+    },
+    {
+      "configuration": "Release",
+      "product": ".",
+      "version": "0.53",
+      "build": "53",
+      "minimum_os": "17.3"
+    },
+    {
+      "configuration": "Release",
+      "product": "Watch/SeeSoundWatch.app",
+      "version": "0.53",
+      "build": "53",
+      "minimum_os": "9.6"
+    },
+    {
+      "configuration": "Release",
+      "product": "PlugIns/SeeSoundShare.appex",
+      "version": "0.53",
+      "build": "53",
+      "minimum_os": "17.3"
+    }
+  ]
+}

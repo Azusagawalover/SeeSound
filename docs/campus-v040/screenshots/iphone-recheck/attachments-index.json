@@ -1,0 +1,95 @@
+{
+  "bundle": "/tmp/SeeSound-v040-iphone-recheck.xcresult",
+  "attachments": [
+    {
+      "id": "0~G7HxkWbvMdYWxbJWMPDGqJyALtEVmK5SP8uRcVoIZw4VhylSsbSSKrPEvOlNL1XiZGhTXeX3YFkWlTp0gpQarg==",
+      "name": "46-linked-workbench",
+      "uti": "public.png",
+      "path": "46-linked-workbench.png"
+    },
+    {
+      "id": "0~o7zMgLlHtEWrR8eiJXxbJawrjcM4EP06FaAA1OWwl2c-k7U2V4GJUul93VC3bLJz-iad3hogDsa_cPP1V1aJvw==",
+      "name": "evaluation-notice-counter",
+      "uti": "public.json",
+      "path": "evaluation-notice-counter.json"
+    },
+    {
+      "id": "0~exoZSmw--JGQDHxLl-TQEPZs4HQzcLC-mMvi7E-gK2mZ_OWkGEOX71xTl3UYJqAKOlR9_el7SGzgCXpSxQqDwA==",
+      "name": "44-chinese-notice-counter",
+      "uti": "public.png",
+      "path": "44-chinese-notice-counter.png"
+    },
+    {
+      "id": "0~P4-Pop4YJ2wEqg1TAcqBf9XPbpkzOo4YOLChr4HOyOOLSdyA1df6h7U5zrBifG89v5KqRGbt9J_4LGWfFOE4oA==",
+      "name": "evaluation-notice-activity",
+      "uti": "public.json",
+      "path": "evaluation-notice-activity.json"
+    },
+    {
+      "id": "0~x9fgB94X8k8LMI_GISJaxZE91VCAZzye35EUYPvICwfZQKjdL4aHktWdZdeZl1xED86ug9nufz6NSD3CjfB5fg==",
+      "name": "44-chinese-notice-activity",
+      "uti": "public.png",
+      "path": "44-chinese-notice-activity.png"
+    },
+    {
+      "id": "0~sG4zrIjRzjLSXbzGPlbGbnY1w84RbvZ2DdgIh8oZ0NnA95DHEPe5zwQdwcr_u2npwEjA36i0XoKdcqTEl1jfdA==",
+      "name": "evaluation-notice-update",
+      "uti": "public.json",
+      "path": "evaluation-notice-update.json"
+    },
+    {
+      "id": "0~1xNRxH08o771s2gt4qj8vTnf03PfxSsO_iAzqTdM51fKkIMiVki50Nz9GWEg5EpQhp-XwG2OKcpdgVApZWuWTg==",
+      "name": "44-chinese-notice-update",
+      "uti": "public.png",
+      "path": "44-chinese-notice-update.png"
+    },
+    {
+      "id": "0~X3eajYq17ZEshLo363piCOoiKoTAIerTFUmVYJnWb8ZIyobdfnDTtXbrD0V8E8uigDl49n2yp3s0gpJ6h_eang==",
+      "name": "47-journey-search-specific-card",
+      "uti": "public.png",
+      "path": "47-journey-search-specific-card.png"
+    }
+  ],
+  "tests": [
+    {
+      "identifier": "WorkflowUITests/testCampusDeskAndResume()",
+      "name": "testCampusDeskAndResume()",
+      "status": "Success"
+    },
+    {
+      "identifier": "WorkflowUITests/testCampusDeskAndResume()",
+      "name": "testCampusDeskAndResume()",
+      "status": "Success"
+    },
+    {
+      "identifier": "WorkflowUITests/testChineseNoticeEvaluationActuallyRunsOCR()",
+      "name": "testChineseNoticeEvaluationActuallyRunsOCR()",
+      "status": "Success"
+    },
+    {
+      "identifier": "WorkflowUITests/testChineseNoticeEvaluationActuallyRunsOCR()",
+      "name": "testChineseNoticeEvaluationActuallyRunsOCR()",
+      "status": "Success"
+    },
+    {
+      "identifier": "WorkflowUITests/testJourneySearchOpensSpecificCardAndResume()",
+      "name": "testJourneySearchOpensSpecificCardAndResume()",
+      "status": "Failure"
+    },
+    {
+      "identifier": "WorkflowUITests/testJourneySearchOpensSpecificCardAndResume()",
+      "name": "testJourneySearchOpensSpecificCardAndResume()",
+      "status": "Failure"
+    },
+    {
+      "identifier": "WorkflowUITests/testPairedWatchJourneySnapshotAndVersionChange()",
+      "name": "testPairedWatchJourneySnapshotAndVersionChange()",
+      "status": "Failure"
+    },
+    {
+      "identifier": "WorkflowUITests/testPairedWatchJourneySnapshotAndVersionChange()",
+      "name": "testPairedWatchJourneySnapshotAndVersionChange()",
+      "status": "Failure"
+    }
+  ]
+}

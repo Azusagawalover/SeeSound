@@ -1,0 +1,42 @@
+{
+  "revision": "9681162a6618cceb548ee2a94e83bcfb3a141066",
+  "license": "apache-2.0",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2675,
+      "sha256": "974d7dafe5a7f9d88633c4ccdfb78b37551336445d2b65569256f8eccc683dfa",
+      "url": "https://huggingface.co/Yehor/YAMNet-CoreML/resolve/9681162a6618cceb548ee2a94e83bcfb3a141066/README.md"
+    },
+    {
+      "path": "main.py",
+      "bytes": 12452,
+      "sha256": "5c8ddce29e2eb1c736696bb0e9d9f5723e119f5cddd1f71a5b0989dcf912b951",
+      "url": "https://huggingface.co/Yehor/YAMNet-CoreML/resolve/9681162a6618cceb548ee2a94e83bcfb3a141066/main.py"
+    },
+    {
+      "path": "YAMNet.mlpackage/Manifest.json",
+      "bytes": 617,
+      "sha256": "35cf235833dbde64dc3bccd117737f5dbafcfc18834e51ac971477f435a2e359",
+      "url": "https://huggingface.co/Yehor/YAMNet-CoreML/resolve/9681162a6618cceb548ee2a94e83bcfb3a141066/YAMNet.mlpackage/Manifest.json"
+    },
+    {
+      "path": "YAMNet.mlpackage/Data/com.apple.CoreML/model.mlmodel",
+      "bytes": 70188,
+      "sha256": "2f555c993e6632c3a1be43f87fa9ec44520c7697ebf3c27c5b17532f1f9c3a7d",
+      "url": "https://huggingface.co/Yehor/YAMNet-CoreML/resolve/9681162a6618cceb548ee2a94e83bcfb3a141066/YAMNet.mlpackage/Data/com.apple.CoreML/model.mlmodel"
+    },
+    {
+      "path": "YAMNet.mlpackage/Data/com.apple.CoreML/weights/weight.bin",
+      "bytes": 7462610,
+      "sha256": "39aee5b5261a4d27cab29a0cd0d272a8d949d456e551bb68c14182cafb78a8ea",
+      "url": "https://huggingface.co/Yehor/YAMNet-CoreML/resolve/9681162a6618cceb548ee2a94e83bcfb3a141066/YAMNet.mlpackage/Data/com.apple.CoreML/weights/weight.bin"
+    },
+    {
+      "path": "yamnet_model/assets/yamnet_class_map.csv",
+      "bytes": 14096,
+      "sha256": "cdf24d193e196d9e95912a2667051ae203e92a2ba09449218ccb40ef787c6df2",
+      "url": "https://huggingface.co/Yehor/YAMNet-CoreML/resolve/9681162a6618cceb548ee2a94e83bcfb3a141066/yamnet_model/assets/yamnet_class_map.csv"
+    }
+  ]
+}

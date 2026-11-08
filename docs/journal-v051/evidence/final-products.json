@@ -1,0 +1,32 @@
+{
+  "products": [
+    {
+      "product": "SeeSound.app",
+      "version": "0.51",
+      "build": "51",
+      "minimum_os": "17.3"
+    },
+    {
+      "product": "SeeSound.app/Watch/SeeSoundWatch.app",
+      "version": "0.51",
+      "build": "51",
+      "minimum_os": "9.6"
+    },
+    {
+      "product": "SeeSoundShare.appex",
+      "version": "0.51",
+      "build": "51",
+      "minimum_os": "17.3"
+    }
+  ],
+  "bundled_pngs": [
+    "coffee.png",
+    "dancing.png",
+    "loving.png",
+    "reading-side.png",
+    "sitting.png",
+    "strolling.png",
+    "unboxing.png"
+  ],
+  "trial_3d_assets_present": false
+}

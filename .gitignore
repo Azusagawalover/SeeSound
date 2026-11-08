@@ -1,0 +1,29 @@
+.DS_Store
+.build/
+build/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+__pycache__/
+.venv/
+Training/output/
+Training/data/
+.swiftpm/xcode/package.xcworkspace/xcuserdata/
+
+.env
+.env.*
+deepseek.json
+*.pem
+*.key
+
+*.seesoundbackup
+
+# Local presentation deliverables and publishing caches
+docs/汇报材料/
+
+# Device signing and build archives
+*.p12
+*.mobileprovision
+*.ipa
+*.xcarchive/
+*.dSYM/

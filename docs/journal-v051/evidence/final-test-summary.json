@@ -1,0 +1,35 @@
+{
+  "phone": {
+    "unique_test_count": 16,
+    "tests": {
+      "WorkflowUITests/testCampusDeskAndResume()": "Success",
+      "WorkflowUITests/testCampusJourneyConfirmationDepartureAndOutcome()": "Success",
+      "WorkflowUITests/testCampusLargestTextAndEvidenceNavigation()": "Success",
+      "WorkflowUITests/testCampusPresentationShowsRealSourceInvalidation()": "Success",
+      "WorkflowUITests/testCampusScenarioWizardCreatesExplicitPlan()": "Success",
+      "WorkflowUITests/testChecklistRenameOrderBatchAndUndo()": "Success",
+      "WorkflowUITests/testFocusLargestText()": "Success",
+      "WorkflowUITests/testFocusSkipUndoAndExplicitCompletion()": "Success",
+      "WorkflowUITests/testJournalLargestTextHome()": "Success",
+      "WorkflowUITests/testJourneySearchOpensSpecificCardAndResume()": "Success",
+      "WorkflowUITests/testLargestTextKeepsPrimaryActionReachable()": "Success",
+      "WorkflowUITests/testNotificationToCompletedCaseAndRecovery()": "Success",
+      "WorkflowUITests/testOriginalImageZoomAndEditableComparison()": "Success",
+      "WorkflowUITests/testUnsavedEditorAndListSortControls()": "Success",
+      "WorkflowUITests/testVisualCommunicationAndMaterialTools()": "Success",
+      "WorkflowUITests/testVisualHomeJourneyAndTabs()": "Success"
+    }
+  },
+  "ipad": {
+    "unique_test_count": 7,
+    "tests": {
+      "WorkflowUITests/testCampusJourneyConfirmationDepartureAndOutcome()": "Success",
+      "WorkflowUITests/testFocusSkipUndoAndExplicitCompletion()": "Success",
+      "WorkflowUITests/testJournalLargestTextHome()": "Success",
+      "WorkflowUITests/testNotificationToCompletedCaseAndRecovery()": "Success",
+      "WorkflowUITests/testOriginalImageZoomAndEditableComparison()": "Success",
+      "WorkflowUITests/testVisualCommunicationAndMaterialTools()": "Success",
+      "WorkflowUITests/testVisualHomeJourneyAndTabs()": "Success"
+    }
+  }
+}

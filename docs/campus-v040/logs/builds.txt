@@ -1,0 +1,53 @@
+debug-delivery
+** TEST BUILD SUCCEEDED **
+
+debug-last-runner
+** TEST BUILD SUCCEEDED **
+
+release-delivery
+** BUILD SUCCEEDED **
+
+[
+  {
+    "configuration": "Debug",
+    "component": "phone",
+    "version": "0.40",
+    "build": "40",
+    "minimum_os": "17.3"
+  },
+  {
+    "configuration": "Debug",
+    "component": "watch",
+    "version": "0.40",
+    "build": "40",
+    "minimum_os": "9.6"
+  },
+  {
+    "configuration": "Debug",
+    "component": "share",
+    "version": "0.40",
+    "build": "40",
+    "minimum_os": "17.3"
+  },
+  {
+    "configuration": "Release",
+    "component": "phone",
+    "version": "0.40",
+    "build": "40",
+    "minimum_os": "17.3"
+  },
+  {
+    "configuration": "Release",
+    "component": "watch",
+    "version": "0.40",
+    "build": "40",
+    "minimum_os": "9.6"
+  },
+  {
+    "configuration": "Release",
+    "component": "share",
+    "version": "0.40",
+    "build": "40",
+    "minimum_os": "17.3"
+  }
+]

@@ -1,0 +1,36 @@
+{
+  "files_reviewed_for_this_round": [
+    {
+      "path": "App/RootView.swift",
+      "sha256": "a72dc73a0e5ca6885121fda0bb2afde77265220547f47317037c1791c896597d"
+    },
+    {
+      "path": "App/WorkspaceUpgradeViews.swift",
+      "sha256": "a6fc7dee973853836c43fa29180493e009f49c668fadf6a8c7b7764376c55699"
+    },
+    {
+      "path": "App/WorkroomCasesViews.swift",
+      "sha256": "47581bbe3865bdef65a9b781af1847f92963387a85b164158e007846f8be3432"
+    },
+    {
+      "path": "App/ConversationViews.swift",
+      "sha256": "cbea290b56f5c4ab9d7e5b9d3f8bd6cee3089a4a16e898a4a8d68b137607b66a"
+    },
+    {
+      "path": "App/ExperienceViews.swift",
+      "sha256": "aa64184e408b308413bb31a8ed8b880c311b0961242a8bac800c85cb2664f258"
+    },
+    {
+      "path": "UITests/WorkflowUITests.swift",
+      "sha256": "a2635a2a2a8a9d41ef0071129f205bb65a085bede5ed4dd7b8960945c6fb6b47"
+    },
+    {
+      "path": "SeeSound.xcodeproj/project.pbxproj",
+      "sha256": "457185c17369180298df693c68d61e65fca2ac0ccea024fbb3b301c44f3cf9b7"
+    }
+  ],
+  "note": "No Git repository; file list records known edited scope, not a computed diff against a complete pristine snapshot.",
+  "changes": "UI/navigation, response reading-state and scroll-position fixes, version and UI checks.",
+  "models_api_storage_watch_protocol_changed": false,
+  "new_runtime_assets": false
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "id": "fleurs-zh-1",
+    "title": "FLEURS普通话公开录音 1",
+    "kind": "speech",
+    "reference": "报告警告称，没有人能保证目前在伊拉克采取的任何行动能够阻止宗派战争、不断增长的暴力或走向混乱。",
+    "keywords": [],
+    "filename": "fleurs-zh-1.wav",
+    "source": "Google FLEURS · cmn_hans_cn · validation · id 1579",
+    "license": "CC BY 4.0",
+    "note": "公开朗读语音，非校园真实采集；单条输出不代表总体准确率。"
+  },
+  {
+    "id": "fleurs-zh-2",
+    "title": "FLEURS普通话公开录音 2",
+    "kind": "speech",
+    "reference": "因为远离大陆，哺乳动物无法长途跋涉而来，使得巨龟成为科隆群岛主要的食草动物。",
+    "keywords": [],
+    "filename": "fleurs-zh-2.wav",
+    "source": "Google FLEURS · cmn_hans_cn · validation · id 1605",
+    "license": "CC BY 4.0",
+    "note": "公开朗读语音，非校园真实采集；单条输出不代表总体准确率。"
+  }
+]

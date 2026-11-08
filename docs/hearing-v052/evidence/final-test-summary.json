@@ -1,0 +1,122 @@
+{
+  "phone": {
+    "distinct": 7,
+    "passed": 7,
+    "failed": [],
+    "latest_result_by_test": {
+      "WorkflowUITests/testCampusJourneyConfirmationDepartureAndOutcome()": "Success",
+      "WorkflowUITests/testHearingFocusedHomeAndQuickReplies()": "Success",
+      "WorkflowUITests/testJournalLargestTextHome()": "Success",
+      "WorkflowUITests/testJourneySearchOpensSpecificCardAndResume()": "Success",
+      "WorkflowUITests/testNotificationToCompletedCaseAndRecovery()": "Success",
+      "WorkflowUITests/testVisualCommunicationAndMaterialTools()": "Success",
+      "WorkflowUITests/testVisualHomeJourneyAndTabs()": "Success"
+    },
+    "rounds": [
+      {
+        "round": "phone-initial",
+        "tests": [
+          {
+            "name": "WorkflowUITests/testCampusJourneyConfirmationDepartureAndOutcome()",
+            "status": "Success"
+          },
+          {
+            "name": "WorkflowUITests/testHearingFocusedHomeAndQuickReplies()",
+            "status": "Failure"
+          },
+          {
+            "name": "WorkflowUITests/testJournalLargestTextHome()",
+            "status": "Success"
+          },
+          {
+            "name": "WorkflowUITests/testJourneySearchOpensSpecificCardAndResume()",
+            "status": "Success"
+          },
+          {
+            "name": "WorkflowUITests/testNotificationToCompletedCaseAndRecovery()",
+            "status": "Success"
+          },
+          {
+            "name": "WorkflowUITests/testVisualCommunicationAndMaterialTools()",
+            "status": "Success"
+          },
+          {
+            "name": "WorkflowUITests/testVisualHomeJourneyAndTabs()",
+            "status": "Success"
+          }
+        ]
+      },
+      {
+        "round": "phone-fixed",
+        "tests": [
+          {
+            "name": "WorkflowUITests/testHearingFocusedHomeAndQuickReplies()",
+            "status": "Success"
+          }
+        ]
+      },
+      {
+        "round": "phone-final",
+        "tests": [
+          {
+            "name": "WorkflowUITests/testHearingFocusedHomeAndQuickReplies()",
+            "status": "Success"
+          }
+        ]
+      }
+    ]
+  },
+  "ipad": {
+    "distinct": 4,
+    "passed": 4,
+    "failed": [],
+    "latest_result_by_test": {
+      "WorkflowUITests/testHearingFocusedHomeAndQuickReplies()": "Success",
+      "WorkflowUITests/testJournalLargestTextHome()": "Success",
+      "WorkflowUITests/testOriginalImageZoomAndEditableComparison()": "Success",
+      "WorkflowUITests/testVisualHomeJourneyAndTabs()": "Success"
+    },
+    "rounds": [
+      {
+        "round": "ipad-final",
+        "tests": [
+          {
+            "name": "WorkflowUITests/testHearingFocusedHomeAndQuickReplies()",
+            "status": "Success"
+          },
+          {
+            "name": "WorkflowUITests/testJournalLargestTextHome()",
+            "status": "Success"
+          },
+          {
+            "name": "WorkflowUITests/testOriginalImageZoomAndEditableComparison()",
+            "status": "Success"
+          },
+          {
+            "name": "WorkflowUITests/testVisualHomeJourneyAndTabs()",
+            "status": "Success"
+          }
+        ]
+      },
+      {
+        "round": "ipad-fixed",
+        "tests": [
+          {
+            "name": "WorkflowUITests/testHearingFocusedHomeAndQuickReplies()",
+            "status": "Success"
+          }
+        ]
+      },
+      {
+        "round": "ipad-final-style",
+        "tests": [
+          {
+            "name": "WorkflowUITests/testHearingFocusedHomeAndQuickReplies()",
+            "status": "Success"
+          }
+        ]
+      }
+    ]
+  },
+  "note": "Unique cases combine initial run and targeted reruns; older failures retained. Data/model/server suites were not rerun for 0.52."
+}

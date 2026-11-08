@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "WorkflowUITests/testNotificationToCompletedCaseAndRecovery()",
+      "status": "Success"
+    }
+  ],
+  "screenshots": [
+    "01-case-next-action.png",
+    "02-confirmed-notification-change.png",
+    "03-case-completed.png",
+    "04-restored-completed-case.png"
+  ]
+}

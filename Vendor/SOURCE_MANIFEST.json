@@ -1,0 +1,74 @@
+[
+  {
+    "directory": "GRDB.swift",
+    "repository": "groue/GRDB.swift",
+    "tag": "v6.29.3",
+    "url": "https://codeload.github.com/groue/GRDB.swift/tar.gz/refs/tags/v6.29.3",
+    "sha256": "256b4f2eb33a712c95eb3e4c7f7c7acdebc8df778c80d1e05d161830c6dd2d08",
+    "bytes": 8990850
+  },
+  {
+    "directory": "DSWaveformImage",
+    "repository": "dmrschmidt/DSWaveformImage",
+    "tag": "14.2.2",
+    "url": "https://codeload.github.com/dmrschmidt/DSWaveformImage/tar.gz/refs/tags/14.2.2",
+    "sha256": "3e25a910e8dd5b55c5f27cd85a406d09750851afe9289e1b45f62d57407403b4",
+    "bytes": 2367350
+  },
+  {
+    "directory": "lottie-ios",
+    "repository": "airbnb/lottie-ios",
+    "tag": "4.4.3",
+    "url": "https://codeload.github.com/airbnb/lottie-ios/tar.gz/refs/tags/4.4.3",
+    "sha256": "20f3c8ec39dceef4162b815c4aa9866aeec63a7ed396b6714b330edb24d03738",
+    "bytes": 126743092
+  },
+  {
+    "directory": "PopupView",
+    "repository": "exyte/PopupView",
+    "tag": "3.0.1",
+    "url": "https://codeload.github.com/exyte/PopupView/tar.gz/refs/tags/3.0.1",
+    "sha256": "675ad537ef04527e886f393c5e51350f36ebcc6af012ff5a085e0e0ff0c9a7d8",
+    "bytes": 1505800
+  },
+  {
+    "directory": "CodeScanner",
+    "repository": "twostraws/CodeScanner",
+    "tag": "2.5.2",
+    "url": "https://codeload.github.com/twostraws/CodeScanner/tar.gz/refs/tags/2.5.2",
+    "sha256": "a5ba91422c84d16ad2fdeec4e3ded133a953adf62dbadaae4a79b3562af02015",
+    "bytes": 15258
+  },
+  {
+    "directory": "argmax-oss-swift",
+    "repository": "argmaxinc/argmax-oss-swift",
+    "tag": "v0.8.0",
+    "url": "https://codeload.github.com/argmaxinc/argmax-oss-swift/tar.gz/refs/tags/v0.8.0",
+    "sha256": "5f52f58c52a8870315c854df6fd455c0b7c27e7a3cfc78678154890fe050eba6",
+    "bytes": 1202867
+  },
+  {
+    "directory": "swift-transformers",
+    "repository": "huggingface/swift-transformers",
+    "tag": "0.1.7",
+    "url": "https://codeload.github.com/huggingface/swift-transformers/tar.gz/refs/tags/0.1.7",
+    "sha256": "9a2fbdf6c0ab860093e16f9c0fb804816a0ea6c6d12d8cc70f3e482e9b77f47b",
+    "bytes": 2214434
+  },
+  {
+    "directory": "swiftui-introspect",
+    "repository": "siteline/swiftui-introspect",
+    "tag": "1.3.0",
+    "url": "https://codeload.github.com/siteline/swiftui-introspect/tar.gz/refs/tags/1.3.0",
+    "sha256": "b426783df2620a1b852c22eacc89e5b295aad9ef10f600ac0b72b1aba69b075f",
+    "bytes": 208720
+  },
+  {
+    "directory": "SwiftUI-Flow",
+    "repository": "tevelee/SwiftUI-Flow",
+    "tag": "3.1.1",
+    "url": "https://codeload.github.com/tevelee/SwiftUI-Flow/tar.gz/refs/tags/3.1.1",
+    "sha256": "1e73a017d80ceafb85ce046aff7f566b28a6d01f8d6b978b4c3b1e4431a4d0b6",
+    "bytes": 442877
+  }
+]

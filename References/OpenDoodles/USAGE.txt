@@ -1,0 +1,10 @@
+Open Doodles — journal illustrations
+Author: Pablo Stanley
+Website: https://www.opendoodles.com/
+Source files: https://opendoodles.s3-us-west-1.amazonaws.com/
+The author's website states: “Free for Commercial and Personal Use. No need to credit, license, or anything.”
+Seven original PNG illustrations are bundled unchanged.
+Their source URLs and SHA256 hashes are recorded in References/OpenDoodles/sources.json.
+These are decorative illustrations, not sound recognition or machine learning components.
+
+Peach was considered as a visual reference. The official archive returned HTTP 404 on 2026-11-03 and no Peach assets were bundled.

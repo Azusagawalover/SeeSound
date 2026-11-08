@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+    <key>CFBundleDevelopmentRegion</key><string>zh-Hans</string>
+    <key>CFBundleDisplayName</key><string>见声</string>
+    <key>CFBundleExecutable</key><string>$(EXECUTABLE_NAME)</string>
+    <key>CFBundleIdentifier</key><string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+    <key>CFBundleInfoDictionaryVersion</key><string>6.0</string>
+    <key>CFBundleName</key><string>$(PRODUCT_NAME)</string>
+    <key>CFBundlePackageType</key><string>APPL</string>
+    <key>CFBundleShortVersionString</key><string>$(MARKETING_VERSION)</string>
+    <key>CFBundleVersion</key><string>$(CURRENT_PROJECT_VERSION)</string>
+    <key>UTExportedTypeDeclarations</key><array><dict>
+        <key>UTTypeIdentifier</key><string>com.azusagawalover.seesound.library</string>
+        <key>UTTypeDescription</key><string>见声加密资料</string>
+        <key>UTTypeConformsTo</key><array><string>public.data</string></array>
+        <key>UTTypeTagSpecification</key><dict><key>public.filename-extension</key><array><string>seesoundbackup</string></array></dict>
+    </dict></array>
+    <key>LSRequiresIPhoneOS</key><true/>
+    <key>UIFileSharingEnabled</key><true/>
+    <key>LSSupportsOpeningDocumentsInPlace</key><true/>
+    <key>NSMicrophoneUsageDescription</key><string>你主动开启声音关注、字幕或个人样本录制时使用麦克风。声音关注和字幕不保存录音；个人样本只有经你确认才保存特征或音频。</string>
+    <key>NSCameraUsageDescription</key><string>你主动开启手部检测或扫描沟通卡分享码时使用摄像头；不保存画面。</string>
+    <key>NSSpeechRecognitionUsageDescription</key><string>你主动开启字幕时，尝试本机中文识别；不支持时停止，不切换云端。</string>
+    <key>NSLocalNetworkUsageDescription</key><string>你主动开启临时文字共享或连接本机文字整理服务时使用本地网络。整理只发送选中的文字，不发送录音或画面。</string>
+    <key>NSAppTransportSecurity</key><dict><key>NSAllowsLocalNetworking</key><true/></dict>
+    <key>NSBonjourServices</key><array><string>_seesound-share._tcp</string></array>
+    <key>UIApplicationSceneManifest</key><dict><key>UIApplicationSupportsMultipleScenes</key><false/></dict>
+    <key>UILaunchScreen</key><dict/>
+    <key>UISupportedInterfaceOrientations</key><array><string>UIInterfaceOrientationPortrait</string></array>
+    <key>UISupportedInterfaceOrientations~ipad</key><array>
+        <string>UIInterfaceOrientationPortrait</string><string>UIInterfaceOrientationPortraitUpsideDown</string>
+        <string>UIInterfaceOrientationLandscapeLeft</string><string>UIInterfaceOrientationLandscapeRight</string>
+    </array>
+</dict></plist>

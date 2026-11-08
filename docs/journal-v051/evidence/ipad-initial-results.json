@@ -1,0 +1,51 @@
+{
+  "tests": [
+    {
+      "name": "WorkflowUITests/testCampusJourneyConfirmationDepartureAndOutcome()",
+      "status": "Failure"
+    },
+    {
+      "name": "WorkflowUITests/testFocusSkipUndoAndExplicitCompletion()",
+      "status": "Success"
+    },
+    {
+      "name": "WorkflowUITests/testJournalLargestTextHome()",
+      "status": "Success"
+    },
+    {
+      "name": "WorkflowUITests/testNotificationToCompletedCaseAndRecovery()",
+      "status": "Failure"
+    },
+    {
+      "name": "WorkflowUITests/testOriginalImageZoomAndEditableComparison()",
+      "status": "Success"
+    },
+    {
+      "name": "WorkflowUITests/testVisualCommunicationAndMaterialTools()",
+      "status": "Success"
+    },
+    {
+      "name": "WorkflowUITests/testVisualHomeJourneyAndTabs()",
+      "status": "Success"
+    }
+  ],
+  "screenshots": [
+    "05-original-comparison-edit-and-zoom.png",
+    "20-focus-ready-to-finish.png",
+    "24-focus-current-item.png",
+    "30-campus-journey.png",
+    "31-two-way-confirmation.png",
+    "60-home-design.png",
+    "61-campus-design.png",
+    "62-scenarios-design.png",
+    "63-journey-design.png",
+    "64-confirmation-design.png",
+    "65-cases-design.png",
+    "66-events-design.png",
+    "67-preferences-design.png",
+    "68-conversation-design.png",
+    "69-workroom-design.png",
+    "70-journal-largest-text-campus.png",
+    "71-journal-largest-text-new.png"
+  ]
+}

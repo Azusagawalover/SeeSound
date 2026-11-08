@@ -1,0 +1,330 @@
+import Foundation
+
+enum SoundSampleLabel: String, Codable, CaseIterable, Identifiable {
+    case knock, doorbell, clapping, other
+    var id: String { rawValue }
+    var title: String {
+        switch self { case .knock: return "敲门"; case .doorbell: return "门铃"; case .clapping: return "拍手"; case .other: return "其他 / 背景" }
+    }
+}
+
+enum ExperimentError: LocalizedError {
+    case invalid, duplicate, limit, noModel, audio
+    var errorDescription: String? {
+        switch self {
+        case .invalid: return "实验文件格式、参数或校验不符合要求。"
+        case .duplicate: return "已经保存过这份音频，请换一段独立录音。"
+        case .limit: return "样本库最多保存 100 段，请先整理已有样本。"
+        case .noModel: return "请先从电脑导入训练好的实验模型。"
+        case .audio: return "请选择 0.5–5 秒、10 MB 以内的有效音频。"
+        }
+    }
+}
+
+/// audio-envelope-v1: 64 temporal frames, each [log-RMS, peak, zero-crossing, mean absolute difference].
+/// These compact exploratory features are not a replacement for a validated acoustic representation.
+enum AudioFeatureCodec {
+    static let schema = "audio-envelope-v1"
+    static let frames = 64
+    static let step = 0.08
+    static func extract(_ samples: [Float]) throws -> [[Double]] {
+        guard samples.count >= 64 * 8, samples.allSatisfy({ $0.isFinite }) else { throw ExperimentError.audio }
+        return (0..<frames).map { frame in
+            let start = frame * samples.count / frames
+            let end = (frame + 1) * samples.count / frames
+            var square = 0.0, peak = 0.0, crossings = 0.0, difference = 0.0
+            for index in start..<end {
+                let value = Double(samples[index]); square += value * value; peak = max(peak, abs(value))
+                if index > start {
+                    let before = Double(samples[index - 1])
+                    if (value >= 0) != (before >= 0) { crossings += 1 }
+                    difference += abs(value - before)
+                }
+            }
+            let count = Double(end - start)
+            let logRMS = (20 * log10(max(0.000_001, sqrt(square / count))) + 60) / 60
+            return [min(1, max(0, logRMS)), min(1, peak), crossings / max(1, count - 1), min(1, difference / max(1, count - 1))]
+        }
+    }
+    static func validate(_ values: [[Double]]) -> Bool {
+        values.count == frames && values.allSatisfy { $0.count == 4 && $0.allSatisfy { $0.isFinite && (0...1).contains($0) } }
+    }
+    /// Deterministic signed delta encoder. Reference moves one quantum per frame; no random rate coding.
+    static func encode(_ values: [[Double]], step: Double = step) -> [[Double]] {
+        guard validate(values), step.isFinite, step > 0, step <= 1 else { return [] }
+        var reference = [Double](repeating: 0, count: 4)
+        return values.map { frame in
+            var spikes = [Double](repeating: 0, count: 8)
+            for channel in 0..<4 {
+                let delta = frame[channel] - reference[channel]
+                if delta >= step { spikes[channel * 2] = 1; reference[channel] += step }
+                else if delta <= -step { spikes[channel * 2 + 1] = 1; reference[channel] -= step }
+            }
+            return spikes
+        }
+    }
+}
+
+struct SoundSample: Codable, Identifiable, Equatable {
+    var id: UUID
+    var batch: UUID
+    var createdAt: Date
+    var label: SoundSampleLabel
+    var note: String
+    var duration: Double
+    var fingerprint: String
+    var keepsAudio: Bool
+    var features: [[Double]]
+    func validate() throws {
+        guard AudioFeatureCodec.validate(features), (0.5...5).contains(duration), note.count <= 120,
+              fingerprint.count == 64, fingerprint.allSatisfy({ $0.isHexDigit }),
+              createdAt.timeIntervalSince1970.isFinite else { throw ExperimentError.invalid }
+    }
+}
+
+struct SoundDataset: Codable {
+    var format = "SeeSoundDataset"
+    var version = 1
+    var featureSchema = AudioFeatureCodec.schema
+    var encodingStep = AudioFeatureCodec.step
+    var samples: [SoundSample]
+    func validated() throws -> SoundDataset {
+        guard format == "SeeSoundDataset", version == 1, featureSchema == AudioFeatureCodec.schema,
+              encodingStep == AudioFeatureCodec.step, samples.count <= 100,
+              Set(samples.map(\.id)).count == samples.count,
+              Set(samples.map(\.fingerprint)).count == samples.count else { throw ExperimentError.invalid }
+        try samples.forEach { try $0.validate() }; return self
+    }
+}
+
+#if SEESOUND_LEGACY_CHECKS
+// Historical experiment types are compiled only by the archival data checks, not the app.
+struct NeuronPoint: Identifiable {
+    var id: Int
+    var input: Double
+    var potential: Double
+    var spike: Double
+}
+
+enum LIFNeuron {
+    /// Port of snnTorch 0.9.4 Leaky reset_delay=False / subtract, including its previous-state reset.
+    /// See References/SNN/snnTorch-LICENSE.txt and leaky.upstream.py.
+    static func tick(input: Double, previous: Double, beta: Double, threshold: Double) -> (spike: Double, membrane: Double) {
+        let oldReset = previous > threshold ? 1.0 : 0.0
+        var membrane = beta * previous + input - oldReset * threshold
+        let spike = membrane > threshold ? 1.0 : 0.0
+        membrane -= (spike - oldReset) * threshold
+        return (spike, membrane)
+    }
+    static func trace(currents: [Double], beta: Double, threshold: Double) -> [NeuronPoint] {
+        guard (0...1).contains(beta), threshold.isFinite, threshold > 0, currents.allSatisfy(\.isFinite) else { return [] }
+        var membrane = 0.0
+        return currents.enumerated().map { index, value in
+            let result = tick(input: value, previous: membrane, beta: beta, threshold: threshold)
+            membrane = result.membrane
+            return NeuronPoint(id: index, input: value, potential: membrane, spike: result.spike)
+        }
+    }
+}
+
+struct DenseParameters: Codable {
+    var weights: [[Double]]
+    var bias: [Double]
+    func validate(inputs: Int, outputs: Int) -> Bool {
+        weights.count == outputs && bias.count == outputs && weights.allSatisfy {
+            $0.count == inputs && $0.allSatisfy { $0.isFinite && abs($0) <= 100 }
+        } && bias.allSatisfy { $0.isFinite && abs($0) <= 100 }
+    }
+    func apply(_ input: [Double]) -> [Double] {
+        zip(weights, bias).map { row, offset in zip(row, input).reduce(offset) { $0 + $1.0 * $1.1 } }
+    }
+}
+
+struct ExperimentEvaluation: Codable {
+    var trainCount: Int
+    var testCount: Int
+    var trainBatches: [String]
+    var testBatches: [String]
+    var snnAccuracy: Double
+    var annAccuracy: Double
+    var snnConfusion: [[Int]]
+    var annConfusion: [[Int]]
+}
+
+struct PublicDatasetProvenance: Codable {
+    var name: String
+    var commit: String
+    var sourceURL: String
+    var license: String
+    var trainFolds: [Int]
+    var testFolds: [Int]
+    var trainSources: [String]
+    var testSources: [String]
+    func validate() throws {
+        guard commit == PublicFeatureCodec.commit, sourceURL == "https://github.com/karolpiczak/ESC-50",
+              name.count <= 100, license == "CC BY-NC 3.0", trainFolds == [1, 2, 3, 4], testFolds == [5],
+              !trainSources.isEmpty, !testSources.isEmpty,
+              trainSources.count <= 96, testSources.count <= 24,
+              Set(trainSources).count == trainSources.count, Set(testSources).count == testSources.count,
+              (trainSources + testSources).allSatisfy({ !$0.isEmpty && $0.count <= 20 && $0.allSatisfy(\.isNumber) }),
+              Set(trainSources).isDisjoint(with: Set(testSources)) else { throw ExperimentError.invalid }
+    }
+}
+
+struct ExperimentModel: Codable {
+    var format: String
+    var version: Int
+    var featureSchema: String
+    var encodingStep: Double
+    var trainingKind: String
+    var labels: [SoundSampleLabel]
+    var beta: Double
+    var threshold: Double
+    var snnHidden: DenseParameters
+    var snnOutput: DenseParameters
+    var annHidden: DenseParameters
+    var annOutput: DenseParameters
+    var testInput: [[Double]]
+    var expectedSNN: [Double]
+    var expectedANN: [Double]
+    var evaluation: ExperimentEvaluation
+    var dataset: PublicDatasetProvenance?
+
+    var isSynthetic: Bool { trainingKind == "synthetic-smoke" }
+    var isPublic: Bool { trainingKind == "esc50-public" }
+    var inputCount: Int { featureSchema == PublicFeatureCodec.schema ? 32 : 8 }
+    var modelTitle: String { isPublic ? "ESC-50 公开数据模型" : isSynthetic ? "合成数据流程模型" : "个人样本实验模型" }
+    func validate() throws {
+        let hidden = snnHidden.bias.count, annSize = annHidden.bias.count, classes = labels.count
+        let legacy = version == 1 && featureSchema == AudioFeatureCodec.schema && ["user-samples", "synthetic-smoke"].contains(trainingKind)
+        let publicModel = version == 2 && featureSchema == PublicFeatureCodec.schema && isPublic
+        guard format == "SeeSoundExperiment", legacy || publicModel,
+              encodingStep == AudioFeatureCodec.step,
+              (2...4).contains(classes), Set(labels).count == classes,
+              (1...64).contains(hidden), (1...64).contains(annSize), (0...1).contains(beta),
+              threshold.isFinite, (0.1...5).contains(threshold),
+              snnHidden.validate(inputs: inputCount, outputs: hidden), snnOutput.validate(inputs: hidden, outputs: classes),
+              annHidden.validate(inputs: inputCount, outputs: annSize), annOutput.validate(inputs: annSize, outputs: classes),
+              testInput.count == 64, testInput.allSatisfy({ $0.count == inputCount && $0.allSatisfy({ $0 == 0 || $0 == 1 }) }),
+              expectedSNN.count == classes, expectedANN.count == classes,
+              (1...100).contains(evaluation.trainCount), (1...100).contains(evaluation.testCount),
+              evaluation.trainCount + evaluation.testCount <= (isPublic ? 120 : 100),
+              !evaluation.trainBatches.isEmpty, !evaluation.testBatches.isEmpty,
+              evaluation.trainBatches.count <= 100, evaluation.testBatches.count <= 100,
+              Set(evaluation.trainBatches).count == evaluation.trainBatches.count,
+              Set(evaluation.testBatches).count == evaluation.testBatches.count,
+              evaluation.trainBatches.allSatisfy({ UUID(uuidString: $0) != nil }),
+              evaluation.testBatches.allSatisfy({ UUID(uuidString: $0) != nil }),
+              Set(evaluation.trainBatches).isDisjoint(with: Set(evaluation.testBatches)),
+              [evaluation.snnAccuracy, evaluation.annAccuracy].allSatisfy({ $0.isFinite && (0...1).contains($0) })
+        else { throw ExperimentError.invalid }
+        if isPublic {
+            guard let dataset, labels == [.knock, .clapping, .other],
+                  evaluation.trainCount == 96, evaluation.testCount == 24,
+                  evaluation.trainBatches.count == 4, evaluation.testBatches.count == 1 else { throw ExperimentError.invalid }
+            try dataset.validate()
+        } else if dataset != nil { throw ExperimentError.invalid }
+        for (matrix, accuracy) in [(evaluation.snnConfusion, evaluation.snnAccuracy), (evaluation.annConfusion, evaluation.annAccuracy)] {
+            guard matrix.count == classes, matrix.allSatisfy({ $0.count == classes && $0.allSatisfy({ (0...100).contains($0) }) }),
+                  matrix.flatMap({ $0 }).reduce(0, +) == evaluation.testCount else { throw ExperimentError.invalid }
+            let correct = matrix.indices.reduce(0) { $0 + matrix[$1][$1] }
+            guard abs(Double(correct) / Double(evaluation.testCount) - accuracy) < 0.000_01 else { throw ExperimentError.invalid }
+        }
+        let result = infer(testInput)
+        for (actual, expected) in [(result.snn, expectedSNN), (result.ann, expectedANN)] {
+            guard expected.allSatisfy(\.isFinite), zip(actual, expected).allSatisfy({ abs($0 - $1) < 0.000_1 }) else { throw ExperimentError.invalid }
+        }
+    }
+    func hiddenTrace(_ encoded: [[Double]], neuron: Int) -> [NeuronPoint] {
+        guard snnHidden.weights.indices.contains(neuron) else { return [] }
+        let currents = encoded.map { frame in
+            zip(snnHidden.weights[neuron], frame).reduce(snnHidden.bias[neuron]) { $0 + $1.0 * $1.1 }
+        }
+        return LIFNeuron.trace(currents: currents, beta: beta, threshold: threshold)
+    }
+    func infer(_ encoded: [[Double]]) -> (snn: [Double], ann: [Double], spikes: Int) {
+        var membrane = [Double](repeating: 0, count: snnHidden.bias.count)
+        var scores = [Double](repeating: 0, count: labels.count), annScores = scores
+        var spikeCount = 0
+        for frame in encoded {
+            let current = snnHidden.apply(frame)
+            let spikes = current.indices.map { index -> Double in
+                let state = LIFNeuron.tick(input: current[index], previous: membrane[index], beta: beta, threshold: threshold)
+                membrane[index] = state.membrane; return state.spike
+            }
+            spikeCount += Int(spikes.reduce(0, +))
+            let snnFrame = snnOutput.apply(spikes)
+            let annFrame = annOutput.apply(annHidden.apply(frame).map { max(0, $0) })
+            for index in scores.indices { scores[index] += snnFrame[index] / Double(encoded.count); annScores[index] += annFrame[index] / Double(encoded.count) }
+        }
+        return (scores, annScores, spikeCount)
+    }
+}
+
+#endif
+
+/// One directory per confirmed sample: staging + atomic rename avoid partially committed entries.
+final class SoundSampleStore {
+    let directory: URL
+    init(directory: URL? = nil) {
+        self.directory = directory ?? FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
+            .appendingPathComponent("SeeSoundSamples", isDirectory: true)
+    }
+    func load() throws -> [SoundSample] {
+        let files = FileManager.default
+        guard files.fileExists(atPath: directory.path) else { return [] }
+        let folders = try files.contentsOfDirectory(at: directory, includingPropertiesForKeys: nil)
+            .filter { UUID(uuidString: $0.lastPathComponent) != nil }
+        guard folders.count <= 100 else { throw ExperimentError.limit }
+        return try folders.map { folder in
+            let url = folder.appendingPathComponent("record.json")
+            let size = try url.resourceValues(forKeys: [.fileSizeKey]).fileSize ?? 0
+            guard size > 0, size < 100_000 else { throw ExperimentError.invalid }
+            let data = try Data(contentsOf: url, options: .mappedIfSafe)
+            let sample = try JSONDecoder().decode(SoundSample.self, from: data)
+            try sample.validate()
+            guard sample.id.uuidString == folder.lastPathComponent else { throw ExperimentError.invalid }
+            return sample
+        }.sorted { $0.createdAt > $1.createdAt }
+    }
+    func save(_ sample: SoundSample, audio: URL?) throws {
+        try sample.validate()
+        let current = try load()
+        guard current.count < 100 else { throw ExperimentError.limit }
+        guard !current.contains(where: { $0.fingerprint == sample.fingerprint }) else { throw ExperimentError.duplicate }
+        let files = FileManager.default
+        try files.createDirectory(at: directory, withIntermediateDirectories: true, attributes: [.posixPermissions: 0o700])
+        var root = directory; var flags = URLResourceValues(); flags.isExcludedFromBackup = true; try root.setResourceValues(flags)
+        let staging = directory.appendingPathComponent("staging-\(sample.id.uuidString)", isDirectory: true)
+        try files.createDirectory(at: staging, withIntermediateDirectories: false, attributes: [.posixPermissions: 0o700])
+        defer { try? files.removeItem(at: staging) }
+        if sample.keepsAudio {
+            guard let audio else { throw ExperimentError.audio }
+            try files.copyItem(at: audio, to: staging.appendingPathComponent("audio.caf"))
+        }
+        try JSONEncoder().encode(sample).write(to: staging.appendingPathComponent("record.json"), options: .atomic)
+        for url in try files.contentsOfDirectory(at: staging, includingPropertiesForKeys: nil) {
+            var attributes: [FileAttributeKey: Any] = [.posixPermissions: 0o600]
+            #if os(iOS)
+            attributes[.protectionKey] = FileProtectionType.completeUntilFirstUserAuthentication
+            #endif
+            try files.setAttributes(attributes, ofItemAtPath: url.path)
+        }
+        try files.moveItem(at: staging, to: directory.appendingPathComponent(sample.id.uuidString))
+    }
+    func relabel(_ sample: SoundSample) throws {
+        try sample.validate()
+        guard try load().contains(where: { $0.id == sample.id }) else { throw ExperimentError.invalid }
+        let url = directory.appendingPathComponent(sample.id.uuidString).appendingPathComponent("record.json")
+        #if os(iOS)
+        try JSONEncoder().encode(sample).write(to: url, options: [.atomic, .completeFileProtectionUntilFirstUserAuthentication])
+        #else
+        try JSONEncoder().encode(sample).write(to: url, options: .atomic)
+        #endif
+        try FileManager.default.setAttributes([.posixPermissions: 0o600], ofItemAtPath: url.path)
+    }
+    func delete(_ id: UUID) throws { try FileManager.default.removeItem(at: directory.appendingPathComponent(id.uuidString)) }
+    func audioURL(for sample: SoundSample) -> URL? {
+        sample.keepsAudio ? directory.appendingPathComponent(sample.id.uuidString).appendingPathComponent("audio.caf") : nil
+    }
+}

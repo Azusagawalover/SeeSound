@@ -1,0 +1,330 @@
+import Charts
+import SwiftUI
+import UniformTypeIdentifiers
+
+struct ExperimentJSONDocument: FileDocument {
+    static var readableContentTypes: [UTType] { [.json] }
+    var data: Data
+    init(data: Data) { self.data = data }
+    init(configuration: ReadConfiguration) throws { data = configuration.file.regularFileContents ?? Data() }
+    func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper { FileWrapper(regularFileWithContents: data) }
+}
+
+struct SoundSamplePage: View {
+    @ObservedObject var workspace: Workspace
+    @ObservedObject var library: SoundSampleLibrary
+    @State private var recordConsent = false
+    @State private var importFile = false
+    @State private var exportFile = false
+    @State private var document = ExperimentJSONDocument(data: Data())
+    @State private var label: SoundSampleLabel = .other
+    @State private var note = ""
+    @State private var keepAudio = false
+    @State private var deletion: SoundSample?
+    @State private var error: String?
+    var body: some View {
+        Form {
+            Section {
+                Label("把熟悉的声音，变成自己的样本", systemImage: "waveform.badge.plus").font(.headline)
+                Text("先采集，再由你标注。样本用于后续实验，不会自动改变正式声音识别。")
+                    .font(.subheadline).foregroundStyle(.secondary)
+                Text(library.status).font(.footnote)
+                if let error { Text(error).font(.caption).foregroundStyle(.red) }
+            }
+            Section("采集 · 0.5–5 秒") {
+                if library.isRecording {
+                    Label("录制中，最多 5 秒", systemImage: "record.circle").foregroundStyle(.red)
+                    Button("结束录制，进入核对") { library.finishRecording() }
+                    Button("取消并丢弃", role: .destructive) { library.cancelCapture() }
+                } else {
+                    Button("录制一个声音样本", systemImage: "mic.badge.plus") { recordConsent = true }.disabled(library.isBusy)
+                    Button("从文件导入短音频", systemImage: "doc.badge.plus") { importFile = true }.disabled(library.isBusy)
+                }
+                if library.isBusy && !library.isRecording { ProgressView("处理音频") }
+                Text("录制或导入后会暂存音频供试听；未保存的音频在离开页面或停止时丢弃。")
+                    .font(.caption).foregroundStyle(.secondary)
+            }
+            if let pending = library.pending {
+                Section("保存前核对") {
+                    LabeledContent("时长", value: String(format: "%.2f 秒", pending.sample.duration))
+                    Button("试听这段音频", systemImage: "play.circle") { workspace.audio.stopEverything(); library.play() }
+                    Picker("我确认的声音", selection: $label) { ForEach(SoundSampleLabel.allCases) { Text($0.title).tag($0) } }
+                    TextField("备注（可选）", text: $note).onChange(of: note) { _, value in note = String(value.prefix(120)) }
+                    Toggle("同时保留原音频，方便以后复核", isOn: $keepAudio)
+                    Text("默认只保存特征和人工标签。打开后原音频也会保存在这台设备，删除样本时一起移除。")
+                        .font(.caption).foregroundStyle(.secondary)
+                    Button("确认标签并保存", systemImage: "checkmark.circle") {
+                        library.save(label: label, note: note, keepAudio: keepAudio)
+                        if library.pending == nil { note = ""; keepAudio = false }
+                    }.disabled(library.samples.count >= 100)
+                    Button("丢弃这段", role: .destructive) { library.discardPending() }
+                }
+            }
+            Section("我的样本 · \(library.samples.count) / 100") {
+                ForEach(SoundSampleLabel.allCases) { item in
+                    LabeledContent(item.title, value: "\(library.samples.filter { $0.label == item }.count) 段")
+                }
+                LabeledContent("当前采集批次", value: String(library.batch.uuidString.prefix(8)))
+                Button("开始新的采集批次") { library.newBatch() }.disabled(library.isBusy || library.pending != nil)
+                Text("同一次采集的样本留在同一批次。请换时段、距离或房间后另开批次，训练与测试才有独立性。")
+                    .font(.caption).foregroundStyle(.secondary)
+                if library.samples.isEmpty { Text("还没有保存样本。先采集不同类别，再进行模型训练。").foregroundStyle(.secondary) }
+                ForEach(library.samples) { sample in
+                    VStack(alignment: .leading, spacing: 8) {
+                        HStack {
+                            Text(sample.label.title).font(.headline)
+                            Spacer(); Text(String(format: "%.1f 秒", sample.duration)).font(.caption).foregroundStyle(.secondary)
+                        }
+                        Text("\(sample.createdAt.formatted(date: .abbreviated, time: .shortened)) · 批次 \(sample.batch.uuidString.prefix(8))")
+                            .font(.caption).foregroundStyle(.secondary)
+                        if !sample.note.isEmpty { Text(sample.note).font(.caption) }
+                        HStack {
+                            if sample.keepsAudio { Button("试听") { workspace.audio.stopEverything(); library.play(sample) } }
+                            Menu("修改人工标签") {
+                                ForEach(SoundSampleLabel.allCases) { item in Button(item.title) { library.relabel(sample, as: item) } }
+                            }
+                            Spacer(); Button("删除", role: .destructive) { deletion = sample }
+                        }.font(.caption)
+                    }.padding(.vertical, 6)
+                }
+            }
+            Section("用于电脑实验") {
+                Button("导出已标注的特征数据", systemImage: "square.and.arrow.up") {
+                    do { document = ExperimentJSONDocument(data: try library.export()); exportFile = true }
+                    catch { self.error = error.localizedDescription }
+                }.disabled(library.samples.isEmpty || library.isBusy)
+                Text("导出包含标签、批次、特征和样本标识，不含原音频及备注。文件由你选择保存或分享；不会自动上传。")
+                    .font(.caption).foregroundStyle(.secondary)
+            }
+        }.navigationTitle("个人声音样本")
+            .onAppear { workspace.audio.stopEverything(); workspace.hand.stop(); workspace.offlineSpeech.cancel() }
+            .onDisappear { library.cancelCapture() }
+            .confirmationDialog("录制个人声音样本？", isPresented: $recordConsent, titleVisibility: .visible) {
+                Button("开始录制，最多 5 秒") { workspace.stop(); Task { await library.startRecording() } }
+            } message: { Text("会使用麦克风并暂存一段音频供试听。确认保存前不会进入样本库，也不会上传。请避免录入旁人的私密谈话。") }
+            .confirmationDialog("删除这段样本及保留的音频？", isPresented: Binding(get: { deletion != nil }, set: { if !$0 { deletion = nil } }), titleVisibility: .visible) {
+                Button("删除样本", role: .destructive) { if let deletion { library.delete(deletion) }; deletion = nil }
+            }
+            .fileImporter(isPresented: $importFile, allowedContentTypes: [.audio]) { result in
+                switch result { case .success(let url): Task { await library.prepare(url) }; case .failure(let error): self.error = error.localizedDescription }
+            }
+            .fileExporter(isPresented: $exportFile, document: document, contentType: .json, defaultFilename: "SeeSound-Dataset") { result in
+                if case .failure(let error) = result { self.error = error.localizedDescription }
+            }
+    }
+}
+
+struct SNNLaboratoryPage: View {
+    @ObservedObject var service: SNNLabService
+    @ObservedObject var library: SoundSampleLibrary
+    @State private var section = 0
+    @State private var selected: UUID?
+    @State private var beta = 0.85
+    @State private var threshold = 1.0
+    @State private var gain = 0.20
+    @State private var importModel = false
+    @State private var result: String?
+    @State private var deleteModel = false
+    private var features: [[Double]] {
+        if let sample = library.samples.first(where: { $0.id == selected }) { return sample.features }
+        return (0..<64).map { index in
+            let pulse = (index / 8) % 2 == 0 ? 0.15 : 0.85
+            return [pulse, pulse, 0.3 + 0.2 * sin(Double(index) * 0.3), 0.2]
+        }
+    }
+    private var encoded: [[Double]] { AudioFeatureCodec.encode(features) }
+    private var trace: [NeuronPoint] {
+        LIFNeuron.trace(currents: encoded.map { $0.reduce(0, +) * gain }, beta: beta, threshold: threshold)
+    }
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
+                VStack(alignment: .leading, spacing: 9) {
+                    Label("让声音的变化，变成脉冲", systemImage: "point.3.connected.trianglepath.dotted").font(.title2.bold())
+                    Text("探索编码与神经元，再用独立数据检查模型。")
+                        .font(.subheadline).foregroundStyle(.secondary)
+                }
+                HStack(spacing: 8) {
+                    ForEach(Array(["探索", "模型", "对照"].enumerated()), id: \.offset) { item in
+                        Button { section = item.offset } label: {
+                            Text(item.element).font(.subheadline.weight(.semibold)).frame(maxWidth: .infinity).padding(.vertical, 12)
+                                .foregroundStyle(section == item.offset ? Color(.systemBackground) : Color.primary)
+                                .background(section == item.offset ? Color.seeAccent : Color(.secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 12))
+                        }.buttonStyle(.plain).accessibilityAddTraits(section == item.offset ? .isSelected : [])
+                    }
+                }
+                if section == 0 { exploration }
+                else if section == 1 { modelPanel }
+                else { comparison }
+            }.padding(20).frame(maxWidth: 950).frame(maxWidth: .infinity)
+        }.background(Color(.systemGroupedBackground)).navigationTitle("SNN 实验室")
+            .fileImporter(isPresented: $importModel, allowedContentTypes: [.json]) { result in
+                switch result { case .success(let url): service.load(url); case .failure(let error): self.result = error.localizedDescription }
+            }
+            .confirmationDialog("移除本地实验模型？", isPresented: $deleteModel, titleVisibility: .visible) {
+                Button("移除模型", role: .destructive) { service.remove(); result = nil }
+            }
+    }
+    private var exploration: some View {
+        VStack(alignment: .leading, spacing: 18) {
+            VStack(alignment: .leading, spacing: 12) {
+                Label("探索模式 · 不输出声音类别", systemImage: "slider.horizontal.3").font(.headline)
+                inputPicker
+                Text(selected == nil ? "当前为数学演示信号，并非麦克风输入或真实识别结果。" : "当前为已保存样本的特征；类别是你人工标注的，不是探索神经元预测。")
+                    .font(.caption).foregroundStyle(.secondary)
+                Chart(Array(features.enumerated()), id: \.offset) { item in
+                    LineMark(x: .value("时间帧", item.offset), y: .value("相对强度", item.element[0]))
+                        .foregroundStyle(Color.seeAccent)
+                }.chartYScale(domain: 0...1).frame(height: 100)
+                    .accessibilityLabel("64 帧的相对强度特征，不是分贝")
+            }.experimentCard()
+            VStack(alignment: .leading, spacing: 12) {
+                Text("01 · 有符号差分编码").font(.headline)
+                Text("4 种特征的上升与下降分别编码为 8 路脉冲；步长固定为 0.08。")
+                    .font(.caption).foregroundStyle(.secondary)
+                SpikeRaster(frames: encoded)
+                Text("\(Int(encoded.flatMap { $0 }.reduce(0, +))) 次输入脉冲 · \(64 * 8) 个位置")
+                    .font(.caption.monospacedDigit()).foregroundStyle(.secondary)
+            }.experimentCard()
+            VStack(alignment: .leading, spacing: 12) {
+                Text("02 · LIF 神经元").font(.headline)
+                parameter("膜电位保留 β", value: $beta, range: 0...0.99)
+                parameter("发放阈值", value: $threshold, range: 0.2...2)
+                parameter("输入增益", value: $gain, range: 0.05...1)
+                Chart {
+                    ForEach(trace) { point in
+                        LineMark(x: .value("帧", point.id), y: .value("复位后膜电位", point.potential)).foregroundStyle(Color.seeAccent)
+                        if point.spike == 1 { PointMark(x: .value("帧", point.id), y: .value("发放", threshold)).foregroundStyle(.orange) }
+                    }
+                    RuleMark(y: .value("阈值", threshold)).lineStyle(StrokeStyle(dash: [5, 4])).foregroundStyle(.secondary)
+                }.frame(height: 180).chartXScale(domain: 0...63)
+                Text("橙点表示发放；曲线是减阈值复位后的膜电位。本次发放 \(Int(trace.map(\.spike).reduce(0, +))) 次。每帧最多发放一次，强输入时复位后仍可能高于阈值。")
+                    .font(.caption).foregroundStyle(.secondary)
+                Button("恢复探索参数") { beta = 0.85; threshold = 1; gain = 0.20 }
+                Text("参数只改变探索神经元，不修改已训练的模型；发放更少不等于设备更省电。")
+                    .font(.caption).foregroundStyle(.secondary)
+            }.experimentCard()
+            VStack(alignment: .leading, spacing: 8) {
+                Text("代码来源").font(.headline)
+                Link("snnTorch · Leaky 神经元与训练组件（MIT）", destination: URL(string: "https://github.com/jeshraghian/snntorch/tree/v0.9.4")!)
+                Text("手机使用对应方程的 Swift 实现；电脑脚本实际依赖 snnTorch。原件与许可证随工程保留。")
+                    .font(.caption).foregroundStyle(.secondary)
+            }.experimentCard()
+        }
+    }
+    private var modelPanel: some View {
+        VStack(alignment: .leading, spacing: 18) {
+            VStack(alignment: .leading, spacing: 12) {
+                Text("电脑训练 → 手机推理").font(.headline)
+                Text(service.status).font(.subheadline)
+                Button("导入训练模型 JSON", systemImage: "square.and.arrow.down") { importModel = true }.buttonStyle(.borderedProminent)
+                Text("导入会检查格式、有限数值、维度、训练 / 测试批次分离，以及 Python 与 Swift 的自检输出。模型文件不上传。")
+                    .font(.caption).foregroundStyle(.secondary)
+            }.experimentCard()
+            if let model = service.model {
+                VStack(alignment: .leading, spacing: 12) {
+                    Label(model.modelTitle, systemImage: "cpu").font(.headline)
+                    Text(model.isSynthetic ? "仅用于验证训练、导出和推理链路，不能用于评价真实声音。" : "这是限定类别的实验模型，尚未证明真实环境泛化，不参与正式提醒。")
+                        .font(.caption).foregroundStyle(.secondary)
+                    Text("\(model.inputCount) 路输入 → \(model.snnHidden.bias.count) 个 LIF 神经元 → \(model.labels.count) 类")
+                        .font(.subheadline.monospacedDigit())
+                    inputPicker
+                    Button("用这个样本运行 SNN / ANN") { run(model) }
+                        .disabled(selected == nil || model.featureSchema != AudioFeatureCodec.schema).buttonStyle(.borderedProminent)
+                    if model.isPublic { Text("公开 Mel 模型请在公开声音实验中回放；个人样本使用不同特征格式，不能直接混用。").font(.caption).foregroundStyle(.secondary) }
+                    if let result { Text(result).font(.subheadline.monospacedDigit()).textSelection(.enabled) }
+                    Button("移除本地实验模型", role: .destructive) { deleteModel = true }
+                }.experimentCard()
+            } else {
+                ContentUnavailableView("还没有训练模型", systemImage: "cpu", description: Text("先在“声音样本”收集带人工标签的数据，导出后运行工程中的 Training 脚本，再导入结果。"))
+            }
+        }
+    }
+    private var comparison: some View {
+        VStack(alignment: .leading, spacing: 18) {
+            if let model = service.model {
+                VStack(alignment: .leading, spacing: 12) {
+                    Text(model.isPublic ? "ESC-50 公开数据留出集报告" : model.isSynthetic ? "合成数据流程报告" : "训练脚本的留出集报告").font(.headline)
+                    Text("以下为导入文件报告，未在手机重新评测。两种方法使用相同的编码与样本划分；标签来自人工。")
+                        .font(.caption).foregroundStyle(.secondary)
+                    LabeledContent("训练 / 测试", value: "\(model.evaluation.trainCount) / \(model.evaluation.testCount) 段")
+                    LabeledContent("独立批次", value: "\(model.evaluation.trainBatches.count) / \(model.evaluation.testBatches.count)")
+                    LabeledContent("SNN 准确率", value: model.evaluation.snnAccuracy.formatted(.percent.precision(.fractionLength(1))))
+                    LabeledContent("ANN 准确率", value: model.evaluation.annAccuracy.formatted(.percent.precision(.fractionLength(1))))
+                    confusion(model.evaluation.snnConfusion, title: "SNN 混淆矩阵", labels: model.labels)
+                    confusion(model.evaluation.annConfusion, title: "ANN 混淆矩阵", labels: model.labels)
+                    Text("未测量 iPhone 能耗；不从脉冲数推算续航优势。一次推理耗时包含 Swift 实现开销，不能代替公平性能基准。")
+                        .font(.caption).foregroundStyle(.secondary)
+                }.experimentCard()
+            } else {
+                ContentUnavailableView("有数据，再谈效果", systemImage: "chart.bar.xaxis", description: Text("导入训练结果后显示 SNN 与 ANN 的同集对照，不预填准确率。"))
+            }
+            VStack(alignment: .leading, spacing: 10) {
+                Text("一个可信的实验怎么做").font(.headline)
+                Text("1. 采集多类声音，加入其他 / 背景样本。\n2. 换时段与环境，建立独立采集批次。\n3. 以批次划分训练与测试，同一批次不跨集合。\n4. 固定编码与划分，同时训练 SNN 和 ANN。\n5. 保留失败样本；增加新环境后重新验证。")
+                    .font(.subheadline).lineSpacing(5)
+            }.experimentCard()
+        }
+    }
+    private var inputPicker: some View {
+        Picker("输入来源", selection: $selected) {
+            Text("数学演示信号").tag(Optional<UUID>.none)
+            ForEach(library.samples) { sample in
+                Text("\(sample.label.title) · \(sample.createdAt.formatted(date: .omitted, time: .shortened)) · \(sample.id.uuidString.prefix(4))").tag(Optional(sample.id))
+            }
+        }.onChange(of: selected) { _, _ in result = nil }
+    }
+    private func parameter(_ title: String, value: Binding<Double>, range: ClosedRange<Double>) -> some View {
+        VStack(alignment: .leading, spacing: 3) {
+            HStack { Text(title); Spacer(); Text(value.wrappedValue, format: .number.precision(.fractionLength(2))).monospacedDigit() }.font(.caption)
+            HStack {
+                Button { value.wrappedValue = max(range.lowerBound, value.wrappedValue - 0.05) } label: { Image(systemName: "minus.circle") }
+                    .accessibilityLabel("减小\(title)")
+                Slider(value: value, in: range).accessibilityLabel(title)
+                Button { value.wrappedValue = min(range.upperBound, value.wrappedValue + 0.05) } label: { Image(systemName: "plus.circle") }
+                    .accessibilityLabel("增大\(title)")
+            }.buttonStyle(.plain)
+        }
+    }
+    private func confusion(_ matrix: [[Int]], title: String, labels: [SoundSampleLabel]) -> some View {
+        VStack(alignment: .leading, spacing: 7) {
+            Text(title).font(.subheadline.bold())
+            Text("行是真实类别，列是预测；顺序：" + labels.map(\.title).joined(separator: "、")).font(.caption).foregroundStyle(.secondary)
+            ForEach(matrix.indices, id: \.self) { index in
+                Text(labels[index].title + "  " + matrix[index].map(String.init).joined(separator: "    ")).font(.caption.monospaced())
+            }
+        }
+    }
+    private func run(_ model: ExperimentModel) {
+        guard model.featureSchema == AudioFeatureCodec.schema else { return }
+        guard let sample = library.samples.first(where: { $0.id == selected }) else { return }
+        let start = Date(); let output = model.infer(AudioFeatureCodec.encode(sample.features)); let elapsed = Date().timeIntervalSince(start) * 1000
+        let snnIndex = output.snn.indices.max(by: { output.snn[$0] < output.snn[$1] }) ?? 0
+        let annIndex = output.ann.indices.max(by: { output.ann[$0] < output.ann[$1] }) ?? 0
+        let group = model.evaluation.trainBatches.contains(sample.batch.uuidString) ? "训练批次" : model.evaluation.testBatches.contains(sample.batch.uuidString) ? "测试批次" : "新批次"
+        result = "人工标签：\(sample.label.title)（\(group)）\nSNN：\(model.labels[snnIndex].title)\nANN：\(model.labels[annIndex].title)\n隐藏层脉冲：\(output.spikes) 次\n两种方法本次共 \(String(format: "%.2f", elapsed)) ms；非正式性能基准\n输出为实验类别建议，不是已验证概率或正式事件。"
+    }
+}
+
+private struct SpikeRaster: View {
+    let frames: [[Double]]
+    var body: some View {
+        Canvas { context, size in
+            for (time, frame) in frames.enumerated() {
+                for (channel, spike) in frame.enumerated() where spike > 0 {
+                    let rect = CGRect(x: Double(time) / 64 * size.width, y: Double(channel) / 8 * size.height,
+                                      width: max(2, size.width / 100), height: max(4, size.height / 12))
+                    context.fill(Path(roundedRect: rect, cornerRadius: 1), with: .color(channel.isMultiple(of: 2) ? .seeAccent : .orange))
+                }
+            }
+        }.frame(height: 100).padding(10).background(Color.seeAccent.opacity(0.04), in: RoundedRectangle(cornerRadius: 12))
+            .accessibilityLabel("8 路差分脉冲：青色为上升，橙色为下降，共 \(Int(frames.flatMap { $0 }.reduce(0, +))) 次")
+    }
+}
+
+private extension View {
+    func experimentCard() -> some View {
+        padding(18).frame(maxWidth: .infinity, alignment: .leading)
+            .background(Color(.secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 22))
+    }
+}

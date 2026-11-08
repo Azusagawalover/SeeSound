@@ -1,0 +1,89 @@
+{
+  "bundle": "/tmp/SeeSound-v040-ipad.xcresult",
+  "attachments": [
+    {
+      "id": "0~2203I8xyh2QXni4HUcEA6Gz-jTfAQ1y9nql9HjeycwRcQ-6TiAPBamWi8kkUzMMQVQiBvgR6TZIS0jXPvhSOPA==",
+      "name": "46-linked-workbench",
+      "uti": "public.png",
+      "path": "46-linked-workbench.png"
+    },
+    {
+      "id": "0~NRU-e3l2xiFB5XjIAfITrfbBSQhFWL7ouiEVRos-SliD8t1U1S8sTW1dcoKdzz11JZkXuHjBmU_0kzWN5fbIiQ==",
+      "name": "30-campus-journey",
+      "uti": "public.png",
+      "path": "30-campus-journey.png"
+    },
+    {
+      "id": "0~DRrupgm9S55o-0BUXX53ARW7FTFb6xplhv70VCigoPtcJpEkbfG-HkCYAIL1ccIrJuyJ-tXvsxC0rFL7pbzwoQ==",
+      "name": "31-two-way-confirmation",
+      "uti": "public.png",
+      "path": "31-two-way-confirmation.png"
+    },
+    {
+      "id": "0~ILLBxL5yxcfMJYh563vL6cR1Ksq7O1uQhyxsicWql8IuJer1ByDLs8_R1p4UV8trWmKn097xEhqC8uDpQLZbdQ==",
+      "name": "32-departure",
+      "uti": "public.png",
+      "path": "32-departure.png"
+    },
+    {
+      "id": "0~V5JvaKsSeCXkE9Li_bNKqm4vA-MY9XDhTm7KnLTwAZhfAefc5bnvBOk3tL9A1fs5YYOSYVAxtEXv-ILE_6Z_8g==",
+      "name": "33-journey-outcome",
+      "uti": "public.png",
+      "path": "33-journey-outcome.png"
+    },
+    {
+      "id": "0~xtGYnbEeYYnJ-TdWRGq0hnfICdBN9e69r-iEz9y9OV_u6GfcOWKQrg5CSqHsj5lab2dMoPSIiPrNMUMphHLJpA==",
+      "name": "34-campus-evidence-largest-text",
+      "uti": "public.png",
+      "path": "34-campus-evidence-largest-text.png"
+    },
+    {
+      "id": "0~KGShtgCLu7eg4qIsUziHFDnsdgLdubL7ZOkcAAeVbicXwk_o9z6b6WT05lqx7f9_juOIOSWFDNd9CfPv04y5Tw==",
+      "name": "05-original-comparison-edit-and-zoom",
+      "uti": "public.png",
+      "path": "05-original-comparison-edit-and-zoom.png"
+    }
+  ],
+  "tests": [
+    {
+      "identifier": "WorkflowUITests/testCampusDeskAndResume()",
+      "name": "testCampusDeskAndResume()",
+      "status": "Success"
+    },
+    {
+      "identifier": "WorkflowUITests/testCampusDeskAndResume()",
+      "name": "testCampusDeskAndResume()",
+      "status": "Success"
+    },
+    {
+      "identifier": "WorkflowUITests/testCampusJourneyConfirmationDepartureAndOutcome()",
+      "name": "testCampusJourneyConfirmationDepartureAndOutcome()",
+      "status": "Success"
+    },
+    {
+      "identifier": "WorkflowUITests/testCampusJourneyConfirmationDepartureAndOutcome()",
+      "name": "testCampusJourneyConfirmationDepartureAndOutcome()",
+      "status": "Success"
+    },
+    {
+      "identifier": "WorkflowUITests/testCampusLargestTextAndEvidenceNavigation()",
+      "name": "testCampusLargestTextAndEvidenceNavigation()",
+      "status": "Success"
+    },
+    {
+      "identifier": "WorkflowUITests/testCampusLargestTextAndEvidenceNavigation()",
+      "name": "testCampusLargestTextAndEvidenceNavigation()",
+      "status": "Success"
+    },
+    {
+      "identifier": "WorkflowUITests/testOriginalImageZoomAndEditableComparison()",
+      "name": "testOriginalImageZoomAndEditableComparison()",
+      "status": "Success"
+    },
+    {
+      "identifier": "WorkflowUITests/testOriginalImageZoomAndEditableComparison()",
+      "name": "testOriginalImageZoomAndEditableComparison()",
+      "status": "Success"
+    }
+  ]
+}

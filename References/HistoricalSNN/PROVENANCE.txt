@@ -1,0 +1,9 @@
+Generated 2026-10-26 from Training/train_sound.py --smoke --epochs 8 --seed 2026.
+These are explicitly synthetic tooling fixtures, not real environmental audio, benchmark data, or a production classifier.
+The snnTorch-generated SNN and ANN outputs and scalar neuron trace are checked by the Swift test suite.
+
+Environment: Python 3.12.14; torch 2.5.1; snntorch 0.9.4; numpy 1.26.4; CPU; float64.
+SyntheticExperiment.json SHA-256: 45bc329728d2308de4ba1949cc44d075992388911fb3590a2105d245aed6fc4b
+NeuronTrace.json SHA-256: badd9f999260f0bcd268b01c3b5659d7583c6ded3f132086186b342a646e7345
+snnTorch upstream Leaky source SHA-256: 5b2ceacb5dc66843a111dc8724d74ac9a8283dd3569966a06c2e5108071dd43c
+Upstream commit: f5cb74654bc274736165dd2cd7455144c95588d4 (tag v0.9.4)

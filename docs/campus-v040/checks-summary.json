@@ -1,0 +1,164 @@
+{
+  "app_version": "0.40 (40)",
+  "recorded_at": "2026-11-03T15:22:50.864446+08:00",
+  "logic": {
+    "passed": 269,
+    "failed": 0,
+    "log": "logs/domain-delivery.txt"
+  },
+  "server": {
+    "passed": 17,
+    "failed": 0,
+    "paid_api_calls": 0,
+    "log": "logs/server.txt"
+  },
+  "builds": [
+    {
+      "configuration": "Debug",
+      "component": "phone",
+      "version": "0.40",
+      "build": "40",
+      "minimum_os": "17.3"
+    },
+    {
+      "configuration": "Debug",
+      "component": "watch",
+      "version": "0.40",
+      "build": "40",
+      "minimum_os": "9.6"
+    },
+    {
+      "configuration": "Debug",
+      "component": "share",
+      "version": "0.40",
+      "build": "40",
+      "minimum_os": "17.3"
+    },
+    {
+      "configuration": "Release",
+      "component": "phone",
+      "version": "0.40",
+      "build": "40",
+      "minimum_os": "17.3"
+    },
+    {
+      "configuration": "Release",
+      "component": "watch",
+      "version": "0.40",
+      "build": "40",
+      "minimum_os": "9.6"
+    },
+    {
+      "configuration": "Release",
+      "component": "share",
+      "version": "0.40",
+      "build": "40",
+      "minimum_os": "17.3"
+    }
+  ],
+  "ui": {
+    "iphone_core_distinct_passed": 8,
+    "iphone_latest": {
+      "testCampusDeskAndResume": {
+        "name": "testCampusDeskAndResume",
+        "status": "passed",
+        "seconds": 25.8,
+        "log": "/tmp/SeeSound-v040-iphone-recheck.log"
+      },
+      "testCampusJourneyConfirmationDepartureAndOutcome": {
+        "name": "testCampusJourneyConfirmationDepartureAndOutcome",
+        "status": "passed",
+        "seconds": 78.56,
+        "log": "/tmp/SeeSound-v040-iphone.log"
+      },
+      "testCampusLargestTextAndEvidenceNavigation": {
+        "name": "testCampusLargestTextAndEvidenceNavigation",
+        "status": "passed",
+        "seconds": 43.755,
+        "log": "/tmp/SeeSound-v040-iphone.log"
+      },
+      "testCampusPresentationShowsRealSourceInvalidation": {
+        "name": "testCampusPresentationShowsRealSourceInvalidation",
+        "status": "passed",
+        "seconds": 48.383,
+        "log": "/tmp/SeeSound-v040-iphone-final.log"
+      },
+      "testCampusScenarioWizardCreatesExplicitPlan": {
+        "name": "testCampusScenarioWizardCreatesExplicitPlan",
+        "status": "passed",
+        "seconds": 34.683,
+        "log": "/tmp/SeeSound-v040-iphone.log"
+      },
+      "testChineseFleursEvaluationActuallyRunsWhisper": {
+        "name": "testChineseFleursEvaluationActuallyRunsWhisper",
+        "status": "passed",
+        "seconds": 34.011,
+        "log": "/tmp/SeeSound-v040-iphone.log"
+      },
+      "testChineseNoticeEvaluationActuallyRunsOCR": {
+        "name": "testChineseNoticeEvaluationActuallyRunsOCR",
+        "status": "passed",
+        "seconds": 52.039,
+        "log": "/tmp/SeeSound-v040-iphone-recheck.log"
+      },
+      "testJourneySearchOpensSpecificCardAndResume": {
+        "name": "testJourneySearchOpensSpecificCardAndResume",
+        "status": "passed",
+        "seconds": 37.699,
+        "log": "/tmp/SeeSound-v040-iphone-delivery.log"
+      }
+    },
+    "ipad_distinct_passed": 4,
+    "ipad_latest": {
+      "testCampusDeskAndResume": {
+        "name": "testCampusDeskAndResume",
+        "status": "passed",
+        "seconds": 21.702,
+        "log": "/tmp/SeeSound-v040-ipad.log"
+      },
+      "testCampusJourneyConfirmationDepartureAndOutcome": {
+        "name": "testCampusJourneyConfirmationDepartureAndOutcome",
+        "status": "passed",
+        "seconds": 47.178,
+        "log": "/tmp/SeeSound-v040-ipad.log"
+      },
+      "testCampusLargestTextAndEvidenceNavigation": {
+        "name": "testCampusLargestTextAndEvidenceNavigation",
+        "status": "passed",
+        "seconds": 22.539,
+        "log": "/tmp/SeeSound-v040-ipad.log"
+      },
+      "testOriginalImageZoomAndEditableComparison": {
+        "name": "testOriginalImageZoomAndEditableComparison",
+        "status": "passed",
+        "seconds": 23.998,
+        "log": "/tmp/SeeSound-v040-ipad.log"
+      }
+    },
+    "paired_watch_latest": {
+      "name": "testPairedWatchJourneySnapshotAndVersionChange",
+      "status": "passed",
+      "seconds": 61.952,
+      "log": "/tmp/SeeSound-watch-version-final.log",
+      "receipt_received": true,
+      "manual_retry_receipt_received": true,
+      "remote_version_invalidation_verified": true,
+      "human_seen_roundtrip_tested": false,
+      "physical_device_tested": false,
+      "evidence": "watch-integration.json"
+    },
+    "multiple_runs_with_repairs": true,
+    "paired_watch_previous": {
+      "name": "testPairedWatchJourneySnapshotAndVersionChange",
+      "status": "failed",
+      "seconds": 54.369,
+      "log": "/tmp/SeeSound-v040-iphone-delivery.log"
+    }
+  },
+  "evaluation": "中文评测结果.json",
+  "remaining": [
+    "Watch腕上已看到往返、真机触觉、后台和锁屏仍待验证",
+    "中文转写存在实际词语错误，保留原始结果并要求人工核对",
+    "iOS17.3.1/watchOS9.6.4真机、耗电和完整无障碍组合未验收"
+  ]
+}

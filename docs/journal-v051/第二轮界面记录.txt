@@ -1,0 +1,10 @@
+2026-11-04 · 第二轮 UI 打磨
+
+底色改为浅燕麦灰（#F2F1E9），白纸卡片保留，珊瑚色用于主要操作。
+首页封面缩小，以原有旅程标题和真实阶段替代宣传文字；保留示例标记。
+快捷入口去掉描边并缩小；四项统计合并为紧凑分组，原筛选操作保留。
+插画缩小并降低饱和度、对比度；顶部停止和工具入口增加可见文字。
+
+仅修改 App/VisualDesign.swift、App/WorkspaceUpgradeViews.swift、App/RootView.swift。
+实际首页截图：screenshots/phone/round2-home.png
+Debug 构建通过；本轮仅检查首页外观，完整功能检验仍按用户要求留待设计定稿后。

@@ -1,0 +1,181 @@
+import AVFoundation
+import Combine
+import Foundation
+
+@MainActor
+final class SoundSampleLibrary: NSObject, ObservableObject, AVAudioRecorderDelegate {
+    @Published private(set) var samples: [SoundSample] = []
+    @Published private(set) var pending: PreparedSound?
+    @Published private(set) var isRecording = false
+    @Published private(set) var isBusy = false
+    @Published private(set) var status = "只在你录制或导入后处理音频，保存前可试听和确认标签。"
+    @Published private(set) var batch = UUID()
+    private let store = SoundSampleStore()
+    private var recorder: AVAudioRecorder?
+    private var player: AVAudioPlayer?
+    private var recordingURL: URL?
+    private var generation = UUID()
+    private var observer: NSObjectProtocol?
+    override init() {
+        super.init()
+        let temporary = FileManager.default.temporaryDirectory
+        if let files = try? FileManager.default.contentsOfDirectory(at: temporary, includingPropertiesForKeys: nil) {
+            for url in files where url.lastPathComponent.hasPrefix("SeeSoundSample-") || url.lastPathComponent.hasPrefix("SeeSoundRecording-") {
+                try? FileManager.default.removeItem(at: url)
+            }
+        }
+        reload()
+        observer = NotificationCenter.default.addObserver(forName: AVAudioSession.interruptionNotification, object: nil, queue: .main) { [weak self] _ in
+            Task { @MainActor [weak self] in self?.cancelCapture() }
+        }
+    }
+    func newBatch() { batch = UUID(); status = "已开始新的采集批次。换环境或换时段再采集，更有利于独立验证。" }
+    func reload() {
+        do { samples = try store.load() }
+        catch { status = "样本读取失败，原文件保留：\(error.localizedDescription)" }
+    }
+    func startRecording() async {
+        guard !isBusy else { return }
+        #if targetEnvironment(simulator)
+        status = "模拟器请导入短音频；真实录制需要 iPhone 或 iPad。"
+        #else
+        cancelCapture()
+        let token = UUID(); generation = token; isBusy = true
+        let allowed: Bool
+        switch AVAudioApplication.shared.recordPermission {
+        case .granted: allowed = true
+        case .undetermined: allowed = await withCheckedContinuation { c in AVAudioApplication.requestRecordPermission { c.resume(returning: $0) } }
+        default: allowed = false
+        }
+        guard generation == token else { return }
+        guard allowed else { isBusy = false; status = "麦克风未授权，可改为导入音频。"; return }
+        do {
+            let session = AVAudioSession.sharedInstance()
+            try session.setCategory(.record, mode: .measurement)
+            try session.setActive(true)
+            let url = FileManager.default.temporaryDirectory.appendingPathComponent("SeeSoundRecording-\(UUID()).caf")
+            recordingURL = url
+            let recorder = try AVAudioRecorder(url: url, settings: [AVFormatIDKey: kAudioFormatLinearPCM, AVSampleRateKey: 16_000,
+                                                                    AVNumberOfChannelsKey: 1, AVLinearPCMBitDepthKey: 16])
+            self.recorder = recorder; recorder.delegate = self
+            guard recorder.record(forDuration: 5) else { throw ExperimentError.audio }
+            isRecording = true; status = "正在录制，最多 5 秒；结束后需要确认保存。"
+        } catch { cancelCapture(); status = "录制未开始：\(error.localizedDescription)" }
+        #endif
+    }
+    func finishRecording() {
+        guard isRecording, let url = recordingURL else { return }
+        recorder?.delegate = nil; recorder?.stop(); recorder = nil; recordingURL = nil
+        isRecording = false; isBusy = false
+        try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
+        Task { await prepare(url, removeSource: true) }
+    }
+    nonisolated func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        Task { @MainActor [weak self] in
+            guard let self, self.recorder === recorder else { return }
+            if flag { self.finishRecording() } else { self.cancelCapture(); self.status = "录制被中断，未保存样本。" }
+        }
+    }
+    func prepare(_ url: URL, removeSource: Bool = false) async {
+        guard !isBusy else { return }
+        discardPending(); player?.stop()
+        let token = UUID(); generation = token; isBusy = true; status = "正在提取本机音频特征…"
+        let batch = self.batch
+        let outcome = await Task.detached(priority: .userInitiated) { () -> Result<PreparedSound, Error> in
+            defer { if removeSource { try? FileManager.default.removeItem(at: url) } }
+            return Result { try SampleAudioReader.prepare(url: url, batch: batch) }
+        }.value
+        guard generation == token else {
+            if case .success(let draft) = outcome { try? FileManager.default.removeItem(at: draft.url) }
+            return
+        }
+        isBusy = false
+        switch outcome {
+        case .success(let draft): pending = draft; status = "请核对内容和标签；只有点击保存才进入样本库。"
+        case .failure(let error): status = "音频未导入：\(error.localizedDescription)"
+        }
+    }
+    func save(label: SoundSampleLabel, note: String, keepAudio: Bool) {
+        guard var draft = pending else { return }
+        draft.sample.label = label; draft.sample.note = String(note.prefix(120)); draft.sample.keepsAudio = keepAudio
+        do {
+            try store.save(draft.sample, audio: keepAudio ? draft.url : nil)
+            discardPending(); reload(); status = keepAudio ? "已保存特征、人工标签及原音频。" : "已保存特征与人工标签；临时原音频已移除。"
+        } catch { status = "保存未完成：\(error.localizedDescription)" }
+    }
+    func relabel(_ sample: SoundSample, as label: SoundSampleLabel) {
+        var updated = sample; updated.label = label
+        do { try store.relabel(updated); reload(); status = "人工标签已更新，没有自动训练模型。" }
+        catch { status = "修改失败：\(error.localizedDescription)" }
+    }
+    func delete(_ sample: SoundSample) {
+        player?.stop()
+        do { try store.delete(sample.id); reload(); status = "样本特征、标签和保留的音频已删除。" }
+        catch { status = "删除未完成：\(error.localizedDescription)" }
+    }
+    func play(_ sample: SoundSample? = nil) {
+        guard let url = sample.flatMap({ store.audioURL(for: $0) }) ?? (sample == nil ? pending?.url : nil) else { return }
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .spokenAudio)
+            try AVAudioSession.sharedInstance().setActive(true)
+            player = try AVAudioPlayer(contentsOf: url); player?.play()
+        } catch { status = "试听失败：\(error.localizedDescription)" }
+    }
+    func export() throws -> Data {
+        let exported = samples.map { sample in var copy = sample; copy.note = ""; copy.keepsAudio = false; return copy }
+        let dataset = try SoundDataset(samples: exported).validated()
+        let encoder = JSONEncoder(); encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
+        return try encoder.encode(dataset)
+    }
+    func discardPending() {
+        player?.stop()
+        if let pending { try? FileManager.default.removeItem(at: pending.url) }
+        pending = nil
+    }
+    func cancelCapture() {
+        generation = UUID(); recorder?.delegate = nil; recorder?.stop(); recorder = nil; player?.stop()
+        if let recordingURL { try? FileManager.default.removeItem(at: recordingURL) }
+        recordingURL = nil; discardPending(); isBusy = false; isRecording = false
+        try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
+    }
+}
+
+@MainActor
+final class SNNLabService: ObservableObject {
+    @Published private(set) var model: ExperimentModel?
+    @Published private(set) var status = "尚未导入训练模型。探索模式可直接使用。"
+    private var url: URL {
+        FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
+            .appendingPathComponent("SeeSoundExperiment", isDirectory: true).appendingPathComponent("model.json")
+    }
+    init() {
+        guard FileManager.default.fileExists(atPath: url.path) else { return }
+        do { model = try decode(url); status = "已恢复本地实验模型。" }
+        catch { status = "已有模型无法读取，原文件保留：\(error.localizedDescription)" }
+    }
+    private func decode(_ url: URL) throws -> ExperimentModel {
+        let access = url.startAccessingSecurityScopedResource(); defer { if access { url.stopAccessingSecurityScopedResource() } }
+        let size = try url.resourceValues(forKeys: [.fileSizeKey]).fileSize ?? 0
+        guard size > 0, size <= 524_288 else { throw ExperimentError.invalid }
+        let parsed = try JSONDecoder().decode(ExperimentModel.self, from: Data(contentsOf: url))
+        try parsed.validate(); return parsed
+    }
+    func load(_ source: URL) {
+        do {
+            let parsed = try decode(source)
+            let files = FileManager.default
+            let root = url.deletingLastPathComponent()
+            try files.createDirectory(at: root, withIntermediateDirectories: true, attributes: [.posixPermissions: 0o700])
+            var directory = root; var flags = URLResourceValues(); flags.isExcludedFromBackup = true; try directory.setResourceValues(flags)
+            try JSONEncoder().encode(parsed).write(to: url, options: [.atomic, .completeFileProtectionUntilFirstUserAuthentication])
+            try files.setAttributes([.posixPermissions: 0o600], ofItemAtPath: url.path)
+            model = parsed; status = parsed.isSynthetic ? "已导入合成数据流程模型；不代表真实声音识别能力。" : "已导入实验模型，并通过跨实现数值自检。"
+        } catch { status = "模型未导入：\(error.localizedDescription)；原模型保持可用。" }
+    }
+    func remove() {
+        do {
+            if FileManager.default.fileExists(atPath: url.path) { try FileManager.default.removeItem(at: url) }
+            model = nil; status = "实验模型已移除。"
+        } catch { status = "移除未完成：\(error.localizedDescription)" }
+    }
+}

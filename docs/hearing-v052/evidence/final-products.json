@@ -1,0 +1,46 @@
+{
+  "products": [
+    {
+      "configuration": "Debug",
+      "product": "SeeSound.app",
+      "version": "0.52",
+      "build": "52",
+      "minimum_os": "17.3"
+    },
+    {
+      "configuration": "Debug",
+      "product": "Watch/SeeSoundWatch.app",
+      "version": "0.52",
+      "build": "52",
+      "minimum_os": "9.6"
+    },
+    {
+      "configuration": "Debug",
+      "product": "PlugIns/SeeSoundShare.appex",
+      "version": "0.52",
+      "build": "52",
+      "minimum_os": "17.3"
+    },
+    {
+      "configuration": "Release",
+      "product": "SeeSound.app",
+      "version": "0.52",
+      "build": "52",
+      "minimum_os": "17.3"
+    },
+    {
+      "configuration": "Release",
+      "product": "Watch/SeeSoundWatch.app",
+      "version": "0.52",
+      "build": "52",
+      "minimum_os": "9.6"
+    },
+    {
+      "configuration": "Release",
+      "product": "PlugIns/SeeSoundShare.appex",
+      "version": "0.52",
+      "build": "52",
+      "minimum_os": "17.3"
+    }
+  ]
+}

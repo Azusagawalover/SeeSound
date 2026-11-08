@@ -1,0 +1,20 @@
+{
+  "app_files": [
+    "BilingualViews.swift",
+    "CampusViews.swift",
+    "CasePreparationViews.swift",
+    "ConversationViews.swift",
+    "DashboardViews.swift",
+    "ExperienceViews.swift",
+    "RootView.swift",
+    "RoutineViews.swift",
+    "VisualDesign.swift",
+    "WorkroomCasesViews.swift",
+    "WorkroomViews.swift",
+    "WorkspaceCaseViews.swift",
+    "WorkspaceUpgradeViews.swift"
+  ],
+  "watch_ui_changed": true,
+  "ui_test_helper_changed": true,
+  "model_api_domain_sources_changed": false
+}

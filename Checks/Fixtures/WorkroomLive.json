@@ -1,0 +1,135 @@
+{
+  "version": 1,
+  "tested_at": "2026-10-27T12:16:41.296350+00:00",
+  "translations": [
+    {
+      "request": {
+        "version": 1,
+        "source_id": "3ce74395-9656-4dd5-8b55-01951610c029",
+        "target": "en",
+        "origin": "demonstration",
+        "text": "【演示】会议在15:00开始，费用12美元。请把地点写下来。"
+      },
+      "result": {
+        "version": 1,
+        "provider": "DeepSeek",
+        "model": "deepseek-flash",
+        "source_id": "3ce74395-9656-4dd5-8b55-01951610c029",
+        "target": "en",
+        "text": "[Demonstration] The meeting starts at 15:00, the fee is 12 dollars. Please write down the location."
+      },
+      "status": 200,
+      "elapsed": 0.632
+    },
+    {
+      "request": {
+        "version": 1,
+        "source_id": "35f57752-dc45-4de3-896a-3226de1fc458",
+        "target": "ja",
+        "origin": "demonstration",
+        "text": "【演示】会议在15:00开始，费用12美元。请把地点写下来。"
+      },
+      "result": {
+        "version": 1,
+        "provider": "DeepSeek",
+        "model": "deepseek-flash",
+        "source_id": "35f57752-dc45-4de3-896a-3226de1fc458",
+        "target": "ja",
+        "text": "【デモ】会議は15:00に始まり、費用は12ドルです。場所を書き留めてください。"
+      },
+      "status": 200,
+      "elapsed": 1.003
+    },
+    {
+      "request": {
+        "version": 1,
+        "source_id": "4b1fc791-acd9-4bd9-a4c3-2e36120d0f43",
+        "target": "ko",
+        "origin": "demonstration",
+        "text": "【演示】会议在15:00开始，费用12美元。请把地点写下来。"
+      },
+      "result": {
+        "version": 1,
+        "provider": "DeepSeek",
+        "model": "deepseek-flash",
+        "source_id": "4b1fc791-acd9-4bd9-a4c3-2e36120d0f43",
+        "target": "ko",
+        "text": "【데모】회의는 15:00에 시작하며, 비용은 12달러입니다. 장소를 적어 두세요."
+      },
+      "status": 200,
+      "elapsed": 1.199
+    },
+    {
+      "request": {
+        "version": 1,
+        "source_id": "102523e2-eea0-48e5-a0ec-0e014d549a49",
+        "target": "zh-Hans",
+        "origin": "demonstration",
+        "text": "[Demo] The meeting is at 15:00. The fee is 12 USD. Please write down the location."
+      },
+      "result": {
+        "version": 1,
+        "provider": "DeepSeek",
+        "model": "deepseek-flash",
+        "source_id": "102523e2-eea0-48e5-a0ec-0e014d549a49",
+        "target": "zh-Hans",
+        "text": "[演示] 会议在15:00。费用是12美元。请写下地点。"
+      },
+      "status": 200,
+      "elapsed": 0.834
+    }
+  ],
+  "clarification": {
+    "request": {
+      "version": 1,
+      "reference_time": "2026-10-27T10:00:00Z",
+      "time_zone": "Asia/Shanghai",
+      "turns": [
+        {
+          "id": "df24beea-a3df-42dc-939a-2f1f349462d2",
+          "origin": "documentText",
+          "text": "【演示通知】活动地点为图书馆二楼，报名截止时间待定，费用12元人民币，请询问组织者具体的报名截止日期和时间。"
+        }
+      ]
+    },
+    "result": {
+      "version": 1,
+      "provider": "DeepSeek",
+      "model": "deepseek-flash",
+      "summary": "演示通知提到活动地点为图书馆二楼、费用12元人民币，报名截止时间待定。",
+      "candidates": [
+        {
+          "kind": "place",
+          "value": "图书馆二楼",
+          "source_id": "df24beea-a3df-42dc-939a-2f1f349462d2",
+          "quote": "活动地点为图书馆二楼",
+          "date_iso": null,
+          "currency": null
+        },
+        {
+          "kind": "amount",
+          "value": "12.00",
+          "source_id": "df24beea-a3df-42dc-939a-2f1f349462d2",
+          "quote": "费用12元人民币",
+          "date_iso": null,
+          "currency": "CNY"
+        }
+      ],
+      "replies": [
+        "您好，请问报名截止日期和时间是什么时候？",
+        "请问活动地点是图书馆二楼吗？"
+      ],
+      "suppressed_replies": 0,
+      "questions": [
+        {
+          "kind": "time",
+          "question": "报名截止的具体日期和时间是什么？",
+          "source_id": "df24beea-a3df-42dc-939a-2f1f349462d2",
+          "quote": "报名截止时间待定"
+        }
+      ]
+    },
+    "status": 200,
+    "elapsed": 1.532
+  }
+}

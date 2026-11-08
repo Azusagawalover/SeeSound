@@ -1,0 +1,123 @@
+import Foundation
+
+enum PublicFeatureCodec {
+    static let schema = "esc50-logmel16-v2"
+    static let commit = "33c8ce9eb2cf0b1c2f8bcf322eb349b6be34dbb6"
+    static func validate(_ features: [[Double]]) -> Bool {
+        features.count == 64 && features.allSatisfy { $0.count == 16 && $0.allSatisfy { $0.isFinite && (0...1).contains($0) } }
+    }
+    static func encode(_ features: [[Double]]) -> [[Double]] {
+        guard validate(features) else { return [] }
+        var reference = [Double](repeating: 0, count: 16)
+        return features.map { frame in
+            var row = [Double](repeating: 0, count: 32)
+            for channel in 0..<16 {
+                let delta = frame[channel] - reference[channel]
+                if delta >= 0.08 { row[channel * 2] = 1; reference[channel] += 0.08 }
+                else if delta <= -0.08 { row[channel * 2 + 1] = 1; reference[channel] -= 0.08 }
+            }
+            return row
+        }
+    }
+}
+
+struct PublicSoundClip: Codable, Identifiable {
+    var id: String
+    var label: SoundSampleLabel
+    var category: String
+    var fold: Int
+    var sourceFile: String
+    var duration: Double
+    var sha256: String
+    var features: [[Double]]
+    var waveform: [Double]
+    var attribution: String
+    var categoryTitle: String {
+        switch category {
+        case "door_wood_knock": return "敲门"
+        case "clapping": return "拍手"
+        case "keyboard_typing": return "键盘声"
+        case "vacuum_cleaner": return "吸尘器"
+        default: return category
+        }
+    }
+    var sourceURL: URL { URL(string: "https://freesound.org/s/\(sourceFile)/")! }
+    func validate() throws {
+        let mapping: [String: SoundSampleLabel] = ["door_wood_knock": .knock, "clapping": .clapping, "keyboard_typing": .other, "vacuum_cleaner": .other]
+        guard id.count <= 80, id.hasSuffix(".wav"), id.hasPrefix("5-"),
+              id.allSatisfy({ $0.isASCII && ($0.isLetter || $0.isNumber || $0 == "-" || $0 == ".") }),
+              mapping[category] == label, fold == 5, duration == 5,
+              !sourceFile.isEmpty, sourceFile.count <= 20, sourceFile.allSatisfy(\.isNumber),
+              sha256.count == 64, sha256.allSatisfy({ $0.isHexDigit }),
+              waveform.count == 64, waveform.allSatisfy({ $0.isFinite && (0...1).contains($0) }),
+              !attribution.isEmpty, attribution.count <= 1500,
+              PublicFeatureCodec.validate(features) else { throw ExperimentError.invalid }
+    }
+}
+
+#if SEESOUND_LEGACY_CHECKS
+struct PublicSoundCatalog: Codable {
+    var format: String
+    var version: Int
+    var commit: String
+    var featureSchema: String
+    var clips: [PublicSoundClip]
+    func validate(model: ExperimentModel) throws {
+        guard format == "SeeSoundPublicCatalog", version == 1, commit == PublicFeatureCodec.commit,
+              featureSchema == PublicFeatureCodec.schema, model.isPublic, clips.count == 24,
+              Set(clips.map(\.id)).count == 24, Set(clips.map(\.sha256)).count == 24,
+              [SoundSampleLabel.knock, .clapping, .other].allSatisfy({ label in clips.filter { $0.label == label }.count == 8 }),
+              let dataset = model.dataset,
+              Set(clips.map(\.sourceFile)) == Set(dataset.testSources) else { throw ExperimentError.invalid }
+        try model.validate()
+        try clips.forEach { try $0.validate() }
+    }
+}
+
+struct PublicPrediction: Identifiable {
+    var id: String
+    var actual: SoundSampleLabel
+    var snn: SoundSampleLabel
+    var ann: SoundSampleLabel
+    var spikes: Int
+    var isError: Bool { actual != snn || actual != ann }
+    var isDisagreement: Bool { snn != ann }
+}
+
+struct PublicClipAnalysis {
+    var encoded: [[Double]]
+    var traces: [[NeuronPoint]]
+    var mostActive: Int { traces.indices.max { traces[$0].map(\.spike).reduce(0, +) < traces[$1].map(\.spike).reduce(0, +) } ?? 0 }
+    init(clip: PublicSoundClip, model: ExperimentModel) {
+        let input = PublicFeatureCodec.encode(clip.features)
+        encoded = input
+        traces = model.snnHidden.bias.indices.map { model.hiddenTrace(input, neuron: $0) }
+    }
+}
+
+struct PublicEvaluation {
+    var predictions: [PublicPrediction]
+    let labels: [SoundSampleLabel] = [.knock, .clapping, .other]
+    func matrix(snn: Bool) -> [[Int]] {
+        var matrix = [[Int]](repeating: [Int](repeating: 0, count: 3), count: 3)
+        for result in predictions {
+            guard let row = labels.firstIndex(of: result.actual), let column = labels.firstIndex(of: snn ? result.snn : result.ann) else { continue }
+            matrix[row][column] += 1
+        }
+        return matrix
+    }
+    func accuracy(snn: Bool) -> Double {
+        guard !predictions.isEmpty else { return 0 }
+        return Double(predictions.filter { $0.actual == (snn ? $0.snn : $0.ann) }.count) / Double(predictions.count)
+    }
+    static func run(model: ExperimentModel, catalog: PublicSoundCatalog) -> PublicEvaluation {
+        let results = catalog.clips.map { clip -> PublicPrediction in
+            let output = model.infer(PublicFeatureCodec.encode(clip.features))
+            let snnIndex = output.snn.indices.max(by: { output.snn[$0] < output.snn[$1] }) ?? 0
+            let annIndex = output.ann.indices.max(by: { output.ann[$0] < output.ann[$1] }) ?? 0
+            return PublicPrediction(id: clip.id, actual: clip.label, snn: model.labels[snnIndex], ann: model.labels[annIndex], spikes: output.spikes)
+        }
+        return PublicEvaluation(predictions: results)
+    }
+}
+#endif

@@ -1,0 +1,55 @@
+{
+  "bundle": "/tmp/SeeSound-v040-iphone-final.xcresult",
+  "attachments": [
+    {
+      "id": "0~C5VCJmtEbxeQU3kwMYef_Ebd5AUZin4yQo9R6_oT9t2pxIz4BuMOYwu1T5-DSmCUk7tOM_ydNmrh-RVX-9z20Q==",
+      "name": "42-presentation-confirmation",
+      "uti": "public.png",
+      "path": "42-presentation-confirmation.png"
+    },
+    {
+      "id": "0~FB51JZmOHhCoCDENbL9VWiE0eBiZAPt_FnNw3PG883LBoPWtwixz14uxYx8FoQvA1H5UscWCABHfGJadcazcXg==",
+      "name": "43-material-change-center",
+      "uti": "public.png",
+      "path": "43-material-change-center.png"
+    },
+    {
+      "id": "0~YkLT9EqX5AbMg8qZtNhoEzSlEVWJ7aoi0HMC9ghAxF9Rp55uy7skU2R54GeTkqSJqCy_oyHpwgemE4CVShwRzA==",
+      "name": "47-journey-search-specific-card",
+      "uti": "public.png",
+      "path": "47-journey-search-specific-card.png"
+    }
+  ],
+  "tests": [
+    {
+      "identifier": "WorkflowUITests/testCampusPresentationShowsRealSourceInvalidation()",
+      "name": "testCampusPresentationShowsRealSourceInvalidation()",
+      "status": "Success"
+    },
+    {
+      "identifier": "WorkflowUITests/testCampusPresentationShowsRealSourceInvalidation()",
+      "name": "testCampusPresentationShowsRealSourceInvalidation()",
+      "status": "Success"
+    },
+    {
+      "identifier": "WorkflowUITests/testJourneySearchOpensSpecificCardAndResume()",
+      "name": "testJourneySearchOpensSpecificCardAndResume()",
+      "status": "Failure"
+    },
+    {
+      "identifier": "WorkflowUITests/testJourneySearchOpensSpecificCardAndResume()",
+      "name": "testJourneySearchOpensSpecificCardAndResume()",
+      "status": "Failure"
+    },
+    {
+      "identifier": "WorkflowUITests/testPairedWatchJourneySnapshotAndVersionChange()",
+      "name": "testPairedWatchJourneySnapshotAndVersionChange()",
+      "status": "Failure"
+    },
+    {
+      "identifier": "WorkflowUITests/testPairedWatchJourneySnapshotAndVersionChange()",
+      "name": "testPairedWatchJourneySnapshotAndVersionChange()",
+      "status": "Failure"
+    }
+  ]
+}

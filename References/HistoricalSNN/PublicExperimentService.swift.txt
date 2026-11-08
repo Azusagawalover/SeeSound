@@ -1,0 +1,122 @@
+import AVFoundation
+import Combine
+import CryptoKit
+import Foundation
+
+@MainActor
+final class PublicExperimentService: NSObject, ObservableObject, AVAudioPlayerDelegate {
+    @Published private(set) var catalog: PublicSoundCatalog?
+    @Published private(set) var model: ExperimentModel?
+    @Published private(set) var analysis: PublicClipAnalysis?
+    @Published private(set) var selectedID: String?
+    @Published private(set) var evaluation: PublicEvaluation?
+    @Published private(set) var isEvaluating = false
+    @Published private(set) var isPlaying = false
+    @Published private(set) var position: Double = 0
+    @Published private(set) var status = "正在准备公开数据实验。"
+    @Published var playbackRate: Float = 1 { didSet { player?.rate = playbackRate } }
+    @Published var looping = false { didSet { player?.numberOfLoops = looping ? -1 : 0 } }
+    private var player: AVAudioPlayer?
+    private var timer: Timer?
+    private var generation = UUID()
+    private var interruption: NSObjectProtocol?
+    private var verified: Set<String> = []
+    var clip: PublicSoundClip? { catalog?.clips.first { $0.id == selectedID } }
+    var frame: Int { min(63, max(0, Int(position * 64))) }
+    var prediction: PublicPrediction? { evaluation?.predictions.first { $0.id == selectedID } }
+
+    override init() {
+        super.init()
+        do {
+            guard let modelURL = Bundle.main.url(forResource: "ESC50-Model", withExtension: "json"),
+                  let catalogURL = Bundle.main.url(forResource: "ESC50-Catalog", withExtension: "json") else { throw ExperimentError.invalid }
+            let model = try JSONDecoder().decode(ExperimentModel.self, from: Data(contentsOf: modelURL))
+            let catalog = try JSONDecoder().decode(PublicSoundCatalog.self, from: Data(contentsOf: catalogURL))
+            try catalog.validate(model: model)
+            self.model = model; self.catalog = catalog; selectedID = catalog.clips.first?.id
+            if let clip = catalog.clips.first { analysis = PublicClipAnalysis(clip: clip, model: model) }
+            status = "已载入 24 段公开测试录音；播放与推理均在本机，不开启麦克风。"
+        } catch { status = "公开实验未能载入：\(error.localizedDescription)" }
+        interruption = NotificationCenter.default.addObserver(forName: AVAudioSession.interruptionNotification, object: nil, queue: .main) { [weak self] _ in
+            Task { @MainActor [weak self] in self?.stop() }
+        }
+    }
+    func select(_ id: String) {
+        guard catalog?.clips.contains(where: { $0.id == id }) == true else { return }
+        pause(); player = nil; selectedID = id; position = 0
+        if let clip, let model { analysis = PublicClipAnalysis(clip: clip, model: model) }
+        status = "已选择公开样本；标注来自 ESC-50，模型意见单独显示。"
+    }
+    func evaluate() async {
+        guard !isEvaluating, let model, let catalog else { return }
+        let token = UUID(); generation = token; isEvaluating = true
+        let result = await Task.detached(priority: .userInitiated) { PublicEvaluation.run(model: model, catalog: catalog) }.value
+        guard generation == token else { return }
+        isEvaluating = false
+        guard result.matrix(snn: true) == model.evaluation.snnConfusion,
+              result.matrix(snn: false) == model.evaluation.annConfusion else {
+            evaluation = nil; status = "本机结果与训练报告不一致，请检查模型和特征文件。"; return
+        }
+        evaluation = result
+        status = "已在本机复核 24 段预计算测试特征，与训练报告一致；尚未验证居家实时识别。"
+    }
+    func playPause() {
+        if isPlaying { pause(); return }
+        guard let clip else { return }
+        do {
+            if player == nil {
+                guard let url = Bundle.main.url(forResource: clip.id, withExtension: nil, subdirectory: "PublicAudio") else { throw ExperimentError.audio }
+                if !verified.contains(clip.id) {
+                    let data = try Data(contentsOf: url)
+                    let hash = SHA256.hash(data: data).map { String(format: "%02x", $0) }.joined()
+                    guard hash == clip.sha256 else { throw ExperimentError.invalid }
+                    verified.insert(clip.id)
+                }
+                let created = try AVAudioPlayer(contentsOf: url)
+                created.delegate = self; created.enableRate = true
+                guard abs(created.duration - clip.duration) < 0.01 else { throw ExperimentError.audio }
+                player = created
+            }
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+            guard let player else { return }
+            if position >= 0.999 { position = 0 }
+            player.currentTime = position * clip.duration
+            player.rate = playbackRate; player.numberOfLoops = looping ? -1 : 0
+            guard player.play() else { throw ExperimentError.audio }
+            isPlaying = true
+            timer?.invalidate()
+            timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { [weak self] _ in
+                Task { @MainActor [weak self] in
+                    guard let self, let player = self.player, self.isPlaying, player.duration > 0 else { return }
+                    self.position = min(1, max(0, player.currentTime / player.duration))
+                }
+            }
+            status = "正在播放 ESC-50 录音；时间线同步显示离线预计算的频谱与脉冲。"
+        } catch { pause(); status = "播放未开始：\(error.localizedDescription)" }
+    }
+    func pause() {
+        let wasPlaying = isPlaying
+        player?.pause(); isPlaying = false; timer?.invalidate(); timer = nil
+        if wasPlaying { status = "播放已暂停，可拖动或逐帧查看。" }
+    }
+    func seek(_ value: Double) {
+        guard value.isFinite else { return }
+        position = min(1, max(0, value))
+        if let player { player.currentTime = position * player.duration }
+    }
+    func step(_ offset: Int) {
+        pause(); seek((Double(min(63, max(0, frame + offset))) + 0.5) / 64)
+    }
+    func stop() {
+        pause(); generation = UUID(); isEvaluating = false
+        try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
+    }
+    nonisolated func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        Task { @MainActor [weak self] in
+            guard let self, self.player === player else { return }
+            self.pause(); self.position = flag ? 1 : self.position
+            self.status = flag ? "公开样本已播放结束。可重播、拖动或逐帧查看。" : "音频播放中断。"
+        }
+    }
+}

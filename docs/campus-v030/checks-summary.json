@@ -1,0 +1,269 @@
+{
+  "app_version": "0.30 (30)",
+  "recorded_at_utc": "2026-10-31T09:41:05.422650+00:00",
+  "logic": {
+    "passed": 246,
+    "failed": 0,
+    "log": "/tmp/SeeSound-v030-domain-delivery2.log"
+  },
+  "server": {
+    "passed": 17,
+    "failed": 0,
+    "paid_api_calls": 0,
+    "log": "/tmp/SeeSound-v030-server.log"
+  },
+  "ui": {
+    "iphone": {
+      "distinct_latest_passed": 11,
+      "tests": {
+        "testCampusJourneyConfirmationDepartureAndOutcome": {
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-iphone-ui-final.log"
+        },
+        "testCampusLargestTextAndEvidenceNavigation": {
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-iphone-final2.log"
+        },
+        "testChecklistRenameOrderBatchAndUndo": {
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-iphone-final2.log"
+        },
+        "testFocusLargestText": {
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-iphone-final2.log"
+        },
+        "testFocusSkipUndoAndExplicitCompletion": {
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-iphone-final2.log"
+        },
+        "testLargestTextKeepsPrimaryActionReachable": {
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-iphone-final2.log"
+        },
+        "testNotificationToCompletedCaseAndRecovery": {
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-iphone-final2.log"
+        },
+        "testOriginalImageZoomAndEditableComparison": {
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-iphone-editor-native.log"
+        },
+        "testPANNsPublicRecordingActuallyRunsInApp": {
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-iphone-final2.log"
+        },
+        "testUnsavedEditorAndListSortControls": {
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-iphone-final2.log"
+        },
+        "testWhisperBaseWithSyntheticSpeech": {
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-iphone-recheck.log"
+        }
+      },
+      "runs_contain_repairs_and_retests": true,
+      "history": [
+        {
+          "test": "testCampusJourneyConfirmationDepartureAndOutcome",
+          "status": "failed",
+          "log": "/tmp/SeeSound-v030-iphone-final2.log"
+        },
+        {
+          "test": "testCampusLargestTextAndEvidenceNavigation",
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-iphone-final2.log"
+        },
+        {
+          "test": "testChecklistRenameOrderBatchAndUndo",
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-iphone-final2.log"
+        },
+        {
+          "test": "testFocusLargestText",
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-iphone-final2.log"
+        },
+        {
+          "test": "testFocusSkipUndoAndExplicitCompletion",
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-iphone-final2.log"
+        },
+        {
+          "test": "testLargestTextKeepsPrimaryActionReachable",
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-iphone-final2.log"
+        },
+        {
+          "test": "testNotificationToCompletedCaseAndRecovery",
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-iphone-final2.log"
+        },
+        {
+          "test": "testOriginalImageZoomAndEditableComparison",
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-iphone-final2.log"
+        },
+        {
+          "test": "testPANNsPublicRecordingActuallyRunsInApp",
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-iphone-final2.log"
+        },
+        {
+          "test": "testUnsavedEditorAndListSortControls",
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-iphone-final2.log"
+        },
+        {
+          "test": "testWhisperBaseWithSyntheticSpeech",
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-iphone-final2.log"
+        },
+        {
+          "test": "testCampusJourneyConfirmationDepartureAndOutcome",
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-iphone-recheck.log"
+        },
+        {
+          "test": "testWhisperBaseWithSyntheticSpeech",
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-iphone-recheck.log"
+        },
+        {
+          "test": "testCampusJourneyConfirmationDepartureAndOutcome",
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-iphone-ui-final.log"
+        },
+        {
+          "test": "testOriginalImageZoomAndEditableComparison",
+          "status": "failed",
+          "log": "/tmp/SeeSound-v030-iphone-ui-final.log"
+        },
+        {
+          "test": "testOriginalImageZoomAndEditableComparison",
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-iphone-editor-native.log"
+        },
+        {
+          "test": "testOriginalImageZoomAndEditableComparison",
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-iphone-editor-native.log"
+        }
+      ]
+    },
+    "ipad": {
+      "distinct_latest_passed": 7,
+      "tests": {
+        "testCampusJourneyConfirmationDepartureAndOutcome": {
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-ipad-recheck.log"
+        },
+        "testCampusLargestTextAndEvidenceNavigation": {
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-ipad-delivery.log"
+        },
+        "testFocusLargestText": {
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-ipad-delivery.log"
+        },
+        "testLargestTextKeepsPrimaryActionReachable": {
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-ipad-delivery.log"
+        },
+        "testOriginalImageZoomAndEditableComparison": {
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-ipad-editor-native.log"
+        },
+        "testPANNsPublicRecordingActuallyRunsInApp": {
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-ipad-delivery.log"
+        },
+        "testWhisperBaseWithSyntheticSpeech": {
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-ipad-delivery.log"
+        }
+      },
+      "runs_contain_repairs_and_retests": true,
+      "history": [
+        {
+          "test": "testCampusJourneyConfirmationDepartureAndOutcome",
+          "status": "failed",
+          "log": "/tmp/SeeSound-v030-ipad-delivery.log"
+        },
+        {
+          "test": "testCampusLargestTextAndEvidenceNavigation",
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-ipad-delivery.log"
+        },
+        {
+          "test": "testFocusLargestText",
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-ipad-delivery.log"
+        },
+        {
+          "test": "testLargestTextKeepsPrimaryActionReachable",
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-ipad-delivery.log"
+        },
+        {
+          "test": "testOriginalImageZoomAndEditableComparison",
+          "status": "failed",
+          "log": "/tmp/SeeSound-v030-ipad-delivery.log"
+        },
+        {
+          "test": "testPANNsPublicRecordingActuallyRunsInApp",
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-ipad-delivery.log"
+        },
+        {
+          "test": "testWhisperBaseWithSyntheticSpeech",
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-ipad-delivery.log"
+        },
+        {
+          "test": "testCampusJourneyConfirmationDepartureAndOutcome",
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-ipad-recheck.log"
+        },
+        {
+          "test": "testOriginalImageZoomAndEditableComparison",
+          "status": "failed",
+          "log": "/tmp/SeeSound-v030-ipad-recheck.log"
+        },
+        {
+          "test": "testOriginalImageZoomAndEditableComparison",
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-ipad-editor-native.log"
+        }
+      ]
+    },
+    "paired_watch": {
+      "distinct_latest_passed": 1,
+      "tests": {
+        "testPairedWatchSnapshotAndVersionChange": {
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-watch-final.log"
+        }
+      },
+      "runs_contain_repairs_and_retests": true,
+      "history": [
+        {
+          "test": "testPairedWatchSnapshotAndVersionChange",
+          "status": "passed",
+          "log": "/tmp/SeeSound-v030-watch-final.log"
+        }
+      ]
+    }
+  },
+  "builds": {
+    "debug": {
+      "passed": true,
+      "log": "/tmp/SeeSound-v030-watch-test-build.log"
+    },
+    "release": {
+      "passed": true,
+      "log": "/tmp/SeeSound-v030-release-native-editor.log"
+    }
+  },
+  "physical_devices_verified": false,
+  "watch_connection_note": "Simulator Watch app was restarted to restore connection after phone app relaunch. Actual received snapshot and outdated flag verified separately in watch-integration.json."
+}

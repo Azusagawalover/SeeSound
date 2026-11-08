@@ -1,0 +1,56 @@
+{
+  "tests": [
+    {
+      "name": "WorkflowUITests/testCampusJourneyConfirmationDepartureAndOutcome()",
+      "status": "Success"
+    },
+    {
+      "name": "WorkflowUITests/testHearingFocusedHomeAndQuickReplies()",
+      "status": "Failure"
+    },
+    {
+      "name": "WorkflowUITests/testJournalLargestTextHome()",
+      "status": "Success"
+    },
+    {
+      "name": "WorkflowUITests/testJourneySearchOpensSpecificCardAndResume()",
+      "status": "Success"
+    },
+    {
+      "name": "WorkflowUITests/testNotificationToCompletedCaseAndRecovery()",
+      "status": "Success"
+    },
+    {
+      "name": "WorkflowUITests/testVisualCommunicationAndMaterialTools()",
+      "status": "Success"
+    },
+    {
+      "name": "WorkflowUITests/testVisualHomeJourneyAndTabs()",
+      "status": "Success"
+    }
+  ],
+  "screenshots": [
+    "01-case-next-action.png",
+    "02-confirmed-notification-change.png",
+    "03-case-completed.png",
+    "04-restored-completed-case.png",
+    "30-campus-journey.png",
+    "31-two-way-confirmation.png",
+    "32-departure.png",
+    "33-journey-outcome.png",
+    "47-journey-search-specific-card.png",
+    "60-home-design.png",
+    "61-campus-design.png",
+    "62-scenarios-design.png",
+    "63-journey-design.png",
+    "64-confirmation-design.png",
+    "65-cases-design.png",
+    "66-events-design.png",
+    "67-preferences-design.png",
+    "68-conversation-design.png",
+    "69-workroom-design.png",
+    "70-journal-largest-text-campus.png",
+    "71-journal-largest-text-new.png",
+    "72-quick-reply-draft.png"
+  ]
+}

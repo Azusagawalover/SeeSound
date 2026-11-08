@@ -1,0 +1,44 @@
+[
+  {
+    "configuration": "Debug",
+    "component": "iOS",
+    "version": "0.50",
+    "build": "50",
+    "minimum_os": "17.3"
+  },
+  {
+    "configuration": "Debug",
+    "component": "Watch",
+    "version": "0.50",
+    "build": "50",
+    "minimum_os": "9.6"
+  },
+  {
+    "configuration": "Debug",
+    "component": "Share",
+    "version": "0.50",
+    "build": "50",
+    "minimum_os": "17.3"
+  },
+  {
+    "configuration": "Release",
+    "component": "iOS",
+    "version": "0.50",
+    "build": "50",
+    "minimum_os": "17.3"
+  },
+  {
+    "configuration": "Release",
+    "component": "Watch",
+    "version": "0.50",
+    "build": "50",
+    "minimum_os": "9.6"
+  },
+  {
+    "configuration": "Release",
+    "component": "Share",
+    "version": "0.50",
+    "build": "50",
+    "minimum_os": "17.3"
+  }
+]

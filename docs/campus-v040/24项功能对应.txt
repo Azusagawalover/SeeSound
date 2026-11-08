@@ -1,0 +1,28 @@
+见声 0.40 功能对应表
+
+1 四类场景入口：CampusScenarioPage
+2 三步建立向导：CampusJourneyWizard
+3 场景与旅程收藏：CampusWorkspaceState、JourneyWorkspaceActions
+4 精确继续上次内容：JourneyBookmark、JourneyResumeDestination
+5 集中变更处理：CampusChangeCenter
+6 材料不同说法与人工依据：JourneyConflictSections、JourneyConflictEditor
+7 重复材料加入前预览：JourneySourcePreview
+8 材料版本与文本变化：JourneyMaterialHistoryPage、JourneyRevisionDelta
+9 旅程及子内容全局搜索：WorkroomSearch、JourneySearchDestination
+10 问题、人工回答与摘录依据：JourneyQuestionPage、JourneyAnswerLinkPage
+11 当天、本周计划：CampusSchedulePage
+12 未解决问题和待回复：CampusQuestionsPage、CampusSchedulePage
+13 根据旅程准备的表达：JourneyCommunicationHub、contextualPhrases
+14 选取字幕片段加入旅程：JourneyClipPicker
+15 逐张连续核对：JourneyCardCarousel
+16 仅显示选中文字的现场模式：JourneyDisplayPage
+17 Watch旅程摘要与对应版本查看回执：watchJourneySummary、handleWatchAgenda
+18 加密接力的旅程差异预览：LibraryJourneyDifference
+19 手动重发当前摘要：ConnectivityBridge.retryAgenda
+20 iPad材料与关联内容联动：CampusDeskPage
+21 固定中文样本实际运行：CampusEvaluationRunner
+22 原始输出、失败和人工复查记录：CampusEvaluationStore、CampusEvaluationReviewPage
+23 七步三分钟作品演示：CampusPresentationPage
+24 新页信息层级与主入口整理：CampusHero、CampusWorkspaceLinks、CampusWorkspaceToolLinks
+
+此表表示实现位置。实际检查范围及未检查项以同目录的验证记录.txt为准。

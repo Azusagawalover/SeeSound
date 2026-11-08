@@ -1,0 +1,17 @@
+{
+  "revision": "c14bf9ad91962cf189f9f58db2132c06247fcd53",
+  "files": [
+    {
+      "file": "features.py",
+      "url": "https://raw.githubusercontent.com/tensorflow/models/c14bf9ad91962cf189f9f58db2132c06247fcd53/research/audioset/yamnet/features.py"
+    },
+    {
+      "file": "params.py",
+      "url": "https://raw.githubusercontent.com/tensorflow/models/c14bf9ad91962cf189f9f58db2132c06247fcd53/research/audioset/yamnet/params.py"
+    },
+    {
+      "file": "yamnet.py",
+      "url": "https://raw.githubusercontent.com/tensorflow/models/c14bf9ad91962cf189f9f58db2132c06247fcd53/research/audioset/yamnet/yamnet.py"
+    }
+  ]
+}

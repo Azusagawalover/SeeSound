@@ -1,0 +1,22 @@
+SeeSound-watch-retry.log
+Test Case '-[SeeSoundUITests.WorkflowUITests testPairedWatchJourneySnapshotAndVersionChange]' started.
+    t =    38.33s Added attachment named '48-watch-journey-receipt'
+/Users/mac/Desktop/归档/见声SeeSound/UITests/WorkflowUITests.swift:375: error: -[SeeSoundUITests.WorkflowUITests testPairedWatchJourneySnapshotAndVersionChange] : failed - Control was not reachable: "上次传递与重试" Button
+Test Case '-[SeeSoundUITests.WorkflowUITests testPairedWatchJourneySnapshotAndVersionChange]' failed (70.593 seconds).
+** TEST EXECUTE FAILED **
+
+SeeSound-watch-retry-final.log
+Test Case '-[SeeSoundUITests.WorkflowUITests testPairedWatchJourneySnapshotAndVersionChange]' started.
+    t =    49.19s Added attachment named '48-watch-journey-receipt'
+    t =    57.18s Added attachment named '49-watch-manual-retry'
+    t =    70.60s Added attachment named '50-watch-journey-changed'
+Test Case '-[SeeSoundUITests.WorkflowUITests testPairedWatchJourneySnapshotAndVersionChange]' passed (70.863 seconds).
+** TEST EXECUTE SUCCEEDED **
+
+SeeSound-watch-version-final.log
+Test Case '-[SeeSoundUITests.WorkflowUITests testPairedWatchJourneySnapshotAndVersionChange]' started.
+    t =    44.54s Added attachment named '48-watch-journey-receipt'
+    t =    51.42s Added attachment named '49-watch-manual-retry'
+    t =    61.71s Added attachment named '50-watch-journey-changed'
+Test Case '-[SeeSoundUITests.WorkflowUITests testPairedWatchJourneySnapshotAndVersionChange]' passed (61.952 seconds).
+** TEST EXECUTE SUCCEEDED **

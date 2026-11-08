@@ -1,0 +1,36 @@
+{
+  "tests": [
+    {
+      "name": "WorkflowUITests/testHearingFocusedHomeAndQuickReplies()",
+      "status": "Success"
+    },
+    {
+      "name": "WorkflowUITests/testJournalLargestTextHome()",
+      "status": "Success"
+    },
+    {
+      "name": "WorkflowUITests/testOriginalImageZoomAndEditableComparison()",
+      "status": "Success"
+    },
+    {
+      "name": "WorkflowUITests/testVisualHomeJourneyAndTabs()",
+      "status": "Success"
+    }
+  ],
+  "screenshots": [
+    "05-original-comparison-edit-and-zoom.png",
+    "60-home-design.png",
+    "61-campus-design.png",
+    "62-scenarios-design.png",
+    "63-journey-design.png",
+    "64-confirmation-design.png",
+    "65-cases-design.png",
+    "66-events-design.png",
+    "67-preferences-design.png",
+    "70-journal-largest-text-campus.png",
+    "71-journal-largest-text-new.png",
+    "72-quick-reply-draft.png",
+    "73-displayed-quick-reply.png",
+    "74-hearing-alert-seen.png"
+  ]
+}

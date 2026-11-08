@@ -1,0 +1,35 @@
+0.30 模型来源与复现
+
+Whisper Base
+来源：OpenAI Whisper / Argmax whisperkit-coreml。
+许可证：MIT。许可证原文随工程保留。
+固定文件与 SHA-256：References/WhisperKitBase/download-manifest.json。
+本工程对输入输出格式和加载方式做适配，并按 Whisper 的 mel 公式提供兼容的前处理模型；编码器与解码器没有重新训练。
+portable.py 生成 Core ML 源包；download.py 下载固定版本并核对哈希；verify.py 对原版和适配版使用同一段合成英文做转换对照。
+转换检查：文字与时间 token 完全一致。mel 最大绝对差0.029296875，编码器平均绝对差约0.00214。
+这只是一段合成英文的转换检查，不代表自然中文、口音或噪声环境准确率。
+App 已包含 Base 和分词器，普通使用不需要这些 Python 工具或联网下载。
+
+PANNs Cnn10
+作者：Qiuqiang Kong 等。
+代码：https://github.com/qiuqiangkong/audioset_tagging_cnn （MIT）
+权重：https://doi.org/10.5281/zenodo.3987831 （CC BY 4.0）
+原文件：Cnn10_mAP=0.380.pth，25237595 字节。
+MD5：bfb1f1f9968938fa8ef4012b8471f5f6。
+SHA-256：5240bdc47444e331bbeb54fd741d2b3f933a4526e84b0c17bf3593df94b13962。
+本工程：Core ML float16 内部计算、float32 接口；Swift 32kHz 前处理；5秒分窗，短片补零、长片分窗平均。
+References/PANNs/convert.py 负责转换，reference.py 生成 PyTorch 对照数据。
+Swift 前处理与 torchlibrosa 的最大绝对差约0.001213；完整原生 Core ML 输出与 PyTorch 最大绝对差约0.002501。
+这是确定性信号上的数值接近检查，不是分类准确率。
+
+YAMNet
+原始 Google 和 Yehor 转换来源记录仍在 References/YAMNet/。
+0.30 增加 float32 输入输出接口，原始预训练网络保留。
+portable_io.py 可从原始模型生成适配包；应用同时识别原接口和带 _to_fp32 后缀的适配输出。
+原有 TensorFlow 前处理和分数对照检查继续运行。
+
+工具版本
+本机转换实际使用 Python3.9、PyTorch2.8.0、coremltools8.3.0、librosa0.10.2.post1、torchlibrosa0.1.0。
+coremltools 对 PyTorch2.8 会提示尚未官方测试，本工程另做了转换前后数值与运行检查。
+这些是开发工具，不是 App 运行依赖。
+下载公开模型时，如网络需要代理，可向 download.py 显式传入 --proxy；脚本不读取 API 密钥。

@@ -1,0 +1,35 @@
+{
+  "bundle": "/tmp/SeeSound-watch-version-final.xcresult",
+  "attachments": [
+    {
+      "id": "0~Tc12CVWj7QQxWXpVtlZXDmzBKmtyeDOWGktvaRDPDdgPDVI5NMOpXokDV_L8ZDhV3FpbQzmof4Zhvjx8y4hRUg==",
+      "name": "48-watch-journey-receipt",
+      "uti": "public.png",
+      "path": "48-watch-journey-receipt.png"
+    },
+    {
+      "id": "0~8ws9QtiVnD64NtyAH6bbDuwDEFxooaHNgHdrm9XzsqNZpfxzAil9CPH-avnUzS-G8g1Z3vV4Z4iNr312r_uzdA==",
+      "name": "49-watch-manual-retry",
+      "uti": "public.png",
+      "path": "49-watch-manual-retry.png"
+    },
+    {
+      "id": "0~XQaHt5PnYFEMFs--W8Zbw4ivXGoYtwNi5zgba6pkRdNGnXgjsCBWx6pYmy2or7i6BzPXAWcFUAldql0Zqdhb5w==",
+      "name": "50-watch-journey-changed",
+      "uti": "public.png",
+      "path": "50-watch-journey-changed.png"
+    }
+  ],
+  "tests": [
+    {
+      "identifier": "WorkflowUITests/testPairedWatchJourneySnapshotAndVersionChange()",
+      "name": "testPairedWatchJourneySnapshotAndVersionChange()",
+      "status": "Success"
+    },
+    {
+      "identifier": "WorkflowUITests/testPairedWatchJourneySnapshotAndVersionChange()",
+      "name": "testPairedWatchJourneySnapshotAndVersionChange()",
+      "status": "Success"
+    }
+  ]
+}

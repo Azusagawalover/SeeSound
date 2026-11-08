@@ -1,0 +1,20 @@
+[
+  {
+    "step": [
+      "install",
+      "77B9A6C2-0C90-4CD0-964B-0A88D42A5532"
+    ],
+    "code": 0,
+    "out": "",
+    "err": ""
+  },
+  {
+    "step": [
+      "launch",
+      "--terminate-running-process"
+    ],
+    "code": 0,
+    "out": "com.azusagawalover.SeeSound.watchkitapp: 10195\n",
+    "err": ""
+  }
+]

@@ -1,0 +1,1089 @@
+{
+  "repository": "https://github.com/karolpiczak/ESC-50",
+  "commit": "33c8ce9eb2cf0b1c2f8bcf322eb349b6be34dbb6",
+  "license": "CC BY-NC 3.0 with upstream per-clip attribution",
+  "testFold": 5,
+  "selection": "All 40 knock + all 40 clapping; four keyboard + four vacuum per fold (40 other total).",
+  "clips": [
+    {
+      "id": "1-101336-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 1,
+      "sourceFile": "101336",
+      "duration": 5.0,
+      "sha256": "e738266e395e378102f74e0920b05ff5937543788420d5b2a6b8d3df8bdb3910"
+    },
+    {
+      "id": "1-103995-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 1,
+      "sourceFile": "103995",
+      "duration": 5.0,
+      "sha256": "1c1d3e65b7a58658766180d2faeeb9bdd1fe7405119bf100d9cd2f671a6e2b11"
+    },
+    {
+      "id": "1-103999-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 1,
+      "sourceFile": "103999",
+      "duration": 5.0,
+      "sha256": "f33db9ec0b036d0dd17c911d456c33a59c0fc85974245a85fed56b8d2568724e"
+    },
+    {
+      "id": "1-26188-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 1,
+      "sourceFile": "26188",
+      "duration": 5.0,
+      "sha256": "655277d3f1c75ddc67aada3ab350bd6029fea04d288b9c747e10bc84cc802de1"
+    },
+    {
+      "id": "1-52290-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 1,
+      "sourceFile": "52290",
+      "duration": 5.0,
+      "sha256": "09082f42b1ee2bc467eab41e2251419eb29fbf0b8bb7ab72a4b04812641c5dc6"
+    },
+    {
+      "id": "1-81001-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 1,
+      "sourceFile": "81001",
+      "duration": 5.0,
+      "sha256": "9f3bb3b76f7094b8f0df0385cc1feb208b55823efb08ab0cc50799a303400f48"
+    },
+    {
+      "id": "1-81001-B-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 1,
+      "sourceFile": "81001",
+      "duration": 5.0,
+      "sha256": "bab8493c0ffff799ecfc8f1f112ec52a9efbf522535ad0007dedaf53e9c766b9"
+    },
+    {
+      "id": "1-82817-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 1,
+      "sourceFile": "82817",
+      "duration": 5.0,
+      "sha256": "acfb2591c6a5430b3abbfe59c8a3c866e849576bb4327ac668721b91367220cf"
+    },
+    {
+      "id": "2-114254-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 2,
+      "sourceFile": "114254",
+      "duration": 5.0,
+      "sha256": "5717c5c7a3bce7f38c9c444ef54f4c702cca53a6e368a6dc5b1cfb8388f7f9eb"
+    },
+    {
+      "id": "2-118624-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 2,
+      "sourceFile": "118624",
+      "duration": 5.0,
+      "sha256": "9da7306a102bb32df6375513c35f7211c002b078b5d1161e3d8ca234867216e6"
+    },
+    {
+      "id": "2-118625-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 2,
+      "sourceFile": "118625",
+      "duration": 5.0,
+      "sha256": "547e4a4b40cbc54a390e4e20ca8740bae55659dcd6dfaf3f872147fc7b87eb93"
+    },
+    {
+      "id": "2-120218-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 2,
+      "sourceFile": "120218",
+      "duration": 5.0,
+      "sha256": "dae3ed8868e44ec84033f246f4e52817cb8805804083fd8d8aee9c109322d88c"
+    },
+    {
+      "id": "2-120218-B-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 2,
+      "sourceFile": "120218",
+      "duration": 5.0,
+      "sha256": "a9a1af8ac24e54bd91cb8d6127baf42fca8502f49cf3d1cea1e9806d262aeab7"
+    },
+    {
+      "id": "2-133889-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 2,
+      "sourceFile": "133889",
+      "duration": 5.0,
+      "sha256": "107b60bc008ec68f0cd71632c12b7518ed4dfd5183538fc31b80db3800ee6e3b"
+    },
+    {
+      "id": "2-134915-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 2,
+      "sourceFile": "134915",
+      "duration": 5.0,
+      "sha256": "18d40b05f1f00bde85437275e099b2bc1d1ef55d98e9b086858b0506b270d9ee"
+    },
+    {
+      "id": "2-140841-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 2,
+      "sourceFile": "140841",
+      "duration": 5.0,
+      "sha256": "1641e186482eb7088b54b56bfe3a2c4526b00e7f4ec046dddea6effe945e7298"
+    },
+    {
+      "id": "3-144510-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 3,
+      "sourceFile": "144510",
+      "duration": 5.0,
+      "sha256": "c7fbb4cbda9d1f2950bf205212115a372b840382228c3baeb6451ae83366ee34"
+    },
+    {
+      "id": "3-151089-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 3,
+      "sourceFile": "151089",
+      "duration": 5.0,
+      "sha256": "77f3f8c26ea85756b565e142b920908a443bc95cc2b3e1e2546e7a69746bc06c"
+    },
+    {
+      "id": "3-152594-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 3,
+      "sourceFile": "152594",
+      "duration": 5.0,
+      "sha256": "8d897589e0bf01b2f19f4cc90253688711a522a05306ecc13fa7903f7be8bbdd"
+    },
+    {
+      "id": "3-154378-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 3,
+      "sourceFile": "154378",
+      "duration": 5.0,
+      "sha256": "1621d5c3bb3b77d5e24a13751cb53e5924578c71bd1617578e12cc525d949a67"
+    },
+    {
+      "id": "3-170574-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 3,
+      "sourceFile": "170574",
+      "duration": 5.0,
+      "sha256": "d017959970fb74e3ba50b976fbf3841a26b9ae38e29da0d1b82c31b8eb703c60"
+    },
+    {
+      "id": "3-180147-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 3,
+      "sourceFile": "180147",
+      "duration": 5.0,
+      "sha256": "ce82be45dfc494abcefd7c0337d883d2ded12775dff29acc4de0b9a44b9a76e2"
+    },
+    {
+      "id": "3-182023-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 3,
+      "sourceFile": "182023",
+      "duration": 5.0,
+      "sha256": "a5bc28b75bb25bd3f3cf0afb845a930e78e02aba383b31f593e1c9abf865736f"
+    },
+    {
+      "id": "3-182025-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 3,
+      "sourceFile": "182025",
+      "duration": 5.0,
+      "sha256": "183c8545811df752f9c9a0a4c13ba03c9385dd87a645f5b84cff00b28b84eece"
+    },
+    {
+      "id": "4-182034-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 4,
+      "sourceFile": "182034",
+      "duration": 5.0,
+      "sha256": "8548390103bfa9097087ea552b42e6b493697f9fbe0b9d78a1aefdbf8b18219f"
+    },
+    {
+      "id": "4-182039-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 4,
+      "sourceFile": "182039",
+      "duration": 5.0,
+      "sha256": "64ba4dcfb42f253c93cf7b52d52584be213bcd058a9a8aa35055d76f10cc7920"
+    },
+    {
+      "id": "4-182041-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 4,
+      "sourceFile": "182041",
+      "duration": 5.0,
+      "sha256": "9ccf22ef141031359b6547ef7b3b0cceef5ea7798ee90f5de87a84064dba23f7"
+    },
+    {
+      "id": "4-186518-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 4,
+      "sourceFile": "186518",
+      "duration": 5.0,
+      "sha256": "20ac1b533d72043c8370ca5de40826e50d9a8c6cfaa098650e2044bda7ca12a0"
+    },
+    {
+      "id": "4-187284-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 4,
+      "sourceFile": "187284",
+      "duration": 5.0,
+      "sha256": "c653e16e3ef1954e3ee3bf9ebb80bd80472cf59c05c211c1ada00fc9b10b0ac0"
+    },
+    {
+      "id": "4-188878-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 4,
+      "sourceFile": "188878",
+      "duration": 5.0,
+      "sha256": "072852ce3b23b40d58774570a5758fae5b114be54a3d8242cf26a722ff735a07"
+    },
+    {
+      "id": "4-211502-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 4,
+      "sourceFile": "211502",
+      "duration": 5.0,
+      "sha256": "8c6e71d485494707a94ce0563deaa5c4599a219e0a512151e8e77ed907775ad8"
+    },
+    {
+      "id": "4-261068-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 4,
+      "sourceFile": "261068",
+      "duration": 5.0,
+      "sha256": "5f9bef85798486a2a5cdf712ef24f5ef12e84858dc7708fd5478d713cb243548"
+    },
+    {
+      "id": "5-218980-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 5,
+      "sourceFile": "218980",
+      "duration": 5.0,
+      "sha256": "c917686cc7048be91d4dec61539344094a01233e649989264187388c9e95f82f"
+    },
+    {
+      "id": "5-218981-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 5,
+      "sourceFile": "218981",
+      "duration": 5.0,
+      "sha256": "b699b80f84ba074526d993750226ec6723b5679393a92fa3d266ea67767d5cca"
+    },
+    {
+      "id": "5-235644-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 5,
+      "sourceFile": "235644",
+      "duration": 5.0,
+      "sha256": "e8104799065c308f8a9c5909f088333ea88e1de05c5a08cf511e9c1387f25fc0"
+    },
+    {
+      "id": "5-250026-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 5,
+      "sourceFile": "250026",
+      "duration": 5.0,
+      "sha256": "6d249f1a956ff78b494ddd919f2ff032f092e2ca0adccb47fef00e8cc03edf6d"
+    },
+    {
+      "id": "5-250026-B-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 5,
+      "sourceFile": "250026",
+      "duration": 5.0,
+      "sha256": "bf4afd0d31614ca48977c54525fd0655c9c9df13a0f4467557c308d4f41e888b"
+    },
+    {
+      "id": "5-251426-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 5,
+      "sourceFile": "251426",
+      "duration": 5.0,
+      "sha256": "076bf69727d6ea75ecc891992f728b66deff2d4be6b68d636865ccc77841bdda"
+    },
+    {
+      "id": "5-251426-B-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 5,
+      "sourceFile": "251426",
+      "duration": 5.0,
+      "sha256": "2738fe71989e18f2e8e0800c678793af2eeba6ca84551f8745f64d21e738ab81"
+    },
+    {
+      "id": "5-256512-A-30.wav",
+      "label": "knock",
+      "category": "door_wood_knock",
+      "fold": 5,
+      "sourceFile": "256512",
+      "duration": 5.0,
+      "sha256": "df74f2bee45f36c528a27035f0a8b50c71b833a6e7c8c39f42a0f4448f968dbf"
+    },
+    {
+      "id": "1-104089-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 1,
+      "sourceFile": "104089",
+      "duration": 5.0,
+      "sha256": "2b6ec14aafc6ed98c833c5c7e56780d283f3ceaea0d4c3c142b2f49fcc2fd215"
+    },
+    {
+      "id": "1-104089-B-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 1,
+      "sourceFile": "104089",
+      "duration": 5.0,
+      "sha256": "61adeef196a98fc7b2c22104cd160bded3ce89b7e9867814b22e40a08e993291"
+    },
+    {
+      "id": "1-105224-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 1,
+      "sourceFile": "105224",
+      "duration": 5.0,
+      "sha256": "a91622b0235b622d7913ae2cc9af3785a546356310507bb7ffd6f1cb6d38ab85"
+    },
+    {
+      "id": "1-110537-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 1,
+      "sourceFile": "110537",
+      "duration": 5.0,
+      "sha256": "9d061b30110d82a33f97eb42146d20e827b34683983a4e10fe83765f58f9d4d5"
+    },
+    {
+      "id": "1-115920-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 1,
+      "sourceFile": "115920",
+      "duration": 5.0,
+      "sha256": "8ed0886be0b6491573df97a5541b270415f95573cfef9b9ff0360a2b0d042bb6"
+    },
+    {
+      "id": "1-115920-B-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 1,
+      "sourceFile": "115920",
+      "duration": 5.0,
+      "sha256": "1674d1ae06080afb7d4d91b3228fe1ab8fd4f27170c5ad76751db4e844aaf0e2"
+    },
+    {
+      "id": "1-115921-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 1,
+      "sourceFile": "115921",
+      "duration": 5.0,
+      "sha256": "b87d30852b565dd2b7d5c33b6ef5d4bbaaf1c03235f98a85fde1d3ba70f1c027"
+    },
+    {
+      "id": "1-94036-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 1,
+      "sourceFile": "94036",
+      "duration": 5.0,
+      "sha256": "33c1225c50c7819dc5110271a1fdfde802925a3606cae438270e8e3c1c95400d"
+    },
+    {
+      "id": "2-25292-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 2,
+      "sourceFile": "25292",
+      "duration": 5.0,
+      "sha256": "a34f340fe36d0d55a5b47f69593e7f49d7ac59e68e26571f53784b79e37722eb"
+    },
+    {
+      "id": "2-25293-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 2,
+      "sourceFile": "25293",
+      "duration": 5.0,
+      "sha256": "c8ddf76965ae2928c07e61d083825398c20ea06fe09d3a999c1a99492c771006"
+    },
+    {
+      "id": "2-57733-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 2,
+      "sourceFile": "57733",
+      "duration": 5.0,
+      "sha256": "b81b94dbc6008a9dfa25fd1856fdd5f92a5810513967e3db27dabbc0d10e6a85"
+    },
+    {
+      "id": "2-60900-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 2,
+      "sourceFile": "60900",
+      "duration": 5.0,
+      "sha256": "481d063f497cc7cc17f3dc8d18cfe68a4fe99cd33912ba2e1e5cfd9cf824fdfa"
+    },
+    {
+      "id": "2-76408-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 2,
+      "sourceFile": "76408",
+      "duration": 5.0,
+      "sha256": "9e710284e17bfea6dd1c4850e0b9f72ba114e03520418be97a19da1a81eafbbc"
+    },
+    {
+      "id": "2-76408-B-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 2,
+      "sourceFile": "76408",
+      "duration": 5.0,
+      "sha256": "6bfd7d486b4c298ddeeb6ac0278ae80c067194928a2f2a9673dd1bff2084db8f"
+    },
+    {
+      "id": "2-76408-C-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 2,
+      "sourceFile": "76408",
+      "duration": 5.0,
+      "sha256": "57eca9070e8343193114d29f2b7e569e7617fd1384878eeef9481d621c826b50"
+    },
+    {
+      "id": "2-76408-D-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 2,
+      "sourceFile": "76408",
+      "duration": 5.0,
+      "sha256": "0d4298f6b4df70ba5c69570564448deed802e566e821194753a319882c706e76"
+    },
+    {
+      "id": "3-130330-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 3,
+      "sourceFile": "130330",
+      "duration": 5.0,
+      "sha256": "2b08bf04f38ce08b05f00ab62eeccb5b8dd1996020ade19a1e8e8505783340b5"
+    },
+    {
+      "id": "3-138114-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 3,
+      "sourceFile": "138114",
+      "duration": 5.0,
+      "sha256": "0dd59218eee6155a51d69b3f2a6d618550d55f56260bf12032b46dbdd3ca5d0b"
+    },
+    {
+      "id": "3-149465-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 3,
+      "sourceFile": "149465",
+      "duration": 5.0,
+      "sha256": "ee4fb4e272d455fba80256516334d4842a3d3206f3653fd5e3f37c42e1372bf1"
+    },
+    {
+      "id": "3-177082-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 3,
+      "sourceFile": "177082",
+      "duration": 5.0,
+      "sha256": "868e46e5e1d968b7ef1ab759d2c0c9dd87ae2badf640cecc232f8a0a6967d4d3"
+    },
+    {
+      "id": "3-177083-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 3,
+      "sourceFile": "177083",
+      "duration": 5.0,
+      "sha256": "277d203965e622db944e34669c403b81532f6c0d589a9126827adde77ce64fc3"
+    },
+    {
+      "id": "3-181278-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 3,
+      "sourceFile": "181278",
+      "duration": 5.0,
+      "sha256": "97e2141a16f5144c1e9959f9e8783017f60c1f8b7d034d6f2a152ebfc0929ad5"
+    },
+    {
+      "id": "3-197435-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 3,
+      "sourceFile": "197435",
+      "duration": 5.0,
+      "sha256": "f53b4f40d335fea48b1bf90ee59e60bd29501214c8acac9c7cefebd89fbb9703"
+    },
+    {
+      "id": "3-197435-B-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 3,
+      "sourceFile": "197435",
+      "duration": 5.0,
+      "sha256": "7f2d8f418cf04396186919ad53bba73fd9ac92fd761fa40bf33f6565bec1977d"
+    },
+    {
+      "id": "4-189828-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 4,
+      "sourceFile": "189828",
+      "duration": 5.0,
+      "sha256": "13a9c47cba0d2dab78358fa78a6ffe10d7fd209b94b4f062b260dd7ea1b67243"
+    },
+    {
+      "id": "4-189830-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 4,
+      "sourceFile": "189830",
+      "duration": 5.0,
+      "sha256": "af85ee4f6c5441e6a92956b69bee17f45207ef8fe3f2917c6a02fdb06bea38bc"
+    },
+    {
+      "id": "4-189832-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 4,
+      "sourceFile": "189832",
+      "duration": 5.0,
+      "sha256": "18ae26ef98e957692b8ee2ba4405adfd99f864ad589470501c90bf10193bd123"
+    },
+    {
+      "id": "4-189832-B-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 4,
+      "sourceFile": "189832",
+      "duration": 5.0,
+      "sha256": "20993c740bd3db3ca2f5c4ec49ab6f48fb2ce4afddc45e10ec1619d612366eaa"
+    },
+    {
+      "id": "4-189833-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 4,
+      "sourceFile": "189833",
+      "duration": 5.0,
+      "sha256": "6e1e23f2d71d057489dc0e630e25271af4c1a9b73888b666eebdae268d7ad0ac"
+    },
+    {
+      "id": "4-189836-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 4,
+      "sourceFile": "189836",
+      "duration": 5.0,
+      "sha256": "d195bb2ea440b17f6537e717f0708aec37f10d51c47343e5c3731caf3596e78e"
+    },
+    {
+      "id": "4-189838-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 4,
+      "sourceFile": "189838",
+      "duration": 5.0,
+      "sha256": "127724ca559c3747cd0be8dc9a9110ea71f6b2e0a075b50f7711224b15d3e5b3"
+    },
+    {
+      "id": "4-205738-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 4,
+      "sourceFile": "205738",
+      "duration": 5.0,
+      "sha256": "8da0720bbb6582e9c5a479b00b8288e5dff8d4fd945faf6fe3b331adc9f707e2"
+    },
+    {
+      "id": "5-209989-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 5,
+      "sourceFile": "209989",
+      "duration": 5.0,
+      "sha256": "541bf9f04ee89bb9a6e1ac1780e2bc0715d60d2343329d4d4f092c36d1adc4aa"
+    },
+    {
+      "id": "5-218494-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 5,
+      "sourceFile": "218494",
+      "duration": 5.0,
+      "sha256": "c8641fdb05314f3ae6da3cab60963c2bdd61a8823e602958ec6ad73dd0c3247b"
+    },
+    {
+      "id": "5-221567-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 5,
+      "sourceFile": "221567",
+      "duration": 5.0,
+      "sha256": "feac82061feabf0fbad0fae318ec3ec047ebbdf2b4fda6d4bc679fee319ffcac"
+    },
+    {
+      "id": "5-221568-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 5,
+      "sourceFile": "221568",
+      "duration": 5.0,
+      "sha256": "ecaafbc58de276019dc7f47fee77bb73d437c4583d6e32bbc023188f96e2401e"
+    },
+    {
+      "id": "5-221950-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 5,
+      "sourceFile": "221950",
+      "duration": 5.0,
+      "sha256": "3addc067d728e69b197c761fac5f8c589f579fe7b73d8cca81e4c282fd257a05"
+    },
+    {
+      "id": "5-249937-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 5,
+      "sourceFile": "249937",
+      "duration": 5.0,
+      "sha256": "73d5f7a986c53114400cf11f5a35dc3657b975c2a5dab67fb59f0cfba9cd5114"
+    },
+    {
+      "id": "5-254160-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 5,
+      "sourceFile": "254160",
+      "duration": 5.0,
+      "sha256": "521fe28d463217441ae3d3f4d415e56a0ee5718aad73af3b5c5725e345a28a72"
+    },
+    {
+      "id": "5-262957-A-22.wav",
+      "label": "clapping",
+      "category": "clapping",
+      "fold": 5,
+      "sourceFile": "262957",
+      "duration": 5.0,
+      "sha256": "f385093df5a3ba607f47356bab51f48501376ff67f167f60e932a89509878a93"
+    },
+    {
+      "id": "1-137-A-32.wav",
+      "label": "other",
+      "category": "keyboard_typing",
+      "fold": 1,
+      "sourceFile": "137",
+      "duration": 5.0,
+      "sha256": "d68e4716f74f073be8f78f5fe8e45daf7c09b0ec0575b21f57989d803536abb3"
+    },
+    {
+      "id": "1-53501-A-32.wav",
+      "label": "other",
+      "category": "keyboard_typing",
+      "fold": 1,
+      "sourceFile": "53501",
+      "duration": 5.0,
+      "sha256": "7edf3a6b856987de4fc2da27906d70abb00c40fba3352275eec840917daf2e50"
+    },
+    {
+      "id": "1-61212-A-32.wav",
+      "label": "other",
+      "category": "keyboard_typing",
+      "fold": 1,
+      "sourceFile": "61212",
+      "duration": 5.0,
+      "sha256": "655cc6c53397673f39fb8f125124e65fafc87480e1d18cc53f78f4404464826d"
+    },
+    {
+      "id": "1-62594-A-32.wav",
+      "label": "other",
+      "category": "keyboard_typing",
+      "fold": 1,
+      "sourceFile": "62594",
+      "duration": 5.0,
+      "sha256": "a8adb317bb75afae3395204f0d0e19fb0230539d0a2cd02d6e2cc424cb3efe05"
+    },
+    {
+      "id": "2-104168-A-32.wav",
+      "label": "other",
+      "category": "keyboard_typing",
+      "fold": 2,
+      "sourceFile": "104168",
+      "duration": 5.0,
+      "sha256": "62f9d3cd5d576e5dd6f956fe11d5c50fb04f054c38e32597a16e19021536943d"
+    },
+    {
+      "id": "2-109316-A-32.wav",
+      "label": "other",
+      "category": "keyboard_typing",
+      "fold": 2,
+      "sourceFile": "109316",
+      "duration": 5.0,
+      "sha256": "29b85ff0c4551fff8893f1b70faee79f0de8edf383f15877cfdeedb4b9aeabce"
+    },
+    {
+      "id": "2-118459-A-32.wav",
+      "label": "other",
+      "category": "keyboard_typing",
+      "fold": 2,
+      "sourceFile": "118459",
+      "duration": 5.0,
+      "sha256": "3e144910a7444c162120ff2067726788fc886aaf4b28be55ca0b6d3347e35a28"
+    },
+    {
+      "id": "2-118459-B-32.wav",
+      "label": "other",
+      "category": "keyboard_typing",
+      "fold": 2,
+      "sourceFile": "118459",
+      "duration": 5.0,
+      "sha256": "580103e9df8e83e039c5cc0b600a5c33457051afd66d9efd87063516f68ef320"
+    },
+    {
+      "id": "3-125548-A-32.wav",
+      "label": "other",
+      "category": "keyboard_typing",
+      "fold": 3,
+      "sourceFile": "125548",
+      "duration": 5.0,
+      "sha256": "786c0ab915c44c716dd70971fc8f80f0cc501164423095e3e5c97929b3796f7d"
+    },
+    {
+      "id": "3-132830-A-32.wav",
+      "label": "other",
+      "category": "keyboard_typing",
+      "fold": 3,
+      "sourceFile": "132830",
+      "duration": 5.0,
+      "sha256": "d75fa250788f499ec7faa1c5ba8ee38eff4e66460f9b2a0b7f8aa26dc2f73e3a"
+    },
+    {
+      "id": "3-144106-A-32.wav",
+      "label": "other",
+      "category": "keyboard_typing",
+      "fold": 3,
+      "sourceFile": "144106",
+      "duration": 5.0,
+      "sha256": "e47881c1bcc652c7e07492c7c1325dba436ddf99cef422f2972b35fa87ad680d"
+    },
+    {
+      "id": "3-144120-A-32.wav",
+      "label": "other",
+      "category": "keyboard_typing",
+      "fold": 3,
+      "sourceFile": "144120",
+      "duration": 5.0,
+      "sha256": "bbc3a875b5add54169100adeaf253ed6120715bcd6ac3b55442b3e2d2863ed5c"
+    },
+    {
+      "id": "4-158653-A-32.wav",
+      "label": "other",
+      "category": "keyboard_typing",
+      "fold": 4,
+      "sourceFile": "158653",
+      "duration": 5.0,
+      "sha256": "125691734898f9db80100600cb63a65203ac0948b4a234e136f0e369bffe3b6b"
+    },
+    {
+      "id": "4-167155-A-32.wav",
+      "label": "other",
+      "category": "keyboard_typing",
+      "fold": 4,
+      "sourceFile": "167155",
+      "duration": 5.0,
+      "sha256": "c95a4bcca8a2113cb7a20bd59d404919eb88f10dc23401815369a449a7f59344"
+    },
+    {
+      "id": "4-172180-A-32.wav",
+      "label": "other",
+      "category": "keyboard_typing",
+      "fold": 4,
+      "sourceFile": "172180",
+      "duration": 5.0,
+      "sha256": "38cb4fdd3c362dddfec350f850a246b3289ae59f9d41ad7ddcd23a069232353c"
+    },
+    {
+      "id": "4-172742-A-32.wav",
+      "label": "other",
+      "category": "keyboard_typing",
+      "fold": 4,
+      "sourceFile": "172742",
+      "duration": 5.0,
+      "sha256": "6107e92023ebe6a8cc7514ed3a4721a10a319f8162a8a6be255cf46c4851ac8e"
+    },
+    {
+      "id": "5-205090-A-32.wav",
+      "label": "other",
+      "category": "keyboard_typing",
+      "fold": 5,
+      "sourceFile": "205090",
+      "duration": 5.0,
+      "sha256": "5a8f193f14fa649248b1d645ce6dae97f5c105015b3351ffaf86406e998c36d3"
+    },
+    {
+      "id": "5-215005-A-32.wav",
+      "label": "other",
+      "category": "keyboard_typing",
+      "fold": 5,
+      "sourceFile": "215005",
+      "duration": 5.0,
+      "sha256": "b8c6b7a28f1523c4aa0a0261ed45dee934c5a8f2558893312d9d981bf1f92067"
+    },
+    {
+      "id": "5-216131-A-32.wav",
+      "label": "other",
+      "category": "keyboard_typing",
+      "fold": 5,
+      "sourceFile": "216131",
+      "duration": 5.0,
+      "sha256": "096ac1b0324a6c59c96f974f006f8ec35ffa362790c58327438c7f5c67744b9a"
+    },
+    {
+      "id": "5-222894-A-32.wav",
+      "label": "other",
+      "category": "keyboard_typing",
+      "fold": 5,
+      "sourceFile": "222894",
+      "duration": 5.0,
+      "sha256": "10352ae357018a1123532e2875b0358dc3954e15b5845a312c7ff846623e56a7"
+    },
+    {
+      "id": "1-100210-A-36.wav",
+      "label": "other",
+      "category": "vacuum_cleaner",
+      "fold": 1,
+      "sourceFile": "100210",
+      "duration": 5.0,
+      "sha256": "f97e97b0fe0afce323d858503b6fa3ffd6c8cb1162c43cf3b24461300fb9abf6"
+    },
+    {
+      "id": "1-100210-B-36.wav",
+      "label": "other",
+      "category": "vacuum_cleaner",
+      "fold": 1,
+      "sourceFile": "100210",
+      "duration": 5.0,
+      "sha256": "acfdccbb58647655b9b63ab5574c178783b969f56e05933f115ae4dd1878a524"
+    },
+    {
+      "id": "1-19840-A-36.wav",
+      "label": "other",
+      "category": "vacuum_cleaner",
+      "fold": 1,
+      "sourceFile": "19840",
+      "duration": 5.0,
+      "sha256": "d6d58e48005b976207cd6030de5d8976e9e7f4377eab86f790c5473c95ad2dd1"
+    },
+    {
+      "id": "1-19872-A-36.wav",
+      "label": "other",
+      "category": "vacuum_cleaner",
+      "fold": 1,
+      "sourceFile": "19872",
+      "duration": 5.0,
+      "sha256": "6f15bb8c669aaf930dfd44ef95920141a2b8d43148f7e29c0f1a7a52f91260d6"
+    },
+    {
+      "id": "2-106072-A-36.wav",
+      "label": "other",
+      "category": "vacuum_cleaner",
+      "fold": 2,
+      "sourceFile": "106072",
+      "duration": 5.0,
+      "sha256": "48d6c73a9f124f3d9454d1c93bbd91e088c96e7cc88352419bdad3f73ba499cd"
+    },
+    {
+      "id": "2-106073-A-36.wav",
+      "label": "other",
+      "category": "vacuum_cleaner",
+      "fold": 2,
+      "sourceFile": "106073",
+      "duration": 5.0,
+      "sha256": "a578d3c4f74bc96341a041e63e8c3190b2c94d3ec3a306f4b7ac8fbe7e84c828"
+    },
+    {
+      "id": "2-122820-A-36.wav",
+      "label": "other",
+      "category": "vacuum_cleaner",
+      "fold": 2,
+      "sourceFile": "122820",
+      "duration": 5.0,
+      "sha256": "89cb5093a2706c98fb55cf9f2b609349e31c44f3be91dcd22fbb3ed64162ec38"
+    },
+    {
+      "id": "2-122820-B-36.wav",
+      "label": "other",
+      "category": "vacuum_cleaner",
+      "fold": 2,
+      "sourceFile": "122820",
+      "duration": 5.0,
+      "sha256": "d00e4870e272267edea4c370525c8aa653979564b84646a5a97d0bef7694ba8d"
+    },
+    {
+      "id": "3-152020-A-36.wav",
+      "label": "other",
+      "category": "vacuum_cleaner",
+      "fold": 3,
+      "sourceFile": "152020",
+      "duration": 5.0,
+      "sha256": "7ddbf7a38dc48773279a392aa8914c313481422b21ccbb221bb2f8321f39f06c"
+    },
+    {
+      "id": "3-152020-B-36.wav",
+      "label": "other",
+      "category": "vacuum_cleaner",
+      "fold": 3,
+      "sourceFile": "152020",
+      "duration": 5.0,
+      "sha256": "304f09ebbd0232d073c29d19903a48d02e442e5a161ec04d1afe9914572acf9d"
+    },
+    {
+      "id": "3-152020-C-36.wav",
+      "label": "other",
+      "category": "vacuum_cleaner",
+      "fold": 3,
+      "sourceFile": "152020",
+      "duration": 5.0,
+      "sha256": "4ced9cc682392672f385022463c93959a21916af693324410932b031e5e5d8c8"
+    },
+    {
+      "id": "3-159346-A-36.wav",
+      "label": "other",
+      "category": "vacuum_cleaner",
+      "fold": 3,
+      "sourceFile": "159346",
+      "duration": 5.0,
+      "sha256": "5327e7573883e6dfbcfd2d0ee1106a9fb3a2121e108fe9d7b8c1313c4df73819"
+    },
+    {
+      "id": "4-146200-A-36.wav",
+      "label": "other",
+      "category": "vacuum_cleaner",
+      "fold": 4,
+      "sourceFile": "146200",
+      "duration": 5.0,
+      "sha256": "41db87e753f13f238ba7f8ffca60421d08f8ab3e315c4d79f0557caed80ee9d8"
+    },
+    {
+      "id": "4-172732-A-36.wav",
+      "label": "other",
+      "category": "vacuum_cleaner",
+      "fold": 4,
+      "sourceFile": "172732",
+      "duration": 5.0,
+      "sha256": "e6e0690da254355cd5e8ae4bda3ea349c83d93b8ece5e140bfd6d467813a3c47"
+    },
+    {
+      "id": "4-172733-A-36.wav",
+      "label": "other",
+      "category": "vacuum_cleaner",
+      "fold": 4,
+      "sourceFile": "172733",
+      "duration": 5.0,
+      "sha256": "cb2683c4942cb7e1d85e0d3ff62ab29e47a035b2d78808f5341302914867a0d7"
+    },
+    {
+      "id": "4-172734-A-36.wav",
+      "label": "other",
+      "category": "vacuum_cleaner",
+      "fold": 4,
+      "sourceFile": "172734",
+      "duration": 5.0,
+      "sha256": "011ed0542de4d6069f22eb60442db8247126bc1eb0681e39cb85f25b6ba6c301"
+    },
+    {
+      "id": "5-182007-A-36.wav",
+      "label": "other",
+      "category": "vacuum_cleaner",
+      "fold": 5,
+      "sourceFile": "182007",
+      "duration": 5.0,
+      "sha256": "3da75e2e43452c3d1bc595b46a51e7a04bc6be977fc5b11e7adaa5e8e5877b0f"
+    },
+    {
+      "id": "5-182010-A-36.wav",
+      "label": "other",
+      "category": "vacuum_cleaner",
+      "fold": 5,
+      "sourceFile": "182010",
+      "duration": 5.0,
+      "sha256": "0ac4e7dd19c4f99e9453c79e0409650b1fb12972f9da4d15f96408788b015a07"
+    },
+    {
+      "id": "5-182012-A-36.wav",
+      "label": "other",
+      "category": "vacuum_cleaner",
+      "fold": 5,
+      "sourceFile": "182012",
+      "duration": 5.0,
+      "sha256": "8fa37e0bd01c6e825f68c8a21bb057a25d4a98b5088f16e16de0fdf0d4a42b03"
+    },
+    {
+      "id": "5-188365-A-36.wav",
+      "label": "other",
+      "category": "vacuum_cleaner",
+      "fold": 5,
+      "sourceFile": "188365",
+      "duration": 5.0,
+      "sha256": "b18b10fd9ceb79b47445240e36b77651334a69fee351b9a47896f6cd0fd97ab8"
+    }
+  ]
+}

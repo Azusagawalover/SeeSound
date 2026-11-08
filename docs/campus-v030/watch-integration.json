@@ -1,0 +1,18 @@
+{
+  "observed_at_utc": "2026-10-31T09:40:30.099947+00:00",
+  "app_version": "0.30 (30)",
+  "phone_runtime": "iOS 17.5 Simulator",
+  "watch_runtime": "watchOS 10.5 Simulator",
+  "transport": "Actual paired WCSession sendMessage and updateApplicationContext",
+  "phone_receipt_ui_test": "testPairedWatchSnapshotAndVersionChange passed",
+  "watch_saved_snapshot_count": 1,
+  "all_demonstration": true,
+  "all_outdated_after_phone_edit": true,
+  "reconnection": "Watch app was manually restarted after the test relaunched the phone app. No snapshot was seeded or edited on Watch.",
+  "not_verified": [
+    "Physical watchOS 9.6.4 device",
+    "Haptics",
+    "Background or lock-screen delivery",
+    "User seen/complete action round trip"
+  ]
+}

@@ -1,0 +1,618 @@
+[0/1] Planning build
+Building for debugging...
+[0/4] Write sources
+[2/4] Write swift-version--58304C5D6DBC2206.txt
+[4/6] Compiling SeeSoundData CampusWorkspaceDomain.swift
+[5/6] Emitting module SeeSoundData
+[6/9] Emitting module SeeSoundDataTests
+[7/9] Compiling SeeSoundDataTests CampusWorkspaceTests.swift
+[7/9] Write Objects.LinkFileList
+[8/9] Linking SeeSoundDataChecksPackageTests
+Build complete! (8.87s)
+Test Suite 'All tests' started at 2026-11-03 14:37:39.744.
+Test Suite 'SeeSoundDataChecksPackageTests.xctest' started at 2026-11-03 14:37:39.746.
+Test Suite 'AgendaIntegrationTests' started at 2026-11-03 14:37:39.746.
+Test Case '-[SeeSoundDataTests.AgendaIntegrationTests testCaseCompletionRequiresEveryStepAndLiveLinkedTaskAndArchivePreservesProgress]' started.
+Test Case '-[SeeSoundDataTests.AgendaIntegrationTests testCaseCompletionRequiresEveryStepAndLiveLinkedTaskAndArchivePreservesProgress]' passed (0.025 seconds).
+Test Case '-[SeeSoundDataTests.AgendaIntegrationTests testCaseFiltersSearchMaterialsAndRespectDemonstrationAndArchive]' started.
+Test Case '-[SeeSoundDataTests.AgendaIntegrationTests testCaseFiltersSearchMaterialsAndRespectDemonstrationAndArchive]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.AgendaIntegrationTests testCoordinatorCapsAt24RefillsAndReportsFailureForRetry]' started.
+Test Case '-[SeeSoundDataTests.AgendaIntegrationTests testCoordinatorCapsAt24RefillsAndReportsFailureForRetry]' passed (0.012 seconds).
+Test Case '-[SeeSoundDataTests.AgendaIntegrationTests testCoordinatorCleansStaleAdditionWhenItemIsDeletedDuringAwait]' started.
+Test Case '-[SeeSoundDataTests.AgendaIntegrationTests testCoordinatorCleansStaleAdditionWhenItemIsDeletedDuringAwait]' passed (0.002 seconds).
+Test Case '-[SeeSoundDataTests.AgendaIntegrationTests testCoordinatorDeduplicatesAndRemovesCompletedDeletedAndArchivedNoticesOnly]' started.
+Test Case '-[SeeSoundDataTests.AgendaIntegrationTests testCoordinatorDeduplicatesAndRemovesCompletedDeletedAndArchivedNoticesOnly]' passed (0.009 seconds).
+Test Case '-[SeeSoundDataTests.AgendaIntegrationTests testLegacyRecordsDecodeWithoutAgendaFieldsAndInvalidDatesFail]' started.
+Test Case '-[SeeSoundDataTests.AgendaIntegrationTests testLegacyRecordsDecodeWithoutAgendaFieldsAndInvalidDatesFail]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.AgendaIntegrationTests testPlannerRequiresExplicitFutureTimeSavedRealAndOpenRecords]' started.
+Test Case '-[SeeSoundDataTests.AgendaIntegrationTests testPlannerRequiresExplicitFutureTimeSavedRealAndOpenRecords]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.AgendaIntegrationTests testRescheduleReplacesTimeAndOldDeliveredNoticeAndPermissionDoesNotPromptAutomatically]' started.
+Test Case '-[SeeSoundDataTests.AgendaIntegrationTests testRescheduleReplacesTimeAndOldDeliveredNoticeAndPermissionDoesNotPromptAutomatically]' passed (0.008 seconds).
+Test Case '-[SeeSoundDataTests.AgendaIntegrationTests testRestoreSuspendsSchedulingAndResumesOnlyWithFinalRecords]' started.
+Test Case '-[SeeSoundDataTests.AgendaIntegrationTests testRestoreSuspendsSchedulingAndResumesOnlyWithFinalRecords]' passed (0.006 seconds).
+Test Case '-[SeeSoundDataTests.AgendaIntegrationTests testScheduledNoticesAreNeverSuppressedAsMissingEventIDs]' started.
+Test Case '-[SeeSoundDataTests.AgendaIntegrationTests testScheduledNoticesAreNeverSuppressedAsMissingEventIDs]' passed (0.000 seconds).
+Test Suite 'AgendaIntegrationTests' passed at 2026-11-03 14:37:39.810.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 0.064 (0.064) seconds
+Test Suite 'AssistanceIntegrationTests' started at 2026-11-03 14:37:39.810.
+Test Case '-[SeeSoundDataTests.AssistanceIntegrationTests testAssociationSplitsPersistTransactionallyAndPruneWithOriginals]' started.
+Test Case '-[SeeSoundDataTests.AssistanceIntegrationTests testAssociationSplitsPersistTransactionallyAndPruneWithOriginals]' passed (0.016 seconds).
+Test Case '-[SeeSoundDataTests.AssistanceIntegrationTests testAssociationsSeparateDemoAndSameCategoryAndHonorSplitPairs]' started.
+Test Case '-[SeeSoundDataTests.AssistanceIntegrationTests testAssociationsSeparateDemoAndSameCategoryAndHonorSplitPairs]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.AssistanceIntegrationTests testAssociationsUseTotalSpanAndNeverChainAcrossWindow]' started.
+Test Case '-[SeeSoundDataTests.AssistanceIntegrationTests testAssociationsUseTotalSpanAndNeverChainAcrossWindow]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.AssistanceIntegrationTests testDemoCleanupPreservesOnlyExplicitlySavedCards]' started.
+Test Case '-[SeeSoundDataTests.AssistanceIntegrationTests testDemoCleanupPreservesOnlyExplicitlySavedCards]' passed (0.002 seconds).
+Test Case '-[SeeSoundDataTests.AssistanceIntegrationTests testEditingInvalidatesReviewAndCannotRemoveDemoSource]' started.
+Test Case '-[SeeSoundDataTests.AssistanceIntegrationTests testEditingInvalidatesReviewAndCannotRemoveDemoSource]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.AssistanceIntegrationTests testIndependentStoreRequiresConsentAndPreservesCorruptFile]' started.
+Test Case '-[SeeSoundDataTests.AssistanceIntegrationTests testIndependentStoreRequiresConsentAndPreservesCorruptFile]' passed (0.002 seconds).
+Test Case '-[SeeSoundDataTests.AssistanceIntegrationTests testInformationServiceSavingEditingReviewAndUnsave]' started.
+Test Case '-[SeeSoundDataTests.AssistanceIntegrationTests testInformationServiceSavingEditingReviewAndUnsave]' passed (0.005 seconds).
+Test Case '-[SeeSoundDataTests.AssistanceIntegrationTests testInformationValidationForAllFourKinds]' started.
+Test Case '-[SeeSoundDataTests.AssistanceIntegrationTests testInformationValidationForAllFourKinds]' passed (0.002 seconds).
+Test Case '-[SeeSoundDataTests.AssistanceIntegrationTests testLegacyPreferencesAndJournalDecodeWithoutNewFields]' started.
+Test Case '-[SeeSoundDataTests.AssistanceIntegrationTests testLegacyPreferencesAndJournalDecodeWithoutNewFields]' passed (0.002 seconds).
+Test Case '-[SeeSoundDataTests.AssistanceIntegrationTests testProfileApplyDeleteAndTemporaryChanges]' started.
+Test Case '-[SeeSoundDataTests.AssistanceIntegrationTests testProfileApplyDeleteAndTemporaryChanges]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.AssistanceIntegrationTests testProfilePreferencesRoundTripAndBadSelectionRejected]' started.
+Test Case '-[SeeSoundDataTests.AssistanceIntegrationTests testProfilePreferencesRoundTripAndBadSelectionRejected]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.AssistanceIntegrationTests testProfilesRejectDuplicateNamesCapacityAndBadResponses]' started.
+Test Case '-[SeeSoundDataTests.AssistanceIntegrationTests testProfilesRejectDuplicateNamesCapacityAndBadResponses]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.AssistanceIntegrationTests testResponsePreservesEventContextAndDoesNotConfirmEvent]' started.
+Test Case '-[SeeSoundDataTests.AssistanceIntegrationTests testResponsePreservesEventContextAndDoesNotConfirmEvent]' passed (0.001 seconds).
+Test Suite 'AssistanceIntegrationTests' passed at 2026-11-03 14:37:39.844.
+	 Executed 13 tests, with 0 failures (0 unexpected) in 0.033 (0.034) seconds
+Test Suite 'CampusTests' started at 2026-11-03 14:37:39.844.
+Test Case '-[SeeSoundDataTests.CampusTests testChangeImpactUsesActualOldEvidenceAndPreservesCompletion]' started.
+Test Case '-[SeeSoundDataTests.CampusTests testChangeImpactUsesActualOldEvidenceAndPreservesCompletion]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.CampusTests testCompletionTicksDoNotRequireJourneyArrangementReview]' started.
+Test Case '-[SeeSoundDataTests.CampusTests testCompletionTicksDoNotRequireJourneyArrangementReview]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.CampusTests testCounterpartNeedsSelfCheckAndEditedFactLosesBothConfirmations]' started.
+Test Case '-[SeeSoundDataTests.CampusTests testCounterpartNeedsSelfCheckAndEditedFactLosesBothConfirmations]' passed (0.009 seconds).
+Test Case '-[SeeSoundDataTests.CampusTests testDemoCannotScheduleRealReminderAndInvalidOutcomeCreatesNothing]' started.
+Test Case '-[SeeSoundDataTests.CampusTests testDemoCannotScheduleRealReminderAndInvalidOutcomeCreatesNothing]' passed (0.002 seconds).
+Test Case '-[SeeSoundDataTests.CampusTests testEvidenceCannotBeInventedOrMixDemoWithPersonalSource]' started.
+Test Case '-[SeeSoundDataTests.CampusTests testEvidenceCannotBeInventedOrMixDemoWithPersonalSource]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.CampusTests testEvidenceLocationHandlesChineseAndMultilineQuotesWithoutGuessing]' started.
+Test Case '-[SeeSoundDataTests.CampusTests testEvidenceLocationHandlesChineseAndMultilineQuotesWithoutGuessing]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.CampusTests testJourneyHandoffIncludesDependenciesButNoUnrelatedJourneyOrRecovery]' started.
+Test Case '-[SeeSoundDataTests.CampusTests testJourneyHandoffIncludesDependenciesButNoUnrelatedJourneyOrRecovery]' passed (0.083 seconds).
+Test Case '-[SeeSoundDataTests.CampusTests testJourneyPauseAndResumeSurviveRestart]' started.
+Test Case '-[SeeSoundDataTests.CampusTests testJourneyPauseAndResumeSurviveRestart]' passed (0.004 seconds).
+Test Case '-[SeeSoundDataTests.CampusTests testLinkedCaseChangeInvalidatesSourceMatchedConfirmationAtomically]' started.
+Test Case '-[SeeSoundDataTests.CampusTests testLinkedCaseChangeInvalidatesSourceMatchedConfirmationAtomically]' passed (0.011 seconds).
+Test Case '-[SeeSoundDataTests.CampusTests testLinkedTaskChangeInvalidatesWatchCaseFingerprint]' started.
+Test Case '-[SeeSoundDataTests.CampusTests testLinkedTaskChangeInvalidatesWatchCaseFingerprint]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.CampusTests testManualAndAutomaticRedactionPreserveOriginalAndHideSelectedIdentifiers]' started.
+Test Case '-[SeeSoundDataTests.CampusTests testManualAndAutomaticRedactionPreserveOriginalAndHideSelectedIdentifiers]' passed (0.002 seconds).
+Test Case '-[SeeSoundDataTests.CampusTests testMergeRetainsJourneyAndDoesNotImportRecoveryOptIn]' started.
+Test Case '-[SeeSoundDataTests.CampusTests testMergeRetainsJourneyAndDoesNotImportRecoveryOptIn]' passed (0.002 seconds).
+Test Case '-[SeeSoundDataTests.CampusTests testNewSourceVersionInvalidatesOnlyItsOwnFactsAndRetainsEvidence]' started.
+Test Case '-[SeeSoundDataTests.CampusTests testNewSourceVersionInvalidatesOnlyItsOwnFactsAndRetainsEvidence]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.CampusTests testOldArchiveDecodesWithoutCampusData]' started.
+Test Case '-[SeeSoundDataTests.CampusTests testOldArchiveDecodesWithoutCampusData]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.CampusTests testOutcomeAndFollowUpCaseSaveTogetherAndReminderIsOptIn]' started.
+Test Case '-[SeeSoundDataTests.CampusTests testOutcomeAndFollowUpCaseSaveTogetherAndReminderIsOptIn]' passed (0.004 seconds).
+Test Case '-[SeeSoundDataTests.CampusTests testRecoveryCannotOverwriteDifferentCaseVersion]' started.
+Test Case '-[SeeSoundDataTests.CampusTests testRecoveryCannotOverwriteDifferentCaseVersion]' passed (0.007 seconds).
+Test Case '-[SeeSoundDataTests.CampusTests testRecoveryIsOptInAndNeverSilentlyRestoredAfterRestart]' started.
+Test Case '-[SeeSoundDataTests.CampusTests testRecoveryIsOptInAndNeverSilentlyRestoredAfterRestart]' passed (0.005 seconds).
+Test Case '-[SeeSoundDataTests.CampusTests testRemovingVisualReferencesDoesNotInvalidateJourneyCaseInformationVersion]' started.
+Test Case '-[SeeSoundDataTests.CampusTests testRemovingVisualReferencesDoesNotInvalidateJourneyCaseInformationVersion]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.CampusTests testSelectedCaseExportDoesNotLeakJourneyConversations]' started.
+Test Case '-[SeeSoundDataTests.CampusTests testSelectedCaseExportDoesNotLeakJourneyConversations]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.CampusTests testSettingsDeselectionKeepsJourneyButDoesNotExportItsListPreferences]' started.
+Test Case '-[SeeSoundDataTests.CampusTests testSettingsDeselectionKeepsJourneyButDoesNotExportItsListPreferences]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.CampusTests testSplitPersistsSelectedOnlyAndRefusesReplayOrStaleDraft]' started.
+Test Case '-[SeeSoundDataTests.CampusTests testSplitPersistsSelectedOnlyAndRefusesReplayOrStaleDraft]' passed (0.005 seconds).
+Test Case '-[SeeSoundDataTests.CampusTests testSplitRequiresConsentAndRejectsWholeBatchWhenOnePartIsInvalid]' started.
+Test Case '-[SeeSoundDataTests.CampusTests testSplitRequiresConsentAndRejectsWholeBatchWhenOnePartIsInvalid]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.CampusTests testStaleJourneyEditorCannotOverwriteNewerState]' started.
+Test Case '-[SeeSoundDataTests.CampusTests testStaleJourneyEditorCannotOverwriteNewerState]' passed (0.006 seconds).
+Test Case '-[SeeSoundDataTests.CampusTests testWatchInvalidationIsVersionAndTimeScoped]' started.
+Test Case '-[SeeSoundDataTests.CampusTests testWatchInvalidationIsVersionAndTimeScoped]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.CampusTests testWatchSeenAppliesOnlyToSameVersionIncludingLinkedTasks]' started.
+Test Case '-[SeeSoundDataTests.CampusTests testWatchSeenAppliesOnlyToSameVersionIncludingLinkedTasks]' passed (0.001 seconds).
+Test Suite 'CampusTests' passed at 2026-11-03 14:37:39.993.
+	 Executed 25 tests, with 0 failures (0 unexpected) in 0.148 (0.149) seconds
+Test Suite 'CampusWorkspaceTests' started at 2026-11-03 14:37:39.993.
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testAttentionIDsAreScopedToParentJourney]' started.
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testAttentionIDsAreScopedToParentJourney]' passed (0.002 seconds).
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testBookmarkAndFavoritesPersistWithoutChangingJourneyVersion]' started.
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testBookmarkAndFavoritesPersistWithoutChangingJourneyVersion]' passed (0.006 seconds).
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testCharacterMetricPreservesDigitsAndCountsInsertionsAndSubstitutions]' started.
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testCharacterMetricPreservesDigitsAndCountsInsertionsAndSubstitutions]' passed (0.002 seconds).
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testConflictOnlyUsesLatestVersionOfEachMaterial]' started.
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testConflictOnlyUsesLatestVersionOfEachMaterial]' passed (0.003 seconds).
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testConflictResolutionDoesNotSilentlyRewriteFactsAndNewSourceReopensIt]' started.
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testConflictResolutionDoesNotSilentlyRewriteFactsAndNewSourceReopensIt]' passed (0.010 seconds).
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testDuplicateNormalizationPreservesDifferentContentAndOrigin]' started.
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testDuplicateNormalizationPreservesDifferentContentAndOrigin]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testDuplicateSourceRequiresExplicitKeepAndStalePreviewCannotWrite]' started.
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testDuplicateSourceRequiresExplicitKeepAndStalePreviewCannotWrite]' passed (0.004 seconds).
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testEvaluationRecordStoreRoundtripPreservesRawOutputAndManualCorrectionSeparately]' started.
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testEvaluationRecordStoreRoundtripPreservesRawOutputAndManualCorrectionSeparately]' passed (0.002 seconds).
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testEvaluationStoreRejectsCorruptionAndInvalidDurations]' started.
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testEvaluationStoreRejectsCorruptionAndInvalidDurations]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testExcerptSaveNeverMixesDemonstrationAndPersonal]' started.
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testExcerptSaveNeverMixesDemonstrationAndPersonal]' passed (0.002 seconds).
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testIncomingJourneyDifferenceRespectsKeepLocalChoice]' started.
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testIncomingJourneyDifferenceRespectsKeepLocalChoice]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testInvalidPlanDateAndInventedQuestionEvidenceAreRejected]' started.
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testInvalidPlanDateAndInventedQuestionEvidenceAreRejected]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testJourneyDeletionRemovesLocalReadingAndWatchState]' started.
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testJourneyDeletionRemovesLocalReadingAndWatchState]' passed (0.005 seconds).
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testLegacyJourneyAndLedgerDecodeWithoutNewFields]' started.
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testLegacyJourneyAndLedgerDecodeWithoutNewFields]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testLocalReadingAndWatchReceiptStateDoesNotEnterEncryptedExport]' started.
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testLocalReadingAndWatchReceiptStateDoesNotEnterEncryptedExport]' passed (0.081 seconds).
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testPresentationResetOnlyTouchesItsOwnMarkedJourney]' started.
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testPresentationResetOnlyTouchesItsOwnMarkedJourney]' passed (0.010 seconds).
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testQuestionEvidenceRequiresConsentExactQuoteAndCurrentVersion]' started.
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testQuestionEvidenceRequiresConsentExactQuoteAndCurrentVersion]' passed (0.004 seconds).
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testScenarioOnlyCreatesQuestionsAndExplicitUserDate]' started.
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testScenarioOnlyCreatesQuestionsAndExplicitUserDate]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testScheduleUsesExplicitUserPlanAndExcludesFinishedJourney]' started.
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testScheduleUsesExplicitUserPlanAndExcludesFinishedJourney]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testScheduleUsesHalfOpenDayAndWeekBoundaries]' started.
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testScheduleUsesHalfOpenDayAndWeekBoundaries]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testSearchDistinguishesSharedSourceAndFactIDsAcrossJourneys]' started.
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testSearchDistinguishesSharedSourceAndFactIDsAcrossJourneys]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testSearchKeepsJourneyChildrenSeparateAndProvidesParentRoute]' started.
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testSearchKeepsJourneyChildrenSeparateAndProvidesParentRoute]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testWatchJourneyContainsOnlySummaryAndContentChangesInvalidateIt]' started.
+Test Case '-[SeeSoundDataTests.CampusWorkspaceTests testWatchJourneyContainsOnlySummaryAndContentChangesInvalidateIt]' passed (0.001 seconds).
+Test Suite 'CampusWorkspaceTests' passed at 2026-11-03 14:37:40.130.
+	 Executed 23 tests, with 0 failures (0 unexpected) in 0.136 (0.137) seconds
+Test Suite 'CaseEfficiencyTests' started at 2026-11-03 14:37:40.130.
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testBatchPreviewDoesNotMutateAndApplyCanBeUndoneAndReloaded]' started.
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testBatchPreviewDoesNotMutateAndApplyCanBeUndoneAndReloaded]' passed (0.005 seconds).
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testBlockedCompletionAndBatchAreRejectedEvenWhenPrerequisiteSelected]' started.
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testBlockedCompletionAndBatchAreRejectedEvenWhenPrerequisiteSelected]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testCannotUncompletePrerequisiteOfCompletedDependent]' started.
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testCannotUncompletePrerequisiteOfCompletedDependent]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testChangedBatchPreviewRefusesToOverwriteNewNote]' started.
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testChangedBatchPreviewRefusesToOverwriteNewNote]' passed (0.003 seconds).
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testCompletedAndWaitingCasesDoNotAdvance]' started.
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testCompletedAndWaitingCasesDoNotAdvance]' passed (0.003 seconds).
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testDiskFailureDoesNotPartiallyUpdateLiveChecklist]' started.
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testDiskFailureDoesNotPartiallyUpdateLiveChecklist]' passed (0.002 seconds).
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testEmptyAndOverlongNamesAreRejected]' started.
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testEmptyAndOverlongNamesAreRejected]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testFocusQueueRespectsOrderingSkippingAndWaiting]' started.
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testFocusQueueRespectsOrderingSkippingAndWaiting]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testLegacyStepDecodesWithoutRenameMarker]' started.
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testLegacyStepDecodesWithoutRenameMarker]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testNextSevenDaysUsesCalendarWindowAndExcludesExpiredAndArchived]' started.
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testNextSevenDaysUsesCalendarWindowAndExcludesExpiredAndArchived]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testRemovalAndUndoRestoreDependencyGraph]' started.
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testRemovalAndUndoRestoreDependencyGraph]' passed (0.005 seconds).
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testRenamePreservesSourceIdentityAndCompletionAndMarksHumanEdit]' started.
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testRenamePreservesSourceIdentityAndCompletionAndMarksHumanEdit]' passed (0.004 seconds).
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testReorderCannotDropDuplicateOrInventRows]' started.
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testReorderCannotDropDuplicateOrInventRows]' passed (0.002 seconds).
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testReorderPreservesSourceProgressAndDependencies]' started.
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testReorderPreservesSourceProgressAndDependencies]' passed (0.007 seconds).
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testSearchFindsSourceTextAndCombinesFolderTagsScopeAndDemoFilter]' started.
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testSearchFindsSourceTextAndCombinesFolderTagsScopeAndDemoFilter]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testSortKeepsPinnedFirstAndDeadlinelessLastAndDeterministicTies]' started.
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testSortKeepsPinnedFirstAndDeadlinelessLastAndDeterministicTies]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testTemporaryChecklistChangesDoNotSaveContent]' started.
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testTemporaryChecklistChangesDoNotSaveContent]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testUndoRejectsLaterChangesWithoutOverwritingThem]' started.
+Test Case '-[SeeSoundDataTests.CaseEfficiencyTests testUndoRejectsLaterChangesWithoutOverwritingThem]' passed (0.004 seconds).
+Test Suite 'CaseEfficiencyTests' passed at 2026-11-03 14:37:40.172.
+	 Executed 18 tests, with 0 failures (0 unexpected) in 0.041 (0.042) seconds
+Test Suite 'CasePreparationTests' started at 2026-11-03 14:37:40.172.
+Test Case '-[SeeSoundDataTests.CasePreparationTests testConfirmedCreationIsOptInAndRepeatedTapDoesNotDuplicateOrResetProgress]' started.
+Test Case '-[SeeSoundDataTests.CasePreparationTests testConfirmedCreationIsOptInAndRepeatedTapDoesNotDuplicateOrResetProgress]' passed (0.012 seconds).
+Test Case '-[SeeSoundDataTests.CasePreparationTests testModelPlanRejectsUnsupportedQuotesAndInventedRequiredMaterials]' started.
+Test Case '-[SeeSoundDataTests.CasePreparationTests testModelPlanRejectsUnsupportedQuotesAndInventedRequiredMaterials]' passed (0.004 seconds).
+Test Case '-[SeeSoundDataTests.CasePreparationTests testOfflinePlanDoesNotAddForbiddenMaterialsOrCancelledActivities]' started.
+Test Case '-[SeeSoundDataTests.CasePreparationTests testOfflinePlanDoesNotAddForbiddenMaterialsOrCancelledActivities]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.CasePreparationTests testOfflinePlanExtractsTwoNamedMaterialsAndAnUnresolvedAction]' started.
+Test Case '-[SeeSoundDataTests.CasePreparationTests testOfflinePlanExtractsTwoNamedMaterialsAndAnUnresolvedAction]' passed (0.013 seconds).
+Test Case '-[SeeSoundDataTests.CasePreparationTests testOriginalChangesIncludingTitleOrNewMaterialInvalidateThePreview]' started.
+Test Case '-[SeeSoundDataTests.CasePreparationTests testOriginalChangesIncludingTitleOrNewMaterialInvalidateThePreview]' passed (0.002 seconds).
+Test Case '-[SeeSoundDataTests.CasePreparationTests testPreviewCanEditSelectAndAddManualItemsWithoutMarkingAnythingDone]' started.
+Test Case '-[SeeSoundDataTests.CasePreparationTests testPreviewCanEditSelectAndAddManualItemsWithoutMarkingAnythingDone]' passed (0.003 seconds).
+Test Case '-[SeeSoundDataTests.CasePreparationTests testRealAPIPlanDecodesAndBuildsAnUncompletedSourceMatchedCase]' started.
+Test Case '-[SeeSoundDataTests.CasePreparationTests testRealAPIPlanDecodesAndBuildsAnUncompletedSourceMatchedCase]' passed (0.004 seconds).
+Test Case '-[SeeSoundDataTests.CasePreparationTests testVersion013CasesWithoutPreparationMetadataStillLoad]' started.
+Test Case '-[SeeSoundDataTests.CasePreparationTests testVersion013CasesWithoutPreparationMetadataStillLoad]' passed (0.000 seconds).
+Test Suite 'CasePreparationTests' passed at 2026-11-03 14:37:40.212.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.039 (0.040) seconds
+Test Suite 'ContinuityTests' started at 2026-11-03 14:37:40.212.
+Test Case '-[SeeSoundDataTests.ContinuityTests testActualCiphertextTamperAndFutureEnvelopeVersionAreRejected]' started.
+Test Case '-[SeeSoundDataTests.ContinuityTests testActualCiphertextTamperAndFutureEnvelopeVersionAreRejected]' passed (0.081 seconds).
+Test Case '-[SeeSoundDataTests.ContinuityTests testAtomicLibraryRollbackAndStalePreviewProtection]' started.
+Test Case '-[SeeSoundDataTests.ContinuityTests testAtomicLibraryRollbackAndStalePreviewProtection]' passed (0.027 seconds).
+Test Case '-[SeeSoundDataTests.ContinuityTests testChecklistOrderChangesFingerprintBecauseItChangesNextAction]' started.
+Test Case '-[SeeSoundDataTests.ContinuityTests testChecklistOrderChangesFingerprintBecauseItChangesNextAction]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.ContinuityTests testCrashJournalRecoversBeforeNextLibraryRead]' started.
+Test Case '-[SeeSoundDataTests.ContinuityTests testCrashJournalRecoversBeforeNextLibraryRead]' passed (0.010 seconds).
+Test Case '-[SeeSoundDataTests.ContinuityTests testCrossRecordDemonstrationLabelsCannotDisagree]' started.
+Test Case '-[SeeSoundDataTests.ContinuityTests testCrossRecordDemonstrationLabelsCannotDisagree]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.ContinuityTests testEncryptedRoundTripRejectsWrongPasswordTamperAndOversizedInput]' started.
+Test Case '-[SeeSoundDataTests.ContinuityTests testEncryptedRoundTripRejectsWrongPasswordTamperAndOversizedInput]' passed (0.121 seconds).
+Test Case '-[SeeSoundDataTests.ContinuityTests testFingerprintIsOrderIndependentAndChangesWhenMeaningChanges]' started.
+Test Case '-[SeeSoundDataTests.ContinuityTests testFingerprintIsOrderIndependentAndChangesWhenMeaningChanges]' passed (0.002 seconds).
+Test Case '-[SeeSoundDataTests.ContinuityTests testHandoffContainsOnlySelectedCaseAndReferencedRecords]' started.
+Test Case '-[SeeSoundDataTests.ContinuityTests testHandoffContainsOnlySelectedCaseAndReferencedRecords]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.ContinuityTests testHardwareChecksCannotBeMarkedPassedOnSimulator]' started.
+Test Case '-[SeeSoundDataTests.ContinuityTests testHardwareChecksCannotBeMarkedPassedOnSimulator]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.ContinuityTests testHealthDoesNotInterpretSilenceOrMissingInputAsNoEvents]' started.
+Test Case '-[SeeSoundDataTests.ContinuityTests testHealthDoesNotInterpretSilenceOrMissingInputAsNoEvents]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.ContinuityTests testLostWatchReceiptCanBeRetriedButChangedPayloadCannotReuseReceipt]' started.
+Test Case '-[SeeSoundDataTests.ContinuityTests testLostWatchReceiptCanBeRetriedButChangedPayloadCannotReuseReceipt]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.ContinuityTests testMergeKeepsLocalConflictsAndDisarmsOnlyIncomingRemindersByDefault]' started.
+Test Case '-[SeeSoundDataTests.ContinuityTests testMergeKeepsLocalConflictsAndDisarmsOnlyIncomingRemindersByDefault]' passed (0.004 seconds).
+Test Case '-[SeeSoundDataTests.ContinuityTests testMergeRejectsProvenanceChangesAndCapacityOverflow]' started.
+Test Case '-[SeeSoundDataTests.ContinuityTests testMergeRejectsProvenanceChangesAndCapacityOverflow]' passed (0.009 seconds).
+Test Case '-[SeeSoundDataTests.ContinuityTests testMissingReferencesRemainVisibleRatherThanPretendingTheyWereRestored]' started.
+Test Case '-[SeeSoundDataTests.ContinuityTests testMissingReferencesRemainVisibleRatherThanPretendingTheyWereRestored]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.ContinuityTests testReminderOverviewDoesNotGuessDeliveryAndPrioritizesInactiveState]' started.
+Test Case '-[SeeSoundDataTests.ContinuityTests testReminderOverviewDoesNotGuessDeliveryAndPrioritizesInactiveState]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.ContinuityTests testWatchActionRequiresMatchingCurrentVersionAndCorrectAction]' started.
+Test Case '-[SeeSoundDataTests.ContinuityTests testWatchActionRequiresMatchingCurrentVersionAndCorrectAction]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.ContinuityTests testWatchAgendaProtocolRejectsExpiredDuplicateAndMalformedItems]' started.
+Test Case '-[SeeSoundDataTests.ContinuityTests testWatchAgendaProtocolRejectsExpiredDuplicateAndMalformedItems]' passed (0.000 seconds).
+Test Suite 'ContinuityTests' passed at 2026-11-03 14:37:40.472.
+	 Executed 17 tests, with 0 failures (0 unexpected) in 0.260 (0.260) seconds
+Test Suite 'DailyFlowIntegrationTests' started at 2026-11-03 14:37:40.472.
+Test Case '-[SeeSoundDataTests.DailyFlowIntegrationTests testChangingOneRuleDoesNotDropOtherQueuedEvents]' started.
+Test Case '-[SeeSoundDataTests.DailyFlowIntegrationTests testChangingOneRuleDoesNotDropOtherQueuedEvents]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.DailyFlowIntegrationTests testDemoSnoozeCannotHideRealReminderOfSameCategory]' started.
+Test Case '-[SeeSoundDataTests.DailyFlowIntegrationTests testDemoSnoozeCannotHideRealReminderOfSameCategory]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.DailyFlowIntegrationTests testMergedReminderUpdatesInPlaceAndRemovalSelectsNext]' started.
+Test Case '-[SeeSoundDataTests.DailyFlowIntegrationTests testMergedReminderUpdatesInPlaceAndRemovalSelectsNext]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.DailyFlowIntegrationTests testNewRemindersNeverReplaceTheSelectedCard]' started.
+Test Case '-[SeeSoundDataTests.DailyFlowIntegrationTests testNewRemindersNeverReplaceTheSelectedCard]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.DailyFlowIntegrationTests testQueueNextAndCollapseDoNotConfirmOrLoseEvents]' started.
+Test Case '-[SeeSoundDataTests.DailyFlowIntegrationTests testQueueNextAndCollapseDoNotConfirmOrLoseEvents]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.DailyFlowIntegrationTests testQueueRetainsLiveIDsAndHasBoundedSpaceForScenarioEvents]' started.
+Test Case '-[SeeSoundDataTests.DailyFlowIntegrationTests testQueueRetainsLiveIDsAndHasBoundedSpaceForScenarioEvents]' passed (0.004 seconds).
+Test Case '-[SeeSoundDataTests.DailyFlowIntegrationTests testScenarioSwitchingRestoresOriginalConversationAndInvalidatesOldCapture]' started.
+Test Case '-[SeeSoundDataTests.DailyFlowIntegrationTests testScenarioSwitchingRestoresOriginalConversationAndInvalidatesOldCapture]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.DailyFlowIntegrationTests testScenarioTurnsAndTypedResponsesRetainDemonstrationOrigin]' started.
+Test Case '-[SeeSoundDataTests.DailyFlowIntegrationTests testScenarioTurnsAndTypedResponsesRetainDemonstrationOrigin]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.DailyFlowIntegrationTests testSnoozeReturnsExistingPendingReminderAfterFiveMinutes]' started.
+Test Case '-[SeeSoundDataTests.DailyFlowIntegrationTests testSnoozeReturnsExistingPendingReminderAfterFiveMinutes]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.DailyFlowIntegrationTests testTextRoundTripAndFrozenOldReadCannotConfirmNewVersion]' started.
+Test Case '-[SeeSoundDataTests.DailyFlowIntegrationTests testTextRoundTripAndFrozenOldReadCannotConfirmNewVersion]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.DailyFlowIntegrationTests testWatchScenarioReplyDoesNotBecomeAConfirmation]' started.
+Test Case '-[SeeSoundDataTests.DailyFlowIntegrationTests testWatchScenarioReplyDoesNotBecomeAConfirmation]' passed (0.001 seconds).
+Test Suite 'DailyFlowIntegrationTests' passed at 2026-11-03 14:37:40.481.
+	 Executed 11 tests, with 0 failures (0 unexpected) in 0.008 (0.009) seconds
+Test Suite 'DailyIntegrationTests' started at 2026-11-03 14:37:40.481.
+Test Case '-[SeeSoundDataTests.DailyIntegrationTests testArchiveCapacityDoesNotSilentlyEvictOldConversations]' started.
+Test Case '-[SeeSoundDataTests.DailyIntegrationTests testArchiveCapacityDoesNotSilentlyEvictOldConversations]' passed (0.085 seconds).
+Test Case '-[SeeSoundDataTests.DailyIntegrationTests testArchiveRefusesCorruptionWithoutOverwritingIt]' started.
+Test Case '-[SeeSoundDataTests.DailyIntegrationTests testArchiveRefusesCorruptionWithoutOverwritingIt]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.DailyIntegrationTests testCaptionContinuationRequiresCurrentRunForegroundAndBounds]' started.
+Test Case '-[SeeSoundDataTests.DailyIntegrationTests testCaptionContinuationRequiresCurrentRunForegroundAndBounds]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.DailyIntegrationTests testConversationArchiveRequiresConsentAndPreservesSourceOnExport]' started.
+Test Case '-[SeeSoundDataTests.DailyIntegrationTests testConversationArchiveRequiresConsentAndPreservesSourceOnExport]' passed (0.003 seconds).
+Test Case '-[SeeSoundDataTests.DailyIntegrationTests testCorrectionsAreExplicitLiteralAndBounded]' started.
+Test Case '-[SeeSoundDataTests.DailyIntegrationTests testCorrectionsAreExplicitLiteralAndBounded]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.DailyIntegrationTests testHeartbeatsCarryNoTextAndDoNotAdvanceTextCursor]' started.
+Test Case '-[SeeSoundDataTests.DailyIntegrationTests testHeartbeatsCarryNoTextAndDoNotAdvanceTextCursor]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.DailyIntegrationTests testInvitationRequiresCurrentRoomAndSixASCIIDigits]' started.
+Test Case '-[SeeSoundDataTests.DailyIntegrationTests testInvitationRequiresCurrentRoomAndSixASCIIDigits]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.DailyIntegrationTests testManualSpeakerLabelsPreserveOriginAndDoNotInventASR]' started.
+Test Case '-[SeeSoundDataTests.DailyIntegrationTests testManualSpeakerLabelsPreserveOriginAndDoNotInventASR]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.DailyIntegrationTests testOldPreferencesMigrateWithoutEnablingCaptureOrPersistence]' started.
+Test Case '-[SeeSoundDataTests.DailyIntegrationTests testOldPreferencesMigrateWithoutEnablingCaptureOrPersistence]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.DailyIntegrationTests testReminderCooldownDoesNotConfuseDemoWithRealOrDeleteEvents]' started.
+Test Case '-[SeeSoundDataTests.DailyIntegrationTests testReminderCooldownDoesNotConfuseDemoWithRealOrDeleteEvents]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.DailyIntegrationTests testSharingLivenessExpiresWithoutInventingReadReceipts]' started.
+Test Case '-[SeeSoundDataTests.DailyIntegrationTests testSharingLivenessExpiresWithoutInventingReadReceipts]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.DailyIntegrationTests testTextCursorRejectsReplaysAndOldRooms]' started.
+Test Case '-[SeeSoundDataTests.DailyIntegrationTests testTextCursorRejectsReplaysAndOldRooms]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.DailyIntegrationTests testTextPacketsRejectExpiredOversizedAndMixedPayloads]' started.
+Test Case '-[SeeSoundDataTests.DailyIntegrationTests testTextPacketsRejectExpiredOversizedAndMixedPayloads]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.DailyIntegrationTests testWatchQuickRepliesUseSeparateVersionAndCannotConfirmEvents]' started.
+Test Case '-[SeeSoundDataTests.DailyIntegrationTests testWatchQuickRepliesUseSeparateVersionAndCannotConfirmEvents]' passed (0.000 seconds).
+Test Suite 'DailyIntegrationTests' passed at 2026-11-03 14:37:40.574.
+	 Executed 14 tests, with 0 failures (0 unexpected) in 0.093 (0.093) seconds
+Test Suite 'DataIntegrationTests' started at 2026-11-03 14:37:40.574.
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testAudioImportConvertsToMono16kAndExtractsDeterministicFeatures]' started.
+2026-11-03 14:37:40.632 xctest[6363:258993] Audio files cannot be non-interleaved. Ignoring setting AVLinearPCMIsNonInterleaved YES.
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testAudioImportConvertsToMono16kAndExtractsDeterministicFeatures]' passed (0.094 seconds).
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testAudioImportRejectsFilesOutsideDurationLimit]' started.
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testAudioImportRejectsFilesOutsideDurationLimit]' passed (0.002 seconds).
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testBundledVocableCatalogHasCompleteProvenanceAndUniquePhrases]' started.
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testBundledVocableCatalogHasCompleteProvenanceAndUniquePhrases]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testCardTransferRejectsBlankDuplicateAndLongPhrases]' started.
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testCardTransferRejectsBlankDuplicateAndLongPhrases]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testCardTransferRejectsExecutableLinksWrongSchemaAndOversize]' started.
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testCardTransferRejectsExecutableLinksWrongSchemaAndOversize]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testCardTransferRoundTrip]' started.
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testCardTransferRoundTrip]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testCorruptLegacyIsRetainedAndCanBeRetried]' started.
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testCorruptLegacyIsRetainedAndCanBeRetried]' passed (0.008 seconds).
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testDatasetRejectsDuplicateRecordingsAndUnsupportedFeatures]' started.
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testDatasetRejectsDuplicateRecordingsAndUnsupportedFeatures]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testExpandedFavoritesCapacityRemainsBounded]' started.
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testExpandedFavoritesCapacityRemainsBounded]' passed (0.003 seconds).
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testImportedTextRetainsFileOriginWhenEdited]' started.
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testImportedTextRetainsFileOriginWhenEdited]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testInvalidSnapshotCannotReplaceExistingData]' started.
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testInvalidSnapshotCannotReplaceExistingData]' passed (0.006 seconds).
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testLegacyConversationChecks]' started.
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testLegacyConversationChecks]' passed (0.003 seconds).
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testLegacyEventChecks]' started.
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testLegacyEventChecks]' passed (0.004 seconds).
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testLegacyHistoryMigratesOnlyAfterValidTransaction]' started.
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testLegacyHistoryMigratesOnlyAfterValidTransaction]' passed (0.007 seconds).
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testLegacyJournalChecks]' started.
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testLegacyJournalChecks]' passed (0.015 seconds).
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testLegacyWatchChecks]' started.
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testLegacyWatchChecks]' passed (0.003 seconds).
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testNoDatabaseIsCreatedBeforeOptIn]' started.
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testNoDatabaseIsCreatedBeforeOptIn]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testOldPreferencesRetainChoices]' started.
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testOldPreferencesRetainChoices]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testOptOutDeletesDatabaseSidecarsAndLeavesPreferences]' started.
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testOptOutDeletesDatabaseSidecarsAndLeavesPreferences]' passed (0.007 seconds).
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testPinnedPhraseMigrationSearchAndComposition]' started.
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testPinnedPhraseMigrationSearchAndComposition]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testPublicAudioFilesHaveDeclaredDurationAndAllAttributions]' started.
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testPublicAudioFilesHaveDeclaredDurationAndAllAttributions]' passed (0.047 seconds).
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testPublicCatalogRejectsAudioTraversalAndIncorrectLabels]' started.
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testPublicCatalogRejectsAudioTraversalAndIncorrectLabels]' passed (0.021 seconds).
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testRetentionAndAnnotationsRemainConsistent]' started.
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testRetentionAndAnnotationsRemainConsistent]' passed (0.006 seconds).
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testSampleFeaturesRejectNonFiniteAudio]' started.
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testSampleFeaturesRejectNonFiniteAudio]' passed (0.018 seconds).
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testSampleStoreCommitsOnlyValidUniqueSamplesAndDeletesAudio]' started.
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testSampleStoreCommitsOnlyValidUniqueSamplesAndDeletesAudio]' passed (0.011 seconds).
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testSampleStoreDoesNotCommitWhenRequiredAudioIsMissing]' started.
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testSampleStoreDoesNotCommitWhenRequiredAudioIsMissing]' passed (0.002 seconds).
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testSQLiteCorruptionIsReportedWithoutOverwriting]' started.
+Test Case '-[SeeSoundDataTests.DataIntegrationTests testSQLiteCorruptionIsReportedWithoutOverwriting]' passed (0.005 seconds).
+Test Suite 'DataIntegrationTests' passed at 2026-11-03 14:37:40.845.
+	 Executed 27 tests, with 0 failures (0 unexpected) in 0.270 (0.271) seconds
+Test Suite 'EnvironmentalIntegrationTests' started at 2026-11-03 14:37:40.845.
+Test Case '-[SeeSoundDataTests.EnvironmentalIntegrationTests testCoreMLClassifierMatchesOfficialTensorFlowWeights]' started.
+Test Case '-[SeeSoundDataTests.EnvironmentalIntegrationTests testCoreMLClassifierMatchesOfficialTensorFlowWeights]' passed (3.457 seconds).
+Test Case '-[SeeSoundDataTests.EnvironmentalIntegrationTests testFrontendMatchesGoogleTensorFlowPaddingHannMagnitudeAndMel]' started.
+Test Case '-[SeeSoundDataTests.EnvironmentalIntegrationTests testFrontendMatchesGoogleTensorFlowPaddingHannMagnitudeAndMel]' passed (2.765 seconds).
+Test Case '-[SeeSoundDataTests.EnvironmentalIntegrationTests testOnlySupportedLabelsMapToFormalReminderCategories]' started.
+Test Case '-[SeeSoundDataTests.EnvironmentalIntegrationTests testOnlySupportedLabelsMapToFormalReminderCategories]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.EnvironmentalIntegrationTests testPatchBoundariesRejectBadInputsAndCoverTail]' started.
+Test Case '-[SeeSoundDataTests.EnvironmentalIntegrationTests testPatchBoundariesRejectBadInputsAndCoverTail]' passed (11.828 seconds).
+Test Suite 'EnvironmentalIntegrationTests' passed at 2026-11-03 14:37:58.895.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 18.050 (18.050) seconds
+Test Suite 'IntelligenceIntegrationTests' started at 2026-11-03 14:37:58.896.
+Test Case '-[SeeSoundDataTests.IntelligenceIntegrationTests testAmountsUseAdjacentCurrencyAndDifferentCurrenciesHaveDifferentIDs]' started.
+Test Case '-[SeeSoundDataTests.IntelligenceIntegrationTests testAmountsUseAdjacentCurrencyAndDifferentCurrenciesHaveDifferentIDs]' passed (0.002 seconds).
+Test Case '-[SeeSoundDataTests.IntelligenceIntegrationTests testCapturedRealAPIResponsesDecodeAndCreateOnlyUnreviewedDemoDrafts]' started.
+Test Case '-[SeeSoundDataTests.IntelligenceIntegrationTests testCapturedRealAPIResponsesDecodeAndCreateOnlyUnreviewedDemoDrafts]' passed (0.005 seconds).
+Test Case '-[SeeSoundDataTests.IntelligenceIntegrationTests testErrorsAndTimeoutDoNotRetryOrLeavePreviousResults]' started.
+Test Case '-[SeeSoundDataTests.IntelligenceIntegrationTests testErrorsAndTimeoutDoNotRetryOrLeavePreviousResults]' passed (0.041 seconds).
+Test Case '-[SeeSoundDataTests.IntelligenceIntegrationTests testOnlyValidSelectedCompletedTextMatchesItsSource]' started.
+Test Case '-[SeeSoundDataTests.IntelligenceIntegrationTests testOnlyValidSelectedCompletedTextMatchesItsSource]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.IntelligenceIntegrationTests testSendingUsesOnlySelectedTextAndNeverAutoAdoptsResult]' started.
+Test Case '-[SeeSoundDataTests.IntelligenceIntegrationTests testSendingUsesOnlySelectedTextAndNeverAutoAdoptsResult]' passed (0.007 seconds).
+Test Case '-[SeeSoundDataTests.IntelligenceIntegrationTests testServiceAddressesRejectPlainInternetAndEmbeddedCredentials]' started.
+Test Case '-[SeeSoundDataTests.IntelligenceIntegrationTests testServiceAddressesRejectPlainInternetAndEmbeddedCredentials]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.IntelligenceIntegrationTests testSourceChangesAndCancellationDiscardLateOutput]' started.
+Test Case '-[SeeSoundDataTests.IntelligenceIntegrationTests testSourceChangesAndCancellationDiscardLateOutput]' passed (0.321 seconds).
+Test Case '-[SeeSoundDataTests.IntelligenceIntegrationTests testSuggestionsKeepDemoSourceAndDoNotConfirmCardsOrCompleteTasks]' started.
+Test Case '-[SeeSoundDataTests.IntelligenceIntegrationTests testSuggestionsKeepDemoSourceAndDoNotConfirmCardsOrCompleteTasks]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.IntelligenceIntegrationTests testTranslationUsesSelectedSourceAndRejectsWrongOrCancelledOutput]' started.
+Test Case '-[SeeSoundDataTests.IntelligenceIntegrationTests testTranslationUsesSelectedSourceAndRejectsWrongOrCancelledOutput]' passed (0.167 seconds).
+Test Case '-[SeeSoundDataTests.IntelligenceIntegrationTests testUnfilteredActionClaimsAreRejectedAndSuppressionCountIsBounded]' started.
+Test Case '-[SeeSoundDataTests.IntelligenceIntegrationTests testUnfilteredActionClaimsAreRejectedAndSuppressionCountIsBounded]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.IntelligenceIntegrationTests testUnsupportedQuotesAmountsPhonesAndDuplicateCandidatesAreRejected]' started.
+Test Case '-[SeeSoundDataTests.IntelligenceIntegrationTests testUnsupportedQuotesAmountsPhonesAndDuplicateCandidatesAreRejected]' passed (0.001 seconds).
+Test Suite 'IntelligenceIntegrationTests' passed at 2026-11-03 14:37:59.442.
+	 Executed 11 tests, with 0 failures (0 unexpected) in 0.546 (0.547) seconds
+Test Suite 'ModelUpgradeTests' started at 2026-11-03 14:37:59.442.
+Test Case '-[SeeSoundDataTests.ModelUpgradeTests testDecoderFormatGuardRejectsRepeatedSymbolsAndPreservesReadableSpeech]' started.
+Test Case '-[SeeSoundDataTests.ModelUpgradeTests testDecoderFormatGuardRejectsRepeatedSymbolsAndPreservesReadableSpeech]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.ModelUpgradeTests testEnhancedOCRRecognizesHighResolutionNoticeWithoutDuplicateRows]' started.
+Test Case '-[SeeSoundDataTests.ModelUpgradeTests testEnhancedOCRRecognizesHighResolutionNoticeWithoutDuplicateRows]' passed (2.684 seconds).
+Test Case '-[SeeSoundDataTests.ModelUpgradeTests testIdenticalNewImportsHaveDistinctReceiptsAndCancelClearsBoth]' started.
+Test Case '-[SeeSoundDataTests.ModelUpgradeTests testIdenticalNewImportsHaveDistinctReceiptsAndCancelClearsBoth]' passed (0.027 seconds).
+Test Case '-[SeeSoundDataTests.ModelUpgradeTests testLegacyOCRRegionsDecodeAndNewConfidenceIsValidated]' started.
+Test Case '-[SeeSoundDataTests.ModelUpgradeTests testLegacyOCRRegionsDecodeAndNewConfidenceIsValidated]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.ModelUpgradeTests testPANNsFrontendMatchesOriginalTorchlibrosaPowerMelAndReflection]' started.
+Test Case '-[SeeSoundDataTests.ModelUpgradeTests testPANNsFrontendMatchesOriginalTorchlibrosaPowerMelAndReflection]' passed (8.017 seconds).
+Test Case '-[SeeSoundDataTests.ModelUpgradeTests testPANNsNativeCoreMLPipelineMatchesPublishedCheckpoint]' started.
+Test Case '-[SeeSoundDataTests.ModelUpgradeTests testPANNsNativeCoreMLPipelineMatchesPublishedCheckpoint]' passed (8.825 seconds).
+Test Case '-[SeeSoundDataTests.ModelUpgradeTests testPANNsRejectsBrokenFrontendInputs]' started.
+Test Case '-[SeeSoundDataTests.ModelUpgradeTests testPANNsRejectsBrokenFrontendInputs]' passed (0.192 seconds).
+Test Suite 'ModelUpgradeTests' passed at 2026-11-03 14:38:19.189.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 19.746 (19.746) seconds
+Test Suite 'ProductTests' started at 2026-11-03 14:38:19.189.
+Test Case '-[SeeSoundDataTests.ProductTests testAutosaveRequiresOptInAndDoesNotReplaceActiveBuffer]' started.
+Test Case '-[SeeSoundDataTests.ProductTests testAutosaveRequiresOptInAndDoesNotReplaceActiveBuffer]' passed (0.021 seconds).
+Test Case '-[SeeSoundDataTests.ProductTests testCaptionRevisionOnlyCountsChangedRecognitionAndRemainsDistinctFromEdits]' started.
+Test Case '-[SeeSoundDataTests.ProductTests testCaptionRevisionOnlyCountsChangedRecognitionAndRemainsDistinctFromEdits]' passed (0.002 seconds).
+Test Case '-[SeeSoundDataTests.ProductTests testDependenciesRejectCyclesUnknownParentsAndUnfinishedPrerequisites]' started.
+Test Case '-[SeeSoundDataTests.ProductTests testDependenciesRejectCyclesUnknownParentsAndUnfinishedPrerequisites]' passed (0.005 seconds).
+Test Case '-[SeeSoundDataTests.ProductTests testEmptyOrganizerQueryListsRecordsAndTagsValidate]' started.
+Test Case '-[SeeSoundDataTests.ProductTests testEmptyOrganizerQueryListsRecordsAndTagsValidate]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.ProductTests testFilingSurvivesBackupMergeWithoutOverwritingLocalOptIn]' started.
+Test Case '-[SeeSoundDataTests.ProductTests testFilingSurvivesBackupMergeWithoutOverwritingLocalOptIn]' passed (0.009 seconds).
+Test Case '-[SeeSoundDataTests.ProductTests testInboxAndCleanupKeepUnrelatedRecordsAndPersistAtomically]' started.
+Test Case '-[SeeSoundDataTests.ProductTests testInboxAndCleanupKeepUnrelatedRecordsAndPersistAtomically]' passed (0.011 seconds).
+Test Case '-[SeeSoundDataTests.ProductTests testKeyFieldReviewShowsChangesWithoutMutatingSource]' started.
+Test Case '-[SeeSoundDataTests.ProductTests testKeyFieldReviewShowsChangesWithoutMutatingSource]' passed (0.002 seconds).
+Test Case '-[SeeSoundDataTests.ProductTests testLegacyArchiveAndConversationDecodeWithDefaults]' started.
+Test Case '-[SeeSoundDataTests.ProductTests testLegacyArchiveAndConversationDecodeWithDefaults]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.ProductTests testNextOccurrenceCreationIsIdempotentAndDurable]' started.
+Test Case '-[SeeSoundDataTests.ProductTests testNextOccurrenceCreationIsIdempotentAndDurable]' passed (0.004 seconds).
+Test Case '-[SeeSoundDataTests.ProductTests testRepeatedCaseResetsProgressRemindersAndRemapsDependencies]' started.
+Test Case '-[SeeSoundDataTests.ProductTests testRepeatedCaseResetsProgressRemindersAndRemapsDependencies]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.ProductTests testSearchExcerptCentersMatchAfterLongPrefix]' started.
+Test Case '-[SeeSoundDataTests.ProductTests testSearchExcerptCentersMatchAfterLongPrefix]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.ProductTests testSelectiveBackupCompletesDependenciesAndExcludesUnselectedPrivateContent]' started.
+Test Case '-[SeeSoundDataTests.ProductTests testSelectiveBackupCompletesDependenciesAndExcludesUnselectedPrivateContent]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.ProductTests testShareInboxLimitsAndExplicitRemoval]' started.
+Test Case '-[SeeSoundDataTests.ProductTests testShareInboxLimitsAndExplicitRemoval]' passed (0.016 seconds).
+Test Case '-[SeeSoundDataTests.ProductTests testTemplateDoesNotCarryCompletionOrEvidence]' started.
+Test Case '-[SeeSoundDataTests.ProductTests testTemplateDoesNotCarryCompletionOrEvidence]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.ProductTests testWaitingAndDeferredKeepProgressIndependent]' started.
+Test Case '-[SeeSoundDataTests.ProductTests testWaitingAndDeferredKeepProgressIndependent]' passed (0.000 seconds).
+Test Suite 'ProductTests' passed at 2026-11-03 14:38:19.264.
+	 Executed 15 tests, with 0 failures (0 unexpected) in 0.075 (0.075) seconds
+Test Suite 'RecoveryExperienceTests' started at 2026-11-03 14:38:19.264.
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testChangedFilingPreviewCannotBeApplied]' started.
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testChangedFilingPreviewCannotBeApplied]' passed (0.004 seconds).
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testChangeSummaryCollapsesEquivalentConfirmedValues]' started.
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testChangeSummaryCollapsesEquivalentConfirmedValues]' passed (0.003 seconds).
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testCleanupPreviewRejectsEditedDraftAndDoesNotDeleteAnything]' started.
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testCleanupPreviewRejectsEditedDraftAndDoesNotDeleteAnything]' passed (0.003 seconds).
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testExampleCleanupOnlyTouchesItsOwnMarkedRecords]' started.
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testExampleCleanupOnlyTouchesItsOwnMarkedRecords]' passed (0.008 seconds).
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testFilingPreviewAndUndoSurviveRestartAndRestoreAbsentKeys]' started.
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testFilingPreviewAndUndoSurviveRestartAndRestoreAbsentKeys]' passed (0.007 seconds).
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testFilingUndoRefusesToOverwriteLaterClassificationChanges]' started.
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testFilingUndoRefusesToOverwriteLaterClassificationChanges]' passed (0.003 seconds).
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testFullTrashRejectsNextDeletionWithoutPartiallyChangingRecords]' started.
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testFullTrashRejectsNextDeletionWithoutPartiallyChangingRecords]' passed (0.217 seconds).
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testMalformedDeletedEntryIsRejectedWithoutUnsafeIdentifierAccess]' started.
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testMalformedDeletedEntryIsRejectedWithoutUnsafeIdentifierAccess]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testOnlyDemonstrationRecordsMayCarryExampleOwnershipMarker]' started.
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testOnlyDemonstrationRecordsMayCarryExampleOwnershipMarker]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testOrdinaryBackupExcludesDeletedContentAndUndoMetadata]' started.
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testOrdinaryBackupExcludesDeletedContentAndUndoMetadata]' passed (0.086 seconds).
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testRestoreCapacityFailureKeepsDeletedCopy]' started.
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testRestoreCapacityFailureKeepsDeletedCopy]' passed (0.003 seconds).
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testRestoreConflictDoesNotOverwriteExistingRecordOrLoseDeletedCopy]' started.
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testRestoreConflictDoesNotOverwriteExistingRecordOrLoseDeletedCopy]' passed (0.004 seconds).
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testRestoredDraftRecoversHistoryAndClassification]' started.
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testRestoredDraftRecoversHistoryAndClassification]' passed (0.005 seconds).
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testResumingExampleReplenishesRemovedSupplementWithoutDuplicatingProject]' started.
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testResumingExampleReplenishesRemovedSupplementWithoutDuplicatingProject]' passed (0.005 seconds).
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testSavedCaseCanBeRecoveredAfterRestartWithoutRearmingReminder]' started.
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testSavedCaseCanBeRecoveredAfterRestartWithoutRearmingReminder]' passed (0.004 seconds).
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testTemporaryDeletedCaseStaysTemporaryAndNeverEntersDiskArchive]' started.
+Test Case '-[SeeSoundDataTests.RecoveryExperienceTests testTemporaryDeletedCaseStaysTemporaryAndNeverEntersDiskArchive]' passed (0.003 seconds).
+Test Suite 'RecoveryExperienceTests' passed at 2026-11-03 14:38:19.620.
+	 Executed 16 tests, with 0 failures (0 unexpected) in 0.355 (0.356) seconds
+Test Suite 'RoutineIntegrationTests' started at 2026-11-03 14:38:19.620.
+Test Case '-[SeeSoundDataTests.RoutineIntegrationTests testCapacityAllowsEditsAndDemoCleanupKeepsExplicitSaves]' started.
+Test Case '-[SeeSoundDataTests.RoutineIntegrationTests testCapacityAllowsEditsAndDemoCleanupKeepsExplicitSaves]' passed (0.008 seconds).
+Test Case '-[SeeSoundDataTests.RoutineIntegrationTests testCardSearchCombinesKindReviewAndPinnedSelection]' started.
+Test Case '-[SeeSoundDataTests.RoutineIntegrationTests testCardSearchCombinesKindReviewAndPinnedSelection]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.RoutineIntegrationTests testChangedUnreviewedAndMissingSourceHaveDistinctWarnings]' started.
+Test Case '-[SeeSoundDataTests.RoutineIntegrationTests testChangedUnreviewedAndMissingSourceHaveDistinctWarnings]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.RoutineIntegrationTests testDuplicatePendingSourceIsRejectedButNewVersionAndCompletedOriginalAreAllowed]' started.
+Test Case '-[SeeSoundDataTests.RoutineIntegrationTests testDuplicatePendingSourceIsRejectedButNewVersionAndCompletedOriginalAreAllowed]' passed (0.002 seconds).
+Test Case '-[SeeSoundDataTests.RoutineIntegrationTests testEditingCannotReplaceOriginSourceIdentityOrCompletion]' started.
+Test Case '-[SeeSoundDataTests.RoutineIntegrationTests testEditingCannotReplaceOriginSourceIdentityOrCompletion]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.RoutineIntegrationTests testFiltersRespectDueBoundaryCalendarAndDemoExclusion]' started.
+Test Case '-[SeeSoundDataTests.RoutineIntegrationTests testFiltersRespectDueBoundaryCalendarAndDemoExclusion]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.RoutineIntegrationTests testLegacyInformationCardWithoutPinStillDecodes]' started.
+Test Case '-[SeeSoundDataTests.RoutineIntegrationTests testLegacyInformationCardWithoutPinStillDecodes]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.RoutineIntegrationTests testNewDemosProduceOnlyUnreviewedMarkedSamples]' started.
+Test Case '-[SeeSoundDataTests.RoutineIntegrationTests testNewDemosProduceOnlyUnreviewedMarkedSamples]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.RoutineIntegrationTests testPinningPreservesReviewAndNeverImplicitlySavesAnEphemeralCard]' started.
+Test Case '-[SeeSoundDataTests.RoutineIntegrationTests testPinningPreservesReviewAndNeverImplicitlySavesAnEphemeralCard]' passed (0.002 seconds).
+Test Case '-[SeeSoundDataTests.RoutineIntegrationTests testRefreshingUsesReviewedLatestVersionAndRebuildsTitleAndDueDate]' started.
+Test Case '-[SeeSoundDataTests.RoutineIntegrationTests testRefreshingUsesReviewedLatestVersionAndRebuildsTitleAndDueDate]' passed (0.007 seconds).
+Test Case '-[SeeSoundDataTests.RoutineIntegrationTests testRoutineCompleteReopenPersistenceAndUnsave]' started.
+Test Case '-[SeeSoundDataTests.RoutineIntegrationTests testRoutineCompleteReopenPersistenceAndUnsave]' passed (0.008 seconds).
+Test Case '-[SeeSoundDataTests.RoutineIntegrationTests testRoutineRequiresUserReviewedCardAndKeepsDemoOrigin]' started.
+Test Case '-[SeeSoundDataTests.RoutineIntegrationTests testRoutineRequiresUserReviewedCardAndKeepsDemoOrigin]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.RoutineIntegrationTests testRoutineStoreRequiresConsentAndNeverOverwritesCorruptFile]' started.
+Test Case '-[SeeSoundDataTests.RoutineIntegrationTests testRoutineStoreRequiresConsentAndNeverOverwritesCorruptFile]' passed (0.002 seconds).
+Test Case '-[SeeSoundDataTests.RoutineIntegrationTests testTemplatesAreIndependentAndDoNotEnableSensorsOrNotificationRules]' started.
+Test Case '-[SeeSoundDataTests.RoutineIntegrationTests testTemplatesAreIndependentAndDoNotEnableSensorsOrNotificationRules]' passed (0.001 seconds).
+Test Suite 'RoutineIntegrationTests' passed at 2026-11-03 14:38:19.653.
+	 Executed 14 tests, with 0 failures (0 unexpected) in 0.033 (0.034) seconds
+Test Suite 'WorkroomIntegrationTests' started at 2026-11-03 14:38:19.653.
+Test Case '-[SeeSoundDataTests.WorkroomIntegrationTests testCapturedRealClarificationsAndFourTranslationsDecodeInTheApp]' started.
+Test Case '-[SeeSoundDataTests.WorkroomIntegrationTests testCapturedRealClarificationsAndFourTranslationsDecodeInTheApp]' passed (0.007 seconds).
+Test Case '-[SeeSoundDataTests.WorkroomIntegrationTests testCaseProgressDoesNotCountMissingTasksAsCompleted]' started.
+Test Case '-[SeeSoundDataTests.WorkroomIntegrationTests testCaseProgressDoesNotCountMissingTasksAsCompleted]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.WorkroomIntegrationTests testClarificationAppendsUserAnswerAndRejectsOldQuestionAfterRevision]' started.
+Test Case '-[SeeSoundDataTests.WorkroomIntegrationTests testClarificationAppendsUserAnswerAndRejectsOldQuestionAfterRevision]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.WorkroomIntegrationTests testCorruptWorkroomCannotBeOverwrittenAndCanBeExplicitlyReset]' started.
+Test Case '-[SeeSoundDataTests.WorkroomIntegrationTests testCorruptWorkroomCannotBeOverwrittenAndCanBeExplicitlyReset]' passed (0.006 seconds).
+Test Case '-[SeeSoundDataTests.WorkroomIntegrationTests testDraftAndCaseSavingAreIndependentOptInAndDeletionDoesNotRemoveOtherStores]' started.
+Test Case '-[SeeSoundDataTests.WorkroomIntegrationTests testDraftAndCaseSavingAreIndependentOptInAndDeletionDoesNotRemoveOtherStores]' passed (0.004 seconds).
+Test Case '-[SeeSoundDataTests.WorkroomIntegrationTests testFragmentsAreStableBoundedAndNeverSendUnselectedLongText]' started.
+Test Case '-[SeeSoundDataTests.WorkroomIntegrationTests testFragmentsAreStableBoundedAndNeverSendUnselectedLongText]' passed (0.005 seconds).
+Test Case '-[SeeSoundDataTests.WorkroomIntegrationTests testGlobalSearchUsesProvidedLocalRecordsAndDoesNotSearchEmptyQueries]' started.
+Test Case '-[SeeSoundDataTests.WorkroomIntegrationTests testGlobalSearchUsesProvidedLocalRecordsAndDoesNotSearchEmptyQueries]' passed (0.002 seconds).
+Test Case '-[SeeSoundDataTests.WorkroomIntegrationTests testImageOCRAndScannedPDFRecognizeGeneratedDemoText]' started.
+Test Case '-[SeeSoundDataTests.WorkroomIntegrationTests testImageOCRAndScannedPDFRecognizeGeneratedDemoText]' passed (1.016 seconds).
+Test Case '-[SeeSoundDataTests.WorkroomIntegrationTests testOfflineRulesExtractExplicitFactsWithoutInferringDatesOrActions]' started.
+Test Case '-[SeeSoundDataTests.WorkroomIntegrationTests testOfflineRulesExtractExplicitFactsWithoutInferringDatesOrActions]' passed (0.005 seconds).
+Test Case '-[SeeSoundDataTests.WorkroomIntegrationTests testOfflineRulesRejectImpossibleDatesAndConflictingArrangements]' started.
+Test Case '-[SeeSoundDataTests.WorkroomIntegrationTests testOfflineRulesRejectImpossibleDatesAndConflictingArrangements]' passed (0.002 seconds).
+Test Case '-[SeeSoundDataTests.WorkroomIntegrationTests testPDFSelectionReadsOnlyRequestedPagesAndRejectsInvalidSelections]' started.
+Test Case '-[SeeSoundDataTests.WorkroomIntegrationTests testPDFSelectionReadsOnlyRequestedPagesAndRejectsInvalidSelections]' passed (0.019 seconds).
+Test Case '-[SeeSoundDataTests.WorkroomIntegrationTests testRevisionHistoryPreservesOriginAndKeepsSixPreviousVersions]' started.
+Test Case '-[SeeSoundDataTests.WorkroomIntegrationTests testRevisionHistoryPreservesOriginAndKeepsSixPreviousVersions]' passed (0.002 seconds).
+Test Case '-[SeeSoundDataTests.WorkroomIntegrationTests testTextAndPDFImportExtractTextWithoutNetworking]' started.
+Test Case '-[SeeSoundDataTests.WorkroomIntegrationTests testTextAndPDFImportExtractTextWithoutNetworking]' passed (0.057 seconds).
+Test Case '-[SeeSoundDataTests.WorkroomIntegrationTests testTranslationResultMustMatchSourceAndTargetAndPreserveRequestOrigin]' started.
+Test Case '-[SeeSoundDataTests.WorkroomIntegrationTests testTranslationResultMustMatchSourceAndTargetAndPreserveRequestOrigin]' passed (0.001 seconds).
+Test Suite 'WorkroomIntegrationTests' passed at 2026-11-03 14:38:20.781.
+	 Executed 14 tests, with 0 failures (0 unexpected) in 1.127 (1.128) seconds
+Test Suite 'WorkspaceUpgradeTests' started at 2026-11-03 14:38:20.781.
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testAttachedSourcesAreIndependentSnapshotsAndRejectDuplicateVersion]' started.
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testAttachedSourcesAreIndependentSnapshotsAndRejectDuplicateVersion]' passed (0.011 seconds).
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testAttachmentLimitAndUnsavedConsentArePreserved]' started.
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testAttachmentLimitAndUnsavedConsentArePreserved]' passed (0.005 seconds).
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testCaptionAppendDoesNotCountAsRevisionAndRewriteHasPreciseChangedSpan]' started.
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testCaptionAppendDoesNotCountAsRevisionAndRewriteHasPreciseChangedSpan]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testCaptionDeletionAndEmojiAreComparedByCharacters]' started.
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testCaptionDeletionAndEmojiAreComparedByCharacters]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testEachFieldHasAtMostOneChoiceAndReminderRequiresExplicitSavedConsent]' started.
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testEachFieldHasAtMostOneChoiceAndReminderRequiresExplicitSavedConsent]' passed (0.005 seconds).
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testEncryptedBackupExcludesLocalOriginalPointersButKeepsSourceText]' started.
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testEncryptedBackupExcludesLocalOriginalPointersButKeepsSourceText]' passed (0.075 seconds).
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testInvalidVisualCoordinatesAndCorruptCacheAreRejected]' started.
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testInvalidVisualCoordinatesAndCorruptCacheAreRejected]' passed (0.004 seconds).
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testLegacyDataStillDecodesWithoutAttachmentsAndFollowUps]' started.
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testLegacyDataStillDecodesWithoutAttachmentsAndFollowUps]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testNewMaterialRequirementsRequireExplicitChoiceAndPreservePreparedRows]' started.
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testNewMaterialRequirementsRequireExplicitChoiceAndPreservePreparedRows]' passed (0.005 seconds).
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testOriginalIsOnlyWrittenWhenOptedInAndCanBeRemovedWithoutLosingText]' started.
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testOriginalIsOnlyWrittenWhenOptedInAndCanBeRemovedWithoutLosingText]' passed (0.006 seconds).
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testOriginalRetainedByCaseSurvivesDraftDeletionUntilLastReferenceRemoved]' started.
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testOriginalRetainedByCaseSurvivesDraftDeletionUntilLastReferenceRemoved]' passed (0.006 seconds).
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testReceiptWithoutMatchingResultCannotClaimPhoneAppliedOperation]' started.
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testReceiptWithoutMatchingResultCannotClaimPhoneAppliedOperation]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testRestoreRollbackKeepsExistingOriginalFilesAvailable]' started.
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testRestoreRollbackKeepsExistingOriginalFilesAvailable]' passed (0.013 seconds).
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testSearchIncludesAttachedSourceAndLocatesIndividualLines]' started.
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testSearchIncludesAttachedSourceAndLocatesIndividualLines]' passed (0.000 seconds).
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testUnconfirmedUpdateCannotWriteAndSameValueMayBeFirstConfirmed]' started.
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testUnconfirmedUpdateCannotWriteAndSameValueMayBeFirstConfirmed]' passed (0.003 seconds).
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testUnreadableOptionalOriginalDoesNotBlockTextEditing]' started.
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testUnreadableOptionalOriginalDoesNotBlockTextEditing]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testUpdateDoesNotChangeDeadlineReminderOrProgressUnlessSeparatelyConfirmed]' started.
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testUpdateDoesNotChangeDeadlineReminderOrProgressUnlessSeparatelyConfirmed]' passed (0.004 seconds).
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testUpdateRejectsStaleReviewAndUngroundedQuoteWithoutWriting]' started.
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testUpdateRejectsStaleReviewAndUngroundedQuoteWithoutWriting]' passed (0.003 seconds).
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testUpdateRequestIsBoundedAndAssistantCannotUseOldSourceAsNewEvidence]' started.
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testUpdateRequestIsBoundedAndAssistantCannotUseOldSourceAsNewEvidence]' passed (0.004 seconds).
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testWaitingFollowUpPersistsResponseAndResumesWithoutCompletingSteps]' started.
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testWaitingFollowUpPersistsResponseAndResumesWithoutCompletingSteps]' passed (0.003 seconds).
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testWatchConnectionStatesDoNotConfuseReachabilityWithReceipt]' started.
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testWatchConnectionStatesDoNotConfuseReachabilityWithReceipt]' passed (0.001 seconds).
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testWorkstationMetricsExcludeDemonstrationsAndCompletedCases]' started.
+Test Case '-[SeeSoundDataTests.WorkspaceUpgradeTests testWorkstationMetricsExcludeDemonstrationsAndCompletedCases]' passed (0.000 seconds).
+Test Suite 'WorkspaceUpgradeTests' passed at 2026-11-03 14:38:20.931.
+	 Executed 22 tests, with 0 failures (0 unexpected) in 0.149 (0.150) seconds
+Test Suite 'SeeSoundDataChecksPackageTests.xctest' passed at 2026-11-03 14:38:20.931.
+	 Executed 269 tests, with 0 failures (0 unexpected) in 41.172 (41.186) seconds
+Test Suite 'All tests' passed at 2026-11-03 14:38:20.931.
+	 Executed 269 tests, with 0 failures (0 unexpected) in 41.172 (41.187) seconds
+PASS: 41 conversation and migration checks. No claim of real speech accuracy or microphone testing.
+PASS: 40 core checks. These do not validate camera, microphone, or real Watch delivery.
+PASS: 35 journal and policy checks. No claim of real detection or device delivery.
+PASS: 25 Watch transfer state checks. Network delivery and haptics require separate checks.
+YAMNet Core ML maximum absolute score error vs TensorFlow: 0.001574066778024033
+YAMNet frontend maximum absolute error vs TensorFlow: 0.0008807182312011719
+PANNs native frontend maximum absolute error vs torchlibrosa: 0.00121307373046875
+PANNs native Core ML maximum absolute score error vs PyTorch: 0.002500593662261963

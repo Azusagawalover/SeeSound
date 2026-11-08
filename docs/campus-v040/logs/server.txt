@@ -1,0 +1,22 @@
+test_health_authentication_and_no_conversation_upload (test_server.ProxyTests) ... ok
+test_nonlocal_listener_requires_https (test_server.ProxyTests) ... ok
+test_provider_error_and_timeout_return_no_suggestions_or_secrets (test_server.ProxyTests) ... ok
+test_request_validation_and_rate_limit_happen_before_provider (test_server.ProxyTests) ... ok
+test_translation_route_accepts_four_languages_but_never_organizes_implicitly (test_server.ProxyTests) ... ok
+test_action_claims_are_removed_with_an_explicit_count (test_server.ValidationTests) ... ok
+test_case_plan_is_opt_in_and_all_rows_reference_real_selected_text (test_server.ValidationTests) ... ok
+test_case_plan_rejects_guessed_materials_duplicates_and_completed_actions (test_server.ValidationTests) ... ok
+test_currency_binds_to_its_own_number_and_accepts_equal_decimal_formats (test_server.ValidationTests) ... ok
+test_input_rejects_bad_sources_duplicate_ids_and_timezone (test_server.ValidationTests) ... ok
+test_one_generation_can_return_information_and_case_plan (test_server.ValidationTests) ... ok
+test_only_selected_payload_is_sent_once_with_a_timeout (test_server.ValidationTests) ... ok
+test_questions_require_a_real_source_and_exact_quote (test_server.ValidationTests) ... ok
+test_result_requires_exact_quote_supported_number_and_digits (test_server.ValidationTests) ... ok
+test_same_number_in_two_currencies_is_not_a_duplicate (test_server.ValidationTests) ... ok
+test_translation_validates_origin_language_size_and_does_not_expose_key (test_server.ValidationTests) ... ok
+test_upstream_incomplete_or_oversized_output_is_rejected (test_server.ValidationTests) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.579s
+
+OK

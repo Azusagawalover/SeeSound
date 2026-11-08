@@ -1,0 +1,116 @@
+{
+  "project": "Microsoft Fluent Emoji",
+  "repository": "https://github.com/microsoft/fluentui-emoji",
+  "commit": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+  "license": "MIT",
+  "assets": [
+    {
+      "name": "campus",
+      "source_path": "assets/School/3D/school_3d.png",
+      "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/School/3D/school_3d.png",
+      "bytes": 44388,
+      "sha256": "fdbd89cc0e4e7a80b776fd12275bb1c7867e364b3017aee7e5a0b736e332ec24",
+      "license": "MIT",
+      "modified": false
+    },
+    {
+      "name": "speech",
+      "source_path": "assets/Speech balloon/3D/speech_balloon_3d.png",
+      "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Speech%20balloon/3D/speech_balloon_3d.png",
+      "bytes": 19211,
+      "sha256": "b9bdb19ef2e550923bc4f541de049f1633883619564b2aa140a968eaf1d69a0d",
+      "license": "MIT",
+      "modified": false
+    },
+    {
+      "name": "clipboard",
+      "source_path": "assets/Clipboard/3D/clipboard_3d.png",
+      "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Clipboard/3D/clipboard_3d.png",
+      "bytes": 30524,
+      "sha256": "cbe87f41d539362944c6a37aeb67387f118740eb1414377619dd8ed368a069a2",
+      "license": "MIT",
+      "modified": false
+    },
+    {
+      "name": "calendar",
+      "source_path": "assets/Spiral calendar/3D/spiral_calendar_3d.png",
+      "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Spiral%20calendar/3D/spiral_calendar_3d.png",
+      "bytes": 38248,
+      "sha256": "bdb3fc64cb0faa458cc6830407ad2d6a1e875082b3eb262104eb0034f86e2725",
+      "license": "MIT",
+      "modified": false
+    },
+    {
+      "name": "folder",
+      "source_path": "assets/File folder/3D/file_folder_3d.png",
+      "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/File%20folder/3D/file_folder_3d.png",
+      "bytes": 19579,
+      "sha256": "d07ff91df2a4ad9f08e281e9b99ad66924b6db0c0afd2a938feca4dd6b7a9039",
+      "license": "MIT",
+      "modified": false
+    },
+    {
+      "name": "shield",
+      "source_path": "assets/Shield/3D/shield_3d.png",
+      "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Shield/3D/shield_3d.png",
+      "bytes": 30024,
+      "sha256": "3c1cc1b14f8dd43e8532f9fb751769cd68382a9f25c012b0549e352a8d953a94",
+      "license": "MIT",
+      "modified": false
+    },
+    {
+      "name": "headphone",
+      "source_path": "assets/Headphone/3D/headphone_3d.png",
+      "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Headphone/3D/headphone_3d.png",
+      "bytes": 27986,
+      "sha256": "e7c26d433340b1706f20c733558da412cbf70b1a95048d51a80eb0ed2c0a02c9",
+      "license": "MIT",
+      "modified": false
+    },
+    {
+      "name": "compass",
+      "source_path": "assets/Compass/3D/compass_3d.png",
+      "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Compass/3D/compass_3d.png",
+      "bytes": 58387,
+      "sha256": "146e39368bbeb95049ca200ba6fca3ded48f0883bc042230d9fa1939b6aec2e7",
+      "license": "MIT",
+      "modified": false
+    },
+    {
+      "name": "memo",
+      "source_path": "assets/Memo/3D/memo_3d.png",
+      "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Memo/3D/memo_3d.png",
+      "bytes": 30659,
+      "sha256": "bddf602ea6a0988a77ef51187a3ac8b526791a614a8bb7123705359319a81dcd",
+      "license": "MIT",
+      "modified": false
+    },
+    {
+      "name": "books",
+      "source_path": "assets/Books/3D/books_3d.png",
+      "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Books/3D/books_3d.png",
+      "bytes": 26332,
+      "sha256": "36f75eaa1e1a849fc950f43962b447c206d96244858468240a6a81beaa97f7be",
+      "license": "MIT",
+      "modified": false
+    },
+    {
+      "name": "watch",
+      "source_path": "assets/Watch/3D/watch_3d.png",
+      "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Watch/3D/watch_3d.png",
+      "bytes": 39539,
+      "sha256": "0df0cdf7cd6675d1cc3f716a26a846fb646b300caeaa20b55337785b8c9c21b2",
+      "license": "MIT",
+      "modified": false
+    },
+    {
+      "name": "search",
+      "source_path": "assets/Magnifying glass tilted left/3D/magnifying_glass_tilted_left_3d.png",
+      "url": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Magnifying%20glass%20tilted%20left/3D/magnifying_glass_tilted_left_3d.png",
+      "bytes": 35247,
+      "sha256": "e8fea91e4652a36486aa9392a67873c987a13389afdae06bbcdae78ab30b4f4f",
+      "license": "MIT",
+      "modified": false
+    }
+  ]
+}

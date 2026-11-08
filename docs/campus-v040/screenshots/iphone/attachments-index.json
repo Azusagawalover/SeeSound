@@ -1,0 +1,165 @@
+{
+  "bundle": "/tmp/SeeSound-v040-iphone.xcresult",
+  "attachments": [
+    {
+      "id": "0~7HdCBw-cKGlLBoNArh5Pk-KkiftWn0Jq7DxckRzKWbG0OJp3T-qWRCENg-ogC1-St6ZPRnhzls05B96vaPhbaA==",
+      "name": "30-campus-journey",
+      "uti": "public.png",
+      "path": "30-campus-journey.png"
+    },
+    {
+      "id": "0~w9IY7Uvye8KuPnnYX_4PHAO4V0sKT2yOkV4BvVyBWSXG8U262RxP8x7UTKPAa7QSnChWYWVfSMGgzrAfx6BaPg==",
+      "name": "31-two-way-confirmation",
+      "uti": "public.png",
+      "path": "31-two-way-confirmation.png"
+    },
+    {
+      "id": "0~1vBYRd6Vygv-M2sBmFg1O0aET6GxHIflNTbXpXyA6oKJ-2aqeufSkZjZOEjMxGgLzoQyxHNvJ_DZ28fEciBatQ==",
+      "name": "32-departure",
+      "uti": "public.png",
+      "path": "32-departure.png"
+    },
+    {
+      "id": "0~mrGgqbRgvZEjKCrMDrmwBq-i9m4rV8jY86DpoTrWqKm2R2ugprUKx_Fj39N_FKRmYO6s5XXT-6xU6V56KglDpw==",
+      "name": "33-journey-outcome",
+      "uti": "public.png",
+      "path": "33-journey-outcome.png"
+    },
+    {
+      "id": "0~EiWwoFe6i0oCCA0_jh0IxWSAJQeALPDZ2Pk1p6aPHqQk-3BSK8YrbdT_Fz994oVUZq43r4kkcGB31QxrL3vRcg==",
+      "name": "34-campus-evidence-largest-text",
+      "uti": "public.png",
+      "path": "34-campus-evidence-largest-text.png"
+    },
+    {
+      "id": "0~RI11aaOXE-EpibodWCiC7FcKX1Wtkb2IFIEqc6WXvsqHnUpT3X9USvD8jyQrQwf-14DeEquLmKniEcUHJRipLQ==",
+      "name": "42-presentation-confirmation",
+      "uti": "public.png",
+      "path": "42-presentation-confirmation.png"
+    },
+    {
+      "id": "0~21QEAq0PNdrXkt6mWlGune1BxErfZVNY20Cy42E5fGD4wb8i7Db7V5FrO5nUNsGLUzYwJzxzYchrAEnSeMAlBA==",
+      "name": "43-material-change-center",
+      "uti": "public.png",
+      "path": "43-material-change-center.png"
+    },
+    {
+      "id": "0~yweQGdmUSpqcF_dVc69b--imoDntE9RS6RYww6hIp1HRS0ZMLHmNTOSJihIwZmftm4s9Vc-gB6E3clLlgAzjcw==",
+      "name": "40-scenario-preview",
+      "uti": "public.png",
+      "path": "40-scenario-preview.png"
+    },
+    {
+      "id": "0~WQLrreG6DCF0_STv4z02R6xPDwN_WSU8IyiGrwz4DXzvkp4Se07EsuexIP3TPX946q4IW0pRZTKMagk_6CsK5A==",
+      "name": "41-scenario-journey",
+      "uti": "public.png",
+      "path": "41-scenario-journey.png"
+    },
+    {
+      "id": "0~PSEflBt40yd2P3L_FbukU1KSmlU6plfK4aLbF0XWEzkRiGkVn7nHKrRaBo93fBOMo4dP6-QMtxe8a35jhpierQ==",
+      "name": "evaluation-fleurs-zh-1",
+      "uti": "public.json",
+      "path": "evaluation-fleurs-zh-1.json"
+    },
+    {
+      "id": "0~SH7F36vavSRGqZM83I5Jfrzx27oi980z33hE1Lbj9rsZwj6DLkra7XHKCqmQpqcZY4_svr6eMn9_3t3V6hLIog==",
+      "name": "45-chinese-fleurs-zh-1",
+      "uti": "public.png",
+      "path": "45-chinese-fleurs-zh-1.png"
+    },
+    {
+      "id": "0~CmnchgLD5BCpem8td5_mMdQEoeOHV_bHU61iO6iFntxLrJXpz_B-OvO_Jlh9LkUA1DJ4zEls6FfaIO2ognVSJA==",
+      "name": "evaluation-fleurs-zh-2",
+      "uti": "public.json",
+      "path": "evaluation-fleurs-zh-2.json"
+    },
+    {
+      "id": "0~h9wUymEZRd_fbQDSyPa1yi7rMVDudOtueXKSLMqqkRlChNzURgKi5saLXJ-uDjq5J8fJcfUmU3w6tCOWck9mDA==",
+      "name": "45-chinese-fleurs-zh-2",
+      "uti": "public.png",
+      "path": "45-chinese-fleurs-zh-2.png"
+    }
+  ],
+  "tests": [
+    {
+      "identifier": "WorkflowUITests/testCampusDeskAndResume()",
+      "name": "testCampusDeskAndResume()",
+      "status": "Failure"
+    },
+    {
+      "identifier": "WorkflowUITests/testCampusDeskAndResume()",
+      "name": "testCampusDeskAndResume()",
+      "status": "Failure"
+    },
+    {
+      "identifier": "WorkflowUITests/testCampusJourneyConfirmationDepartureAndOutcome()",
+      "name": "testCampusJourneyConfirmationDepartureAndOutcome()",
+      "status": "Success"
+    },
+    {
+      "identifier": "WorkflowUITests/testCampusJourneyConfirmationDepartureAndOutcome()",
+      "name": "testCampusJourneyConfirmationDepartureAndOutcome()",
+      "status": "Success"
+    },
+    {
+      "identifier": "WorkflowUITests/testCampusLargestTextAndEvidenceNavigation()",
+      "name": "testCampusLargestTextAndEvidenceNavigation()",
+      "status": "Success"
+    },
+    {
+      "identifier": "WorkflowUITests/testCampusLargestTextAndEvidenceNavigation()",
+      "name": "testCampusLargestTextAndEvidenceNavigation()",
+      "status": "Success"
+    },
+    {
+      "identifier": "WorkflowUITests/testCampusPresentationShowsRealSourceInvalidation()",
+      "name": "testCampusPresentationShowsRealSourceInvalidation()",
+      "status": "Success"
+    },
+    {
+      "identifier": "WorkflowUITests/testCampusPresentationShowsRealSourceInvalidation()",
+      "name": "testCampusPresentationShowsRealSourceInvalidation()",
+      "status": "Success"
+    },
+    {
+      "identifier": "WorkflowUITests/testCampusScenarioWizardCreatesExplicitPlan()",
+      "name": "testCampusScenarioWizardCreatesExplicitPlan()",
+      "status": "Success"
+    },
+    {
+      "identifier": "WorkflowUITests/testCampusScenarioWizardCreatesExplicitPlan()",
+      "name": "testCampusScenarioWizardCreatesExplicitPlan()",
+      "status": "Success"
+    },
+    {
+      "identifier": "WorkflowUITests/testChineseFleursEvaluationActuallyRunsWhisper()",
+      "name": "testChineseFleursEvaluationActuallyRunsWhisper()",
+      "status": "Success"
+    },
+    {
+      "identifier": "WorkflowUITests/testChineseFleursEvaluationActuallyRunsWhisper()",
+      "name": "testChineseFleursEvaluationActuallyRunsWhisper()",
+      "status": "Success"
+    },
+    {
+      "identifier": "WorkflowUITests/testChineseNoticeEvaluationActuallyRunsOCR()",
+      "name": "testChineseNoticeEvaluationActuallyRunsOCR()",
+      "status": "Failure"
+    },
+    {
+      "identifier": "WorkflowUITests/testChineseNoticeEvaluationActuallyRunsOCR()",
+      "name": "testChineseNoticeEvaluationActuallyRunsOCR()",
+      "status": "Failure"
+    },
+    {
+      "identifier": "WorkflowUITests/testJourneySearchOpensSpecificCardAndResume()",
+      "name": "testJourneySearchOpensSpecificCardAndResume()",
+      "status": "Failure"
+    },
+    {
+      "identifier": "WorkflowUITests/testJourneySearchOpensSpecificCardAndResume()",
+      "name": "testJourneySearchOpensSpecificCardAndResume()",
+      "status": "Failure"
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "tests": [
+    {
+      "name": "WorkflowUITests/testCampusDeskAndResume()",
+      "status": "Success"
+    },
+    {
+      "name": "WorkflowUITests/testCampusJourneyConfirmationDepartureAndOutcome()",
+      "status": "Success"
+    },
+    {
+      "name": "WorkflowUITests/testCampusLargestTextAndEvidenceNavigation()",
+      "status": "Success"
+    },
+    {
+      "name": "WorkflowUITests/testCampusPresentationShowsRealSourceInvalidation()",
+      "status": "Success"
+    },
+    {
+      "name": "WorkflowUITests/testCampusScenarioWizardCreatesExplicitPlan()",
+      "status": "Success"
+    },
+    {
+      "name": "WorkflowUITests/testChecklistRenameOrderBatchAndUndo()",
+      "status": "Failure"
+    },
+    {
+      "name": "WorkflowUITests/testFocusLargestText()",
+      "status": "Success"
+    },
+    {
+      "name": "WorkflowUITests/testFocusSkipUndoAndExplicitCompletion()",
+      "status": "Success"
+    },
+    {
+      "name": "WorkflowUITests/testJournalLargestTextHome()",
+      "status": "Success"
+    },
+    {
+      "name": "WorkflowUITests/testJourneySearchOpensSpecificCardAndResume()",
+      "status": "Success"
+    },
+    {
+      "name": "WorkflowUITests/testLargestTextKeepsPrimaryActionReachable()",
+      "status": "Success"
+    },
+    {
+      "name": "WorkflowUITests/testNotificationToCompletedCaseAndRecovery()",
+      "status": "Success"
+    },
+    {
+      "name": "WorkflowUITests/testOriginalImageZoomAndEditableComparison()",
+      "status": "Success"
+    },
+    {
+      "name": "WorkflowUITests/testUnsavedEditorAndListSortControls()",
+      "status": "Success"
+    },
+    {
+      "name": "WorkflowUITests/testVisualCommunicationAndMaterialTools()",
+      "status": "Success"
+    },
+    {
+      "name": "WorkflowUITests/testVisualHomeJourneyAndTabs()",
+      "status": "Success"
+    }
+  ],
+  "screenshots": [
+    "01-case-next-action.png",
+    "02-confirmed-notification-change.png",
+    "03-case-completed.png",
+    "04-restored-completed-case.png",
+    "05-original-comparison-edit-and-zoom.png",
+    "06-largest-text-next-action.png",
+    "07-largest-text-checklist.png",
+    "20-focus-ready-to-finish.png",
+    "23-list-sort.png",
+    "24-focus-current-item.png",
+    "25-focus-largest-text.png",
+    "30-campus-journey.png",
+    "31-two-way-confirmation.png",
+    "32-departure.png",
+    "33-journey-outcome.png",
+    "34-campus-evidence-largest-text.png",
+    "40-scenario-preview.png",
+    "41-scenario-journey.png",
+    "42-presentation-confirmation.png",
+    "43-material-change-center.png",
+    "46-linked-workbench.png",
+    "47-journey-search-specific-card.png",
+    "60-home-design.png",
+    "61-campus-design.png",
+    "62-scenarios-design.png",
+    "63-journey-design.png",
+    "64-confirmation-design.png",
+    "65-cases-design.png",
+    "66-events-design.png",
+    "67-preferences-design.png",
+    "68-conversation-design.png",
+    "69-workroom-design.png",
+    "70-journal-largest-text-campus.png",
+    "71-journal-largest-text-new.png"
+  ]
+}

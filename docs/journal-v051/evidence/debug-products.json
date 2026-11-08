@@ -1,0 +1,20 @@
+[
+  {
+    "component": "iOS",
+    "version": "0.51",
+    "build": "51",
+    "minimum_os": "17.3"
+  },
+  {
+    "component": "Watch",
+    "version": "0.51",
+    "build": "51",
+    "minimum_os": "9.6"
+  },
+  {
+    "component": "Share",
+    "version": "0.51",
+    "build": "51",
+    "minimum_os": "17.3"
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "bundle": "/tmp/SeeSound-v040-iphone-delivery.xcresult",
+  "attachments": [
+    {
+      "id": "0~htQ0YX_OkiojnojjpNPYGEMaQPveEzFS6Sxne33df_rMMFKc-3mAPXEKlhxVxzO9DnmCO_kKaU2eZbDxrAgQLw==",
+      "name": "47-journey-search-specific-card",
+      "uti": "public.png",
+      "path": "47-journey-search-specific-card.png"
+    }
+  ],
+  "tests": [
+    {
+      "identifier": "WorkflowUITests/testJourneySearchOpensSpecificCardAndResume()",
+      "name": "testJourneySearchOpensSpecificCardAndResume()",
+      "status": "Success"
+    },
+    {
+      "identifier": "WorkflowUITests/testJourneySearchOpensSpecificCardAndResume()",
+      "name": "testJourneySearchOpensSpecificCardAndResume()",
+      "status": "Success"
+    },
+    {
+      "identifier": "WorkflowUITests/testPairedWatchJourneySnapshotAndVersionChange()",
+      "name": "testPairedWatchJourneySnapshotAndVersionChange()",
+      "status": "Failure"
+    },
+    {
+      "identifier": "WorkflowUITests/testPairedWatchJourneySnapshotAndVersionChange()",
+      "name": "testPairedWatchJourneySnapshotAndVersionChange()",
+      "status": "Failure"
+    }
+  ]
+}

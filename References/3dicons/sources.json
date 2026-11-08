@@ -1,0 +1,46 @@
+{
+  "creator": "Vijay Verma",
+  "project": "3dicons V1",
+  "homepage": "https://3dicons.co/",
+  "license": "CC0-1.0",
+  "license_url": "https://3dicons.co/about",
+  "assets": [
+    {
+      "name": "3d-file-text",
+      "url": "https://pub-821312cfd07a4061bf7b99c1f23ed29b.r2.dev/v1/dynamic/color/file-text-dynamic-color.png",
+      "source_page": "https://old.3dicons.co/",
+      "license": "CC0-1.0",
+      "bytes": 71947,
+      "sha256": "cfc7c13f11b2770bc4d0d88b7ca46bc3de020b8817274fee3f295e10918fc91a",
+      "modified": false
+    },
+    {
+      "name": "3d-chat-text",
+      "url": "https://pub-821312cfd07a4061bf7b99c1f23ed29b.r2.dev/v1/dynamic/color/chat-text-dynamic-color.png",
+      "source_page": "https://old.3dicons.co/",
+      "license": "CC0-1.0",
+      "bytes": 62832,
+      "sha256": "2ef00b3454cdc06aa8f681f235ee5669ebb2c07a853de07d6e5cb93e3db1879b",
+      "modified": false
+    },
+    {
+      "name": "3d-headphone",
+      "url": "https://pub-821312cfd07a4061bf7b99c1f23ed29b.r2.dev/v1/dynamic/color/headphone-dynamic-color.png",
+      "source_page": "https://old.3dicons.co/",
+      "license": "CC0-1.0",
+      "bytes": 65111,
+      "sha256": "909a84dbdfb8e370e135580b3b38cb5cbb3a37a616a71adb0ceddcfeae2a5b48",
+      "modified": false
+    },
+    {
+      "name": "3d-folder",
+      "url": "https://pub-821312cfd07a4061bf7b99c1f23ed29b.r2.dev/v1/dynamic/color/folder-dynamic-color.png",
+      "source_page": "https://old.3dicons.co/",
+      "license": "CC0-1.0",
+      "bytes": 62779,
+      "sha256": "325917e1b4659e9873d459b6e3079a047fe4519cb21f3b01aa05c7972592b067",
+      "modified": false
+    }
+  ],
+  "display": "Original PNGs unchanged; runtime saturation 0.6, opacity 0.94."
+}

@@ -1,0 +1,12 @@
+{
+  "upstream_code": "https://github.com/qiuqiangkong/audioset_tagging_cnn",
+  "code_license": "MIT",
+  "checkpoint": "https://zenodo.org/records/3987831/files/Cnn10_mAP%3D0.380.pth",
+  "weights_license": "CC-BY-4.0",
+  "doi": "10.5281/zenodo.3987831",
+  "author": "Qiuqiang Kong et al.",
+  "checkpoint_sha256": "5240bdc47444e331bbeb54fd741d2b3f933a4526e84b0c17bf3593df94b13962",
+  "checkpoint_md5": "bfb1f1f9968938fa8ef4012b8471f5f6",
+  "changes": "Core ML float16 conversion; input frontend separated for native Swift; 5-second fixed windows; weights unchanged",
+  "runtime_requirements": "iOS17.3+; no server; public lab only"
+}

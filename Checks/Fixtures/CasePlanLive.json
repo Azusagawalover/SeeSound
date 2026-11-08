@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "tested_at": "2026-10-27T13:16:10.095293+00:00",
+  "draft_id": "3B620F1B-849D-435C-BCBA-0453BDFC4E72",
+  "draft_title": "演示 · 读书会通知",
+  "request": {
+    "version": 1,
+    "include_case_plan": true,
+    "reference_time": "2026-10-27T10:00:00Z",
+    "time_zone": "Asia/Shanghai",
+    "turns": [
+      {
+        "id": "d45d5e42-17d4-e9ab-a08d-2c37d1ea4cd6",
+        "text": "【演示通知】\n活动：校园读书会\n时间：2026-10-30 15:00\n地点：图书馆二楼\n材料费：12元人民币\n联系电话：+1 (202) 555-0147\n请带学生证和一本喜欢的书。\n报名截止时间待定，请询问组织者。",
+        "origin": "demonstration"
+      }
+    ]
+  },
+  "result": {
+    "version": 1,
+    "provider": "DeepSeek",
+    "model": "deepseek-flash",
+    "summary": "演示通知：校园读书会于2026-10-30 15:00在图书馆二楼举行，材料费12元人民币，联系电话+1 (202) 555-0147；请带学生证和一本喜欢的书，报名截止时间待定。",
+    "candidates": [
+      {
+        "kind": "time",
+        "value": "2026-10-30 15:00",
+        "source_id": "d45d5e42-17d4-e9ab-a08d-2c37d1ea4cd6",
+        "quote": "时间：2026-10-30 15:00",
+        "date_iso": "2026-10-30T15:00:00+08:00",
+        "currency": null
+      },
+      {
+        "kind": "place",
+        "value": "图书馆二楼",
+        "source_id": "d45d5e42-17d4-e9ab-a08d-2c37d1ea4cd6",
+        "quote": "地点：图书馆二楼",
+        "date_iso": null,
+        "currency": null
+      },
+      {
+        "kind": "amount",
+        "value": "12",
+        "source_id": "d45d5e42-17d4-e9ab-a08d-2c37d1ea4cd6",
+        "quote": "材料费：12元人民币",
+        "date_iso": null,
+        "currency": "CNY"
+      },
+      {
+        "kind": "phone",
+        "value": "+1 (202) 555-0147",
+        "source_id": "d45d5e42-17d4-e9ab-a08d-2c37d1ea4cd6",
+        "quote": "联系电话：+1 (202) 555-0147",
+        "date_iso": null,
+        "currency": null
+      },
+      {
+        "kind": "task",
+        "value": "带学生证和一本喜欢的书",
+        "source_id": "d45d5e42-17d4-e9ab-a08d-2c37d1ea4cd6",
+        "quote": "请带学生证和一本喜欢的书。",
+        "date_iso": null,
+        "currency": null
+      }
+    ],
+    "replies": [
+      "请问读书会的时间是10月30日15:00吗？",
+      "请再确认一下活动地点，是图书馆二楼吗？",
+      "报名截止时间还没定，请问向谁询问？"
+    ],
+    "suppressed_replies": 0,
+    "questions": [
+      {
+        "kind": "time",
+        "question": "报名截止时间是什么时候？",
+        "source_id": "d45d5e42-17d4-e9ab-a08d-2c37d1ea4cd6",
+        "quote": "报名截止时间待定，请询问组织者。"
+      }
+    ],
+    "case_plan": {
+      "title": "参加校园读书会",
+      "items": [
+        {
+          "kind": "material",
+          "value": "学生证",
+          "basis": "stated",
+          "source_id": "d45d5e42-17d4-e9ab-a08d-2c37d1ea4cd6",
+          "quote": "请带学生证和一本喜欢的书。"
+        },
+        {
+          "kind": "material",
+          "value": "一本喜欢的书",
+          "basis": "stated",
+          "source_id": "d45d5e42-17d4-e9ab-a08d-2c37d1ea4cd6",
+          "quote": "请带学生证和一本喜欢的书。"
+        },
+        {
+          "kind": "step",
+          "value": "向组织者询问报名截止时间",
+          "basis": "stated",
+          "source_id": "d45d5e42-17d4-e9ab-a08d-2c37d1ea4cd6",
+          "quote": "报名截止时间待定，请询问组织者。"
+        },
+        {
+          "kind": "step",
+          "value": "确认材料费12元人民币的准备方式",
+          "basis": "suggested",
+          "source_id": "d45d5e42-17d4-e9ab-a08d-2c37d1ea4cd6",
+          "quote": "材料费：12元人民币"
+        }
+      ]
+    }
+  },
+  "status": 200,
+  "elapsed": 3.806
+}

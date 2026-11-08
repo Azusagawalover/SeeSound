@@ -1,0 +1,64 @@
+iphone
+Test Case '-[SeeSoundUITests.WorkflowUITests testCampusDeskAndResume]' started.
+/Users/mac/Desktop/归档/见声SeeSound/UITests/WorkflowUITests.swift:439: error: -[SeeSoundUITests.WorkflowUITests testCampusDeskAndResume] : failed - Control was not reachable: "campus.desk" Any
+Test Case '-[SeeSoundUITests.WorkflowUITests testCampusDeskAndResume]' failed (231.440 seconds).
+Test Case '-[SeeSoundUITests.WorkflowUITests testCampusJourneyConfirmationDepartureAndOutcome]' started.
+Test Case '-[SeeSoundUITests.WorkflowUITests testCampusJourneyConfirmationDepartureAndOutcome]' passed (78.560 seconds).
+Test Case '-[SeeSoundUITests.WorkflowUITests testCampusLargestTextAndEvidenceNavigation]' started.
+Test Case '-[SeeSoundUITests.WorkflowUITests testCampusLargestTextAndEvidenceNavigation]' passed (43.755 seconds).
+Test Case '-[SeeSoundUITests.WorkflowUITests testCampusPresentationShowsRealSourceInvalidation]' started.
+Test Case '-[SeeSoundUITests.WorkflowUITests testCampusPresentationShowsRealSourceInvalidation]' passed (51.984 seconds).
+Test Case '-[SeeSoundUITests.WorkflowUITests testCampusScenarioWizardCreatesExplicitPlan]' started.
+Test Case '-[SeeSoundUITests.WorkflowUITests testCampusScenarioWizardCreatesExplicitPlan]' passed (34.683 seconds).
+Test Case '-[SeeSoundUITests.WorkflowUITests testChineseFleursEvaluationActuallyRunsWhisper]' started.
+Test Case '-[SeeSoundUITests.WorkflowUITests testChineseFleursEvaluationActuallyRunsWhisper]' passed (34.011 seconds).
+Test Case '-[SeeSoundUITests.WorkflowUITests testChineseNoticeEvaluationActuallyRunsOCR]' started.
+/Users/mac/Desktop/归档/见声SeeSound/UITests/WorkflowUITests.swift:430: error: -[SeeSoundUITests.WorkflowUITests testChineseNoticeEvaluationActuallyRunsOCR] : Failed to get matching snapshot: No matches found for Elements matching predicate '"evaluation.score" IN identifiers' from input {(
+Test Case '-[SeeSoundUITests.WorkflowUITests testChineseNoticeEvaluationActuallyRunsOCR]' failed (22.467 seconds).
+Test Case '-[SeeSoundUITests.WorkflowUITests testJourneySearchOpensSpecificCardAndResume]' started.
+/Users/mac/Desktop/归档/见声SeeSound/UITests/WorkflowUITests.swift:451: error: -[SeeSoundUITests.WorkflowUITests testJourneySearchOpensSpecificCardAndResume] : XCTAssertTrue failed
+Test Case '-[SeeSoundUITests.WorkflowUITests testJourneySearchOpensSpecificCardAndResume]' failed (22.441 seconds).
+** TEST EXECUTE FAILED **
+
+iphone-recheck
+Test Case '-[SeeSoundUITests.WorkflowUITests testCampusDeskAndResume]' started.
+Test Case '-[SeeSoundUITests.WorkflowUITests testCampusDeskAndResume]' passed (25.800 seconds).
+Test Case '-[SeeSoundUITests.WorkflowUITests testChineseNoticeEvaluationActuallyRunsOCR]' started.
+Test Case '-[SeeSoundUITests.WorkflowUITests testChineseNoticeEvaluationActuallyRunsOCR]' passed (52.039 seconds).
+Test Case '-[SeeSoundUITests.WorkflowUITests testJourneySearchOpensSpecificCardAndResume]' started.
+/Users/mac/Desktop/归档/见声SeeSound/UITests/WorkflowUITests.swift:465: error: -[SeeSoundUITests.WorkflowUITests testJourneySearchOpensSpecificCardAndResume] : failed - Control was not reachable: "campus.resume" Any
+Test Case '-[SeeSoundUITests.WorkflowUITests testJourneySearchOpensSpecificCardAndResume]' failed (62.378 seconds).
+Test Case '-[SeeSoundUITests.WorkflowUITests testPairedWatchJourneySnapshotAndVersionChange]' started.
+/Users/mac/Desktop/归档/见声SeeSound/UITests/WorkflowUITests.swift:367: error: -[SeeSoundUITests.WorkflowUITests testPairedWatchJourneySnapshotAndVersionChange] : XCTAssertTrue failed - Optional(Attributes: Application, 0x101d70250, pid: 6271, label: '见声'
+Test Case '-[SeeSoundUITests.WorkflowUITests testPairedWatchJourneySnapshotAndVersionChange]' failed (53.388 seconds).
+** TEST EXECUTE FAILED **
+
+iphone-final
+Test Case '-[SeeSoundUITests.WorkflowUITests testCampusPresentationShowsRealSourceInvalidation]' started.
+Test Case '-[SeeSoundUITests.WorkflowUITests testCampusPresentationShowsRealSourceInvalidation]' passed (48.383 seconds).
+Test Case '-[SeeSoundUITests.WorkflowUITests testJourneySearchOpensSpecificCardAndResume]' started.
+/Users/mac/Desktop/归档/见声SeeSound/UITests/WorkflowUITests.swift:466: error: -[SeeSoundUITests.WorkflowUITests testJourneySearchOpensSpecificCardAndResume] : Failed to tap "校园办事" Button: No matches found for Elements matching predicate '"校园办事" IN identifiers' from input {(
+Test Case '-[SeeSoundUITests.WorkflowUITests testJourneySearchOpensSpecificCardAndResume]' failed (31.476 seconds).
+Test Case '-[SeeSoundUITests.WorkflowUITests testPairedWatchJourneySnapshotAndVersionChange]' started.
+/Users/mac/Desktop/归档/见声SeeSound/UITests/WorkflowUITests.swift:367: error: -[SeeSoundUITests.WorkflowUITests testPairedWatchJourneySnapshotAndVersionChange] : XCTAssertTrue failed - Optional(Attributes: Application, 0x10434e710, pid: 7039, label: '见声'
+Test Case '-[SeeSoundUITests.WorkflowUITests testPairedWatchJourneySnapshotAndVersionChange]' failed (64.350 seconds).
+** TEST EXECUTE FAILED **
+
+iphone-delivery
+Test Case '-[SeeSoundUITests.WorkflowUITests testJourneySearchOpensSpecificCardAndResume]' started.
+Test Case '-[SeeSoundUITests.WorkflowUITests testJourneySearchOpensSpecificCardAndResume]' passed (37.699 seconds).
+Test Case '-[SeeSoundUITests.WorkflowUITests testPairedWatchJourneySnapshotAndVersionChange]' started.
+/Users/mac/Desktop/归档/见声SeeSound/UITests/WorkflowUITests.swift:374: error: -[SeeSoundUITests.WorkflowUITests testPairedWatchJourneySnapshotAndVersionChange] : XCTAssertTrue failed - Optional(Attributes: Application, 0x1050857a0, pid: 7616, label: '见声'
+Test Case '-[SeeSoundUITests.WorkflowUITests testPairedWatchJourneySnapshotAndVersionChange]' failed (54.369 seconds).
+** TEST EXECUTE FAILED **
+
+ipad
+Test Case '-[SeeSoundUITests.WorkflowUITests testCampusDeskAndResume]' started.
+Test Case '-[SeeSoundUITests.WorkflowUITests testCampusDeskAndResume]' passed (21.702 seconds).
+Test Case '-[SeeSoundUITests.WorkflowUITests testCampusJourneyConfirmationDepartureAndOutcome]' started.
+Test Case '-[SeeSoundUITests.WorkflowUITests testCampusJourneyConfirmationDepartureAndOutcome]' passed (47.178 seconds).
+Test Case '-[SeeSoundUITests.WorkflowUITests testCampusLargestTextAndEvidenceNavigation]' started.
+Test Case '-[SeeSoundUITests.WorkflowUITests testCampusLargestTextAndEvidenceNavigation]' passed (22.539 seconds).
+Test Case '-[SeeSoundUITests.WorkflowUITests testOriginalImageZoomAndEditableComparison]' started.
+Test Case '-[SeeSoundUITests.WorkflowUITests testOriginalImageZoomAndEditableComparison]' passed (23.998 seconds).
+** TEST EXECUTE SUCCEEDED **

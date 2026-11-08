@@ -1,0 +1,34 @@
+[
+  {
+    "name": "3d-file-text",
+    "bytes": 71947,
+    "width": 400,
+    "height": 400,
+    "alpha": true,
+    "sha256_matches": true
+  },
+  {
+    "name": "3d-chat-text",
+    "bytes": 62832,
+    "width": 400,
+    "height": 400,
+    "alpha": true,
+    "sha256_matches": true
+  },
+  {
+    "name": "3d-headphone",
+    "bytes": 65111,
+    "width": 400,
+    "height": 400,
+    "alpha": true,
+    "sha256_matches": true
+  },
+  {
+    "name": "3d-folder",
+    "bytes": 62779,
+    "width": 400,
+    "height": 400,
+    "alpha": true,
+    "sha256_matches": true
+  }
+]

@@ -1,0 +1,56 @@
+{
+  "creator": "Pablo Stanley",
+  "project": "Open Doodles",
+  "homepage": "https://www.opendoodles.com/",
+  "assets": [
+    {
+      "name": "reading-side",
+      "url": "https://opendoodles.s3-us-west-1.amazonaws.com/reading-side.png",
+      "bytes": 231073,
+      "sha256": "c6341954c7bc4f676230868ede339e93098ff025ade142b55c195ebfcb168524",
+      "modified": false
+    },
+    {
+      "name": "dancing",
+      "url": "https://opendoodles.s3-us-west-1.amazonaws.com/dancing.png",
+      "bytes": 260277,
+      "sha256": "4b337759a25cf61aecb484c8fb811d80c25f52facc8c4205d5dd8a8dda2a3836",
+      "modified": false
+    },
+    {
+      "name": "loving",
+      "url": "https://opendoodles.s3-us-west-1.amazonaws.com/loving.png",
+      "bytes": 144375,
+      "sha256": "86f6eca6b4068d17d80558c3fc2d7911b0d545245710504ef0e345d89033def8",
+      "modified": false
+    },
+    {
+      "name": "unboxing",
+      "url": "https://opendoodles.s3-us-west-1.amazonaws.com/unboxing.png",
+      "bytes": 217543,
+      "sha256": "997d6b5ac77b0712872b9255325dabfe5ef6261a0ce8e543e45233c2837547a5",
+      "modified": false
+    },
+    {
+      "name": "coffee",
+      "url": "https://opendoodles.s3-us-west-1.amazonaws.com/coffee.png",
+      "bytes": 199279,
+      "sha256": "793535649593fc81741fd54a4d6d162364463a8d17ad4e9e9258d19fd575ac1c",
+      "modified": false
+    },
+    {
+      "name": "strolling",
+      "url": "https://opendoodles.s3-us-west-1.amazonaws.com/strolling.png",
+      "bytes": 218901,
+      "sha256": "4a0dd9fbfc71201d3d6ba1133d1fe43a30e4537c5c1c4383a9edf1484e049b6f",
+      "modified": false
+    },
+    {
+      "name": "sitting",
+      "url": "https://opendoodles.s3-us-west-1.amazonaws.com/sitting.png",
+      "bytes": 173172,
+      "sha256": "527b1db0181a9edeb110230f30d12edbc7bcf33b7df42246a320c2280c56e803",
+      "modified": false
+    }
+  ]
+}

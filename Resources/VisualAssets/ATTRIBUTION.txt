@@ -1,0 +1,3 @@
+Microsoft Fluent Emoji. Copyright (c) Microsoft Corporation. MIT license.
+https://github.com/microsoft/fluentui-emoji
+Original unmodified 3D PNG assets. Fixed source revision and hashes: References/FluentEmoji/sources.json

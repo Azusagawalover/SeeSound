@@ -1,0 +1,50 @@
+{
+  "recorded_at": "2026-11-03T15:22:50.864446+08:00",
+  "input": "明确标注的补办学生证演示旅程",
+  "transport": "实际WCSession，未向接收端写入测试快照",
+  "watch_before_phone_change": {
+    "items": [
+      {
+        "seen": false,
+        "next": "准备材料 · 在哪里提交材料？ · 地点：学生服务中心一楼",
+        "completed": false,
+        "kind": "journey",
+        "id": "F962AA4D-7D1C-474B-9DAB-A1BB99546386",
+        "title": "补办学生证 · 示例",
+        "fingerprint": "6184737baefa099c7edc75f9faa7814f3b99254eefd2276f6756ac46e48d3665",
+        "demonstration": true
+      }
+    ],
+    "date": 815383185.55187,
+    "kind": "snapshot",
+    "version": 1,
+    "id": "3D672697-6317-4B70-8D26-50A621D63189"
+  },
+  "watch_after_phone_change": {
+    "version": 1,
+    "kind": "snapshot",
+    "date": 815383185.55187,
+    "items": [
+      {
+        "outdated": true,
+        "seen": false,
+        "id": "F962AA4D-7D1C-474B-9DAB-A1BB99546386",
+        "fingerprint": "6184737baefa099c7edc75f9faa7814f3b99254eefd2276f6756ac46e48d3665",
+        "kind": "journey",
+        "completed": false,
+        "demonstration": true,
+        "title": "补办学生证 · 示例",
+        "next": "准备材料 · 在哪里提交材料？ · 地点：学生服务中心一楼"
+      }
+    ],
+    "id": "20F148FB-E02B-4513-B166-43A480A19BE5"
+  },
+  "first_receipt": "screenshots/watch-verified/48-watch-journey-receipt.png",
+  "manual_retry_receipt": "screenshots/watch-verified/49-watch-manual-retry.png",
+  "phone_change": "screenshots/watch-verified/50-watch-journey-changed.png",
+  "setup": "手机App安装后重新安装并打开同版Watch App，再激活两端；原配对与资料保留",
+  "unverified": [
+    "腕上我已看到的真实往返",
+    "真机触觉和后台/锁屏行为"
+  ]
+}

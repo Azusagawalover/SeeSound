@@ -1,0 +1,13 @@
+{
+  "tests": [
+    {
+      "name": "WorkflowUITests/testHearingFocusedHomeAndQuickReplies()",
+      "status": "Success"
+    }
+  ],
+  "screenshots": [
+    "72-quick-reply-draft.png",
+    "73-displayed-quick-reply.png",
+    "74-hearing-alert-seen.png"
+  ]
+}
